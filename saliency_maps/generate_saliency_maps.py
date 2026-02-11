@@ -24,6 +24,7 @@ from text_prompts import *
 # Disable parallel tokenization warnings
 os.environ["TOKENIZERS_PARALLELISM"] = "false"
 
+
 # Function to calculate Dice coefficient for evaluating segmentation
 def calculate_dice_coefficient(mask1, mask2):
     # Calculate intersection and Dice score
@@ -136,8 +137,11 @@ def main(args):
     print("Loading models ...")
     
     # Load the appropriate model based on the arguments
+    # Load the appropriate model based on the arguments
     if(args.model_name == "BiomedCLIP" and args.finetuned):
-        model = AutoModel.from_pretrained("./saliency_maps/model", trust_remote_code=True).to(args.device)
+        model_path = args.checkpoint_path if args.checkpoint_path else "./saliency_maps/model"
+        print(f"Loading finetuned model from: {model_path}")
+        model = AutoModel.from_pretrained(model_path, trust_remote_code=True).to(args.device)
         processor = AutoProcessor.from_pretrained("chuhac/BiomedCLIP-vit-bert-hf", trust_remote_code=True)
         tokenizer = AutoTokenizer.from_pretrained("chuhac/BiomedCLIP-vit-bert-hf", trust_remote_code=True)
     elif(args.model_name == "BiomedCLIP" and not args.finetuned):
@@ -219,6 +223,7 @@ if __name__ == '__main__':
     parser.add_argument('--seed', type=int, default=42, help="Random seed for reproducibility")
     parser.add_argument('--json-path', type=str, default="busi.json", help="Path to the JSON file containing the text prompts")
     parser.add_argument('--reproduce', action='store_true')
+    parser.add_argument('--checkpoint-path', type=str, default=None, help="Path to custom model checkpoint")
     args = parser.parse_args()
     main(args)
 

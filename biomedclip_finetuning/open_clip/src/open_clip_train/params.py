@@ -61,7 +61,7 @@ def parse_args(args):
     )
     parser.add_argument(
         "--dataset-type",
-        choices=["webdataset", "csv", "synthetic", "auto"],
+        choices=["webdataset", "csv", "synthetic", "auto", "egobridge"],
         default="auto",
         help="Which type of dataset to process."
     )
@@ -517,6 +517,39 @@ def parse_args(args):
         type=float,
         default=0.0,
         help="Weight for Entropy Regularization.",
+    )
+    
+    # EgoBridge Arguments
+    parser.add_argument(
+        "--egobridge-mode",
+        type=str,
+        default="none",
+        choices=["none", "stage1", "stage2"],
+        help="EgoBridge fine-tuning mode: 'stage1' (Pos-Pos) or 'stage2' (Pos-Neg)."
+    )
+    parser.add_argument(
+        "--sinkhorn-epsilon",
+        type=float,
+        default=0.05,
+        help="Epsilon parameter for Sinkhorn distance (entropic regularization)."
+    )
+    parser.add_argument(
+        "--sinkhorn-max-iters",
+        type=int,
+        default=50,
+        help="Max iterations for Sinkhorn algorithm."
+    )
+    parser.add_argument(
+        "--contrastive-lambda",
+        type=float,
+        default=1.0,
+        help="Weight for the contrastive loss component in EgoBridge."
+    )
+    parser.add_argument(
+        "--mask-key",
+        type=str,
+        default="mask_path",
+        help="CSV key for mask paths (if using CSV dataset for EgoBridge)."
     )
 
     args = parser.parse_args(args)

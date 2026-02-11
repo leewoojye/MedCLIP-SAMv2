@@ -18,6 +18,7 @@ from open_clip import get_input_dtype, CLIP, CustomTextCLIP
 from open_clip_train.distributed import is_master
 from open_clip_train.zero_shot import zero_shot_eval
 from open_clip_train.precision import get_autocast
+from open_clip.loss import EgoBridgeLoss # Import Custom Loss
 
 
 class AverageMeter(object):
@@ -88,6 +89,130 @@ def train_one_epoch(model, data, loss, epoch, optimizer, scaler, scheduler, dist
 
         if not args.skip_scheduler:
             scheduler(step)
+
+        # EgoBridge Stage 1 & 2 Data Handling
+        if args.egobridge_mode != 'none':
+            if args.egobridge_mode == 'stage1':
+                # batch: (anchor_img, anchor_mask, pos_img, pos_mask)
+                anchor_img, anchor_mask, pos_img, pos_mask = batch
+                images = torch.cat([anchor_img, pos_img], dim=0) # [2B, C, H, W]
+                # masks: [B, C, H, W] -> need to pass to loss
+                texts = None # No text in this stage? Or we use dummy text if model requires it?
+                # CLIP model expects text. If we use visual-only loss, we might need to bypass text encoding OR provide dummy text.
+                # However, EgoBridgeLoss only uses image features. 
+                # We need to extract features from images. 
+                
+            elif args.egobridge_mode == 'stage2':
+                # batch: (anchor_img, anchor_mask, neg_img)
+                anchor_img, anchor_mask, neg_img = batch
+                images = torch.cat([anchor_img, neg_img], dim=0)
+                pos_mask = anchor_mask
+                texts = None
+
+            images = images.to(device=device, dtype=input_dtype, non_blocking=True)
+            if anchor_mask is not None:
+                 anchor_mask = anchor_mask.to(device=device, non_blocking=True)
+            if 'pos_mask' in locals() and pos_mask is not None:
+                 pos_mask = pos_mask.to(device=device, non_blocking=True)
+            
+            optimizer.zero_grad()
+
+            with autocast():
+                # We need feature maps (tokens) for Sinkhorn
+                # Ensure model returns tokens.
+                # Standard CLIP forward returns global features. 
+                # We need to access model.visual directly or modify CLIP forward.
+                # Based on previous analysis: model.visual(image) returns (pooled, tokens) if output_tokens=True.
+                
+                # Hack: Temporarily set output_tokens = True
+                unwrap_model(model).visual.output_tokens = True
+                
+                # We only need image features
+                # model.encode_image(images) -> calls visual(images)
+                # But encode_image might index [0] if tuple returned? 
+                # Let's see model.py: encode_image calls self.visual(image).
+                # If visual returns tuple, encode_image returns tuple? 
+                # No, standard encode_image usually expects tensor.
+                # Let's call visual directly.
+                
+                visual_out = unwrap_model(model).visual(images)
+                
+                # Restore output_tokens
+                unwrap_model(model).visual.output_tokens = False
+                
+                if isinstance(visual_out, tuple):
+                    global_features, feature_maps = visual_out
+                else:
+                    # Fallback if not tuple (should not happen if we did it right)
+                    global_features = visual_out
+                    feature_maps = None # Error?
+                
+                # Split features back to (anchor, other)
+                batch_size = anchor_img.shape[0]
+                feat1 = feature_maps[:batch_size]
+                feat2 = feature_maps[batch_size:]
+                
+                if args.egobridge_mode == 'stage1':
+                     loss_out = loss(feat1, feat2, anchor_mask, pos_mask, output_dict=True)
+                elif args.egobridge_mode == 'stage2':
+                     loss_out = loss(feat1, feat2, anchor_mask, None, output_dict=True)
+                     
+                total_loss = loss_out['loss']
+                losses = loss_out
+                
+            backward(total_loss, scaler)
+            
+            # Skip the rest of the loop (standard CLIP training)
+            # Update meters
+            if scaler is not None:
+                if args.grad_clip_norm is not None:
+                    scaler.unscale_(optimizer)
+                    torch.nn.utils.clip_grad_norm_(model.parameters(), args.grad_clip_norm, norm_type=2.0)
+                scaler.step(optimizer)
+                scaler.update()
+            else:
+                 optimizer.step()
+
+            # reset gradient accum, if enabled
+            if args.accum_freq > 1:
+                accum_images, accum_texts, accum_features = [], [], {}
+
+            # Note: we clamp to 4.6052 = ln(100), as in the original paper.
+            with torch.no_grad():
+                unwrap_model(model).logit_scale.clamp_(0, math.log(100))
+
+            batch_time_m.update(time.time() - end)
+            end = time.time()
+            batch_count = i_accum + 1
+            if is_master(args) and (i_accum % args.log_every_n_steps == 0 or batch_count == num_batches_per_epoch):
+                batch_size = len(images)
+                num_samples = batch_count * batch_size * args.accum_freq * args.world_size
+                samples_per_epoch = dataloader.num_samples
+                percent_complete = 100.0 * batch_count / num_batches_per_epoch
+
+                # NOTE loss is coarsely sampled, just master node and per log update
+                for key, val in losses.items():
+                    if key not in losses_m:
+                        losses_m[key] = AverageMeter()
+                    losses_m[key].update(val.item(), batch_size)
+
+                loss_log = " ".join(
+                    [
+                        f"{loss_name.capitalize()}: {loss_m.val:#.5g} ({loss_m.avg:#.5g})" 
+                        for loss_name, loss_m in losses_m.items()
+                    ]
+                )
+                
+                logging.info(
+                    f"Train Epoch: {epoch} [{num_samples:>{sample_digits}}/{samples_per_epoch} ({percent_complete:.0f}%)] "
+                    f"Data (t): {data_time_m.avg:.3f} "
+                    f"Batch (t): {batch_time_m.avg:.3f} "
+                    f"LR: {optimizer.param_groups[0]['lr']:5f} " + loss_log
+                )
+                
+                # Simplified logging for EgoBridge (no samples/sec/gpu calc for now to avoid var errors)
+            
+            continue # Skip standard CLIP part
 
         images, texts = batch
         images = images.to(device=device, dtype=input_dtype, non_blocking=True)

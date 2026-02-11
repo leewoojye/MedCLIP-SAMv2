@@ -523,6 +523,124 @@ def get_synthetic_dataset(args, preprocess_fn, is_train, epoch=0, tokenizer=None
     return DataInfo(dataloader, sampler)
 
 
+class EgoBridgeDataset(Dataset):
+    def __init__(self, root_dir, mode='stage1', transform=None, mask_transform=None):
+        self.root_dir = root_dir
+        self.mode = mode
+        self.transform = transform
+        self.mask_transform = mask_transform
+        
+        self.benign_dir = os.path.join(root_dir, 'benign')
+        self.normal_dir = os.path.join(root_dir, 'normal')
+        
+        self.benign_images = [f for f in os.listdir(self.benign_dir) if f.endswith('.png') and '_mask' not in f]
+        self.normal_images = [f for f in os.listdir(self.normal_dir) if f.endswith('.png')] if os.path.exists(self.normal_dir) else []
+        
+        logging.info(f"EgoBridgeDataset initialized in {mode} mode.")
+        logging.info(f"Found {len(self.benign_images)} benign images and {len(self.normal_images)} normal images.")
+        
+    def __len__(self):
+        # Length is roughly determined by the number of benign images as they are the anchors
+        return len(self.benign_images)
+
+    def _load_image_and_mask(self, img_path, mask_path=None):
+        image = Image.open(img_path).convert('RGB')
+        
+        mask = None
+        if mask_path and os.path.exists(mask_path):
+            mask = Image.open(mask_path).convert('L')
+            
+        if self.transform:
+            image = self.transform(image)
+            
+        if mask:
+            if self.mask_transform:
+                mask = self.mask_transform(mask)
+            else:
+                 # Default mask processing matching simple resize
+                 pass
+
+        return image, mask
+
+    def __getitem__(self, idx):
+        # Stage 1: Positive-Positive Pair
+        # Anchor: Benign Image at idx
+        anchor_img_name = self.benign_images[idx]
+        anchor_img_path = os.path.join(self.benign_dir, anchor_img_name)
+        anchor_mask_name = anchor_img_name.replace('.png', '_mask.png')
+        anchor_mask_path = os.path.join(self.benign_dir, anchor_mask_name)
+        
+        anchor_img, anchor_mask = self._load_image_and_mask(anchor_img_path, anchor_mask_path)
+        
+        if self.mode == 'stage1':
+            # Positive Pair: Another random Benign Image
+            pos_idx = random.randint(0, len(self.benign_images) - 1)
+            # Ensure different image 
+            while pos_idx == idx and len(self.benign_images) > 1:
+                 pos_idx = random.randint(0, len(self.benign_images) - 1)
+            
+            pos_img_name = self.benign_images[pos_idx]
+            pos_img_path = os.path.join(self.benign_dir, pos_img_name)
+            pos_mask_name = pos_img_name.replace('.png', '_mask.png')
+            pos_mask_path = os.path.join(self.benign_dir, pos_mask_name)
+            
+            pos_img, pos_mask = self._load_image_and_mask(pos_img_path, pos_mask_path)
+            
+            return anchor_img, anchor_mask, pos_img, pos_mask
+            
+        elif self.mode == 'stage2':
+            # Positive-Negative Pair
+            # Positive: Anchor Benign (already loaded)
+            
+            # Negative: Random Normal Image
+            if len(self.normal_images) > 0:
+                neg_idx = random.randint(0, len(self.normal_images) - 1)
+                neg_img_name = self.normal_images[neg_idx]
+                neg_img_path = os.path.join(self.normal_dir, neg_img_name)
+                neg_img, _ = self._load_image_and_mask(neg_img_path, None) # No mask for normal
+            else:
+                 # Fallback if no normal images
+                 logging.warning("No normal images found for Stage 2! duplicating anchor.")
+                 neg_img = anchor_img 
+
+            return anchor_img, anchor_mask, neg_img
+            
+        else:
+            raise ValueError(f"Invalid mode: {self.mode}")
+
+def get_egobridge_dataset(args, preprocess_fn, is_train, epoch=0, tokenizer=None):
+    # Construct mask transform matching image resize but without normalization
+    import torchvision.transforms as T
+    mask_transform = T.Compose([
+        T.Resize((224, 224), interpolation=T.InterpolationMode.NEAREST),
+        T.ToTensor()
+    ])
+    
+    dataset = EgoBridgeDataset(
+        root_dir=args.train_data, # Using train_data arg as root root
+        mode=args.egobridge_mode,
+        transform=preprocess_fn,
+        mask_transform=mask_transform
+    )
+    
+    num_samples = len(dataset)
+    sampler = DistributedSampler(dataset) if args.distributed and is_train else None
+    shuffle = is_train and sampler is None
+
+    dataloader = DataLoader(
+        dataset,
+        batch_size=args.batch_size,
+        shuffle=shuffle,
+        num_workers=args.workers,
+        pin_memory=True,
+        sampler=sampler,
+        drop_last=is_train,
+    )
+    dataloader.num_samples = num_samples
+    dataloader.num_batches = len(dataloader)
+
+    return DataInfo(dataloader, sampler)
+
 def get_dataset_fn(data_path, dataset_type):
     if dataset_type == "webdataset":
         return get_wds_dataset
@@ -530,6 +648,8 @@ def get_dataset_fn(data_path, dataset_type):
         return get_csv_dataset
     elif dataset_type == "synthetic":
         return get_synthetic_dataset
+    elif dataset_type == "egobridge":
+        return get_egobridge_dataset
     elif dataset_type == "auto":
         ext = data_path.split('.')[-1]
         if ext in ['csv', 'tsv']:

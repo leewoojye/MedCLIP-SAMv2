@@ -10,6 +10,10 @@
 # --gt_path data/pancreas/test_masks \
 # --seg_path sam_outputs/data/pancreas/masks
 
+# python evaluation/eval.py \
+# --gt_path data/breast_tumors/test_masks \
+# --seg_path sam_outputs/data/breast_tumors/masks
+
 python evaluation/eval.py \
---gt_path data/breast_tumors/test_masks \
---seg_path sam_outputs/data/breast_tumors/masks
+--gt_path UDIAT/test_masks \
+--seg_path sam_outputs/UDIAT/test_masks

@@ -1,0 +1,3 @@
+2026-02-11,11:50:13 | INFO | Running with a single process. Device cuda.
+2026-02-11,11:50:14 | INFO | Downloading 'pytorch_model.bin' to '/home/woojye2020/.cache/huggingface/hub/models--chuhac--BiomedCLIP-vit-bert-hf/blobs/5bdc400de59a85620ddc7584d06913dc901c47f22647899c6addec71b9a5c9a2.incomplete'
+2026-02-11,11:50:27 | INFO | Download complete. Moving file to /home/woojye2020/.cache/huggingface/hub/models--chuhac--BiomedCLIP-vit-bert-hf/blobs/5bdc400de59a85620ddc7584d06913dc901c47f22647899c6addec71b9a5c9a2

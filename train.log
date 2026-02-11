@@ -1,0 +1,205 @@
+nohup: ignoring input
+=================================================================================================
+Starting Stage 1: Positive-Positive Alignment...
+=================================================================================================
+Using device: cuda
+Initializing Dataset for stage1...
+Scanning dataset in /home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/Dataset_BUSI_with_GT...
+Found 647 positive (tumor) images.
+Found 133 negative (normal) images.
+Loading Model...
+Starting training for 20 epochs...
+Epoch 1/20 - Step 0/21 - Loss: 0.8650
+Epoch 1/20 - Step 10/21 - Loss: 0.0204
+Epoch 1/20 - Step 20/21 - Loss: -0.7174
+Epoch 1 Completed. Avg Loss: 0.0527
+Saved checkpoint to ./logs_finetuning/egobridge_stage1_pos_pos_20260211_140706/epoch_1
+Epoch 2/20 - Step 0/21 - Loss: -0.6292
+Epoch 2/20 - Step 10/21 - Loss: -0.8620
+Epoch 2/20 - Step 20/21 - Loss: -0.9182
+Epoch 2 Completed. Avg Loss: -0.8373
+Saved checkpoint to ./logs_finetuning/egobridge_stage1_pos_pos_20260211_140706/epoch_2
+Epoch 3/20 - Step 0/21 - Loss: -0.9425
+Epoch 3/20 - Step 10/21 - Loss: -0.9621
+Epoch 3/20 - Step 20/21 - Loss: -0.9724
+Epoch 3 Completed. Avg Loss: -0.9510
+Saved checkpoint to ./logs_finetuning/egobridge_stage1_pos_pos_20260211_140706/epoch_3
+Epoch 4/20 - Step 0/21 - Loss: -0.9698
+Epoch 4/20 - Step 10/21 - Loss: -0.9770
+Epoch 4/20 - Step 20/21 - Loss: -0.9816
+Epoch 4 Completed. Avg Loss: -0.9714
+Saved checkpoint to ./logs_finetuning/egobridge_stage1_pos_pos_20260211_140706/epoch_4
+Epoch 5/20 - Step 0/21 - Loss: -0.9813
+Epoch 5/20 - Step 10/21 - Loss: -0.9529
+Epoch 5/20 - Step 20/21 - Loss: -0.9834
+Epoch 5 Completed. Avg Loss: -0.9805
+Saved checkpoint to ./logs_finetuning/egobridge_stage1_pos_pos_20260211_140706/epoch_5
+Epoch 6/20 - Step 0/21 - Loss: -0.9872
+Epoch 6/20 - Step 10/21 - Loss: -0.9881
+Epoch 6/20 - Step 20/21 - Loss: -0.9901
+Epoch 6 Completed. Avg Loss: -0.9847
+Saved checkpoint to ./logs_finetuning/egobridge_stage1_pos_pos_20260211_140706/epoch_6
+Epoch 7/20 - Step 0/21 - Loss: -0.9578
+Epoch 7/20 - Step 10/21 - Loss: -0.9859
+Epoch 7/20 - Step 20/21 - Loss: -0.9914
+Epoch 7 Completed. Avg Loss: -0.9870
+Saved checkpoint to ./logs_finetuning/egobridge_stage1_pos_pos_20260211_140706/epoch_7
+Epoch 8/20 - Step 0/21 - Loss: -0.9912
+Epoch 8/20 - Step 10/21 - Loss: -0.9910
+Epoch 8/20 - Step 20/21 - Loss: -0.9919
+Epoch 8 Completed. Avg Loss: -0.9884
+Saved checkpoint to ./logs_finetuning/egobridge_stage1_pos_pos_20260211_140706/epoch_8
+Epoch 9/20 - Step 0/21 - Loss: -0.9926
+Epoch 9/20 - Step 10/21 - Loss: -0.9620
+Epoch 9/20 - Step 20/21 - Loss: -0.9950
+Epoch 9 Completed. Avg Loss: -0.9896
+Saved checkpoint to ./logs_finetuning/egobridge_stage1_pos_pos_20260211_140706/epoch_9
+Epoch 10/20 - Step 0/21 - Loss: -0.9932
+Epoch 10/20 - Step 10/21 - Loss: -0.9929
+Epoch 10/20 - Step 20/21 - Loss: -0.9922
+Epoch 10 Completed. Avg Loss: -0.9903
+Saved checkpoint to ./logs_finetuning/egobridge_stage1_pos_pos_20260211_140706/epoch_10
+Epoch 11/20 - Step 0/21 - Loss: -0.9928
+Epoch 11/20 - Step 10/21 - Loss: -0.9938
+Epoch 11/20 - Step 20/21 - Loss: -0.9954
+Epoch 11 Completed. Avg Loss: -0.9911
+Saved checkpoint to ./logs_finetuning/egobridge_stage1_pos_pos_20260211_140706/epoch_11
+Epoch 12/20 - Step 0/21 - Loss: -0.9944
+Epoch 12/20 - Step 10/21 - Loss: -0.9927
+Epoch 12/20 - Step 20/21 - Loss: -0.9942
+Epoch 12 Completed. Avg Loss: -0.9916
+Saved checkpoint to ./logs_finetuning/egobridge_stage1_pos_pos_20260211_140706/epoch_12
+Epoch 13/20 - Step 0/21 - Loss: -0.9954
+Epoch 13/20 - Step 10/21 - Loss: -0.9962
+Epoch 13/20 - Step 20/21 - Loss: -0.9955
+Epoch 13 Completed. Avg Loss: -0.9920
+Saved checkpoint to ./logs_finetuning/egobridge_stage1_pos_pos_20260211_140706/epoch_13
+Epoch 14/20 - Step 0/21 - Loss: -0.9940
+Epoch 14/20 - Step 10/21 - Loss: -0.9953
+Epoch 14/20 - Step 20/21 - Loss: -0.9952
+Epoch 14 Completed. Avg Loss: -0.9923
+Saved checkpoint to ./logs_finetuning/egobridge_stage1_pos_pos_20260211_140706/epoch_14
+Epoch 15/20 - Step 0/21 - Loss: -0.9955
+Epoch 15/20 - Step 10/21 - Loss: -0.9954
+Epoch 15/20 - Step 20/21 - Loss: -0.9894
+Epoch 15 Completed. Avg Loss: -0.9923
+Saved checkpoint to ./logs_finetuning/egobridge_stage1_pos_pos_20260211_140706/epoch_15
+Epoch 16/20 - Step 0/21 - Loss: -0.9955
+Epoch 16/20 - Step 10/21 - Loss: -0.9958
+Epoch 16/20 - Step 20/21 - Loss: -0.9967
+Epoch 16 Completed. Avg Loss: -0.9928
+Saved checkpoint to ./logs_finetuning/egobridge_stage1_pos_pos_20260211_140706/epoch_16
+Epoch 17/20 - Step 0/21 - Loss: -0.9959
+Epoch 17/20 - Step 10/21 - Loss: -0.9958
+Epoch 17/20 - Step 20/21 - Loss: -0.9970
+Epoch 17 Completed. Avg Loss: -0.9929
+Saved checkpoint to ./logs_finetuning/egobridge_stage1_pos_pos_20260211_140706/epoch_17
+Epoch 18/20 - Step 0/21 - Loss: -0.9954
+Epoch 18/20 - Step 10/21 - Loss: -0.9960
+Epoch 18/20 - Step 20/21 - Loss: -0.9964
+Epoch 18 Completed. Avg Loss: -0.9930
+Saved checkpoint to ./logs_finetuning/egobridge_stage1_pos_pos_20260211_140706/epoch_18
+Epoch 19/20 - Step 0/21 - Loss: -0.9961
+Epoch 19/20 - Step 10/21 - Loss: -0.9964
+Epoch 19/20 - Step 20/21 - Loss: -0.9971
+Epoch 19 Completed. Avg Loss: -0.9931
+Saved checkpoint to ./logs_finetuning/egobridge_stage1_pos_pos_20260211_140706/epoch_19
+Epoch 20/20 - Step 0/21 - Loss: -0.9962
+Epoch 20/20 - Step 10/21 - Loss: -0.9957
+Epoch 20/20 - Step 20/21 - Loss: -0.9961
+Epoch 20 Completed. Avg Loss: -0.9931
+Saved checkpoint to ./logs_finetuning/egobridge_stage1_pos_pos_20260211_140706/epoch_20
+Training Completed.
+Stage 1 Completed.
+=================================================================================================
+Starting Stage 2: Positive-Negative Contrast...
+=================================================================================================
+Found Stage 1 checkpoint: ./logs_finetuning/egobridge_stage1_pos_pos_20260211_140706/epoch_20
+Using device: cuda
+Initializing Dataset for stage2...
+Scanning dataset in /home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/Dataset_BUSI_with_GT...
+Found 647 positive (tumor) images.
+Found 133 negative (normal) images.
+Loading Model...
+Loading weights from ./logs_finetuning/egobridge_stage1_pos_pos_20260211_140706/epoch_20
+Starting training for 15 epochs...
+Epoch 1/15 - Step 0/21 - Loss: 0.7739
+Epoch 1/15 - Step 10/21 - Loss: -0.9717
+Epoch 1/15 - Step 20/21 - Loss: -0.9886
+Epoch 1 Completed. Avg Loss: -0.6931
+Saved checkpoint to ./logs_finetuning/egobridge_stage2_pos_neg_20260211_140706/epoch_1
+Epoch 2/15 - Step 0/21 - Loss: -0.9866
+Epoch 2/15 - Step 10/21 - Loss: -0.9878
+Epoch 2/15 - Step 20/21 - Loss: -0.9936
+Epoch 2 Completed. Avg Loss: -0.9869
+Saved checkpoint to ./logs_finetuning/egobridge_stage2_pos_neg_20260211_140706/epoch_2
+Epoch 3/15 - Step 0/21 - Loss: -0.9939
+Epoch 3/15 - Step 10/21 - Loss: -0.9957
+Epoch 3/15 - Step 20/21 - Loss: -0.9949
+Epoch 3 Completed. Avg Loss: -0.9919
+Saved checkpoint to ./logs_finetuning/egobridge_stage2_pos_neg_20260211_140706/epoch_3
+Epoch 4/15 - Step 0/21 - Loss: -0.9954
+Epoch 4/15 - Step 10/21 - Loss: -0.9956
+Epoch 4/15 - Step 20/21 - Loss: -0.9942
+Epoch 4 Completed. Avg Loss: -0.9925
+Saved checkpoint to ./logs_finetuning/egobridge_stage2_pos_neg_20260211_140706/epoch_4
+Epoch 5/15 - Step 0/21 - Loss: -0.9961
+Epoch 5/15 - Step 10/21 - Loss: -0.9649
+Epoch 5/15 - Step 20/21 - Loss: -0.9957
+Epoch 5 Completed. Avg Loss: -0.9929
+Saved checkpoint to ./logs_finetuning/egobridge_stage2_pos_neg_20260211_140706/epoch_5
+Epoch 6/15 - Step 0/21 - Loss: -0.9963
+Epoch 6/15 - Step 10/21 - Loss: -0.9963
+Epoch 6/15 - Step 20/21 - Loss: -0.9965
+Epoch 6 Completed. Avg Loss: -0.9932
+Saved checkpoint to ./logs_finetuning/egobridge_stage2_pos_neg_20260211_140706/epoch_6
+Epoch 7/15 - Step 0/21 - Loss: -0.9647
+Epoch 7/15 - Step 10/21 - Loss: -0.9950
+Epoch 7/15 - Step 20/21 - Loss: -0.9965
+Epoch 7 Completed. Avg Loss: -0.9934
+Saved checkpoint to ./logs_finetuning/egobridge_stage2_pos_neg_20260211_140706/epoch_7
+Epoch 8/15 - Step 0/21 - Loss: -0.9965
+Epoch 8/15 - Step 10/21 - Loss: -0.9962
+Epoch 8/15 - Step 20/21 - Loss: -0.9966
+Epoch 8 Completed. Avg Loss: -0.9936
+Saved checkpoint to ./logs_finetuning/egobridge_stage2_pos_neg_20260211_140706/epoch_8
+Epoch 9/15 - Step 0/21 - Loss: -0.9961
+Epoch 9/15 - Step 10/21 - Loss: -0.9657
+Epoch 9/15 - Step 20/21 - Loss: -0.9972
+Epoch 9 Completed. Avg Loss: -0.9937
+Saved checkpoint to ./logs_finetuning/egobridge_stage2_pos_neg_20260211_140706/epoch_9
+Epoch 10/15 - Step 0/21 - Loss: -0.9966
+Epoch 10/15 - Step 10/21 - Loss: -0.9966
+Epoch 10/15 - Step 20/21 - Loss: -0.9969
+Epoch 10 Completed. Avg Loss: -0.9938
+Saved checkpoint to ./logs_finetuning/egobridge_stage2_pos_neg_20260211_140706/epoch_10
+Epoch 11/15 - Step 0/21 - Loss: -0.9965
+Epoch 11/15 - Step 10/21 - Loss: -0.9967
+Epoch 11/15 - Step 20/21 - Loss: -0.9976
+Epoch 11 Completed. Avg Loss: -0.9939
+Saved checkpoint to ./logs_finetuning/egobridge_stage2_pos_neg_20260211_140706/epoch_11
+Epoch 12/15 - Step 0/21 - Loss: -0.9969
+Epoch 12/15 - Step 10/21 - Loss: -0.9969
+Epoch 12/15 - Step 20/21 - Loss: -0.9969
+Epoch 12 Completed. Avg Loss: -0.9939
+Saved checkpoint to ./logs_finetuning/egobridge_stage2_pos_neg_20260211_140706/epoch_12
+Epoch 13/15 - Step 0/21 - Loss: -0.9971
+Epoch 13/15 - Step 10/21 - Loss: -0.9976
+Epoch 13/15 - Step 20/21 - Loss: -0.9970
+Epoch 13 Completed. Avg Loss: -0.9940
+Saved checkpoint to ./logs_finetuning/egobridge_stage2_pos_neg_20260211_140706/epoch_13
+Epoch 14/15 - Step 0/21 - Loss: -0.9969
+Epoch 14/15 - Step 10/21 - Loss: -0.9966
+Epoch 14/15 - Step 20/21 - Loss: -0.9965
+Epoch 14 Completed. Avg Loss: -0.9940
+Saved checkpoint to ./logs_finetuning/egobridge_stage2_pos_neg_20260211_140706/epoch_14
+Epoch 15/15 - Step 0/21 - Loss: -0.9971
+Epoch 15/15 - Step 10/21 - Loss: -0.9969
+Epoch 15/15 - Step 20/21 - Loss: -0.9968
+Epoch 15 Completed. Avg Loss: -0.9940
+Saved checkpoint to ./logs_finetuning/egobridge_stage2_pos_neg_20260211_140706/epoch_15
+Training Completed.
+=================================================================================================
+Fine-tuning Pipeline Completed!
+Final Model Key Checkpoint: ./logs_finetuning/egobridge_stage2_pos_neg_20260211_140706/epoch_15
+=================================================================================================

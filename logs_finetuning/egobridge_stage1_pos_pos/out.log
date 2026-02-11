@@ -1,0 +1,3 @@
+2026-02-11,10:50:01 | INFO | Running with a single process. Device cuda.
+2026-02-11,10:50:01 | INFO | Loaded ViT-B-16 model config.
+2026-02-11,10:50:03 | INFO | Loading pretrained ViT-B-16 weights (/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/saliency_maps/model/pytorch_model.bin).

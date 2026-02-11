@@ -3,22 +3,23 @@
 # custom config
 
 # Enter the path to your dataset
-DATASET="data/breast_tumors"
+DATASET="UDIAT"
 
 SAL_PATH="saliency_map_outputs/${DATASET}/test_masks"
-COARSE_PATH="coarse_outputs/${DATASET}/test_masks"
+COARSE_PATH="coarse_outputs/${DATASET}/test_masks" 
 SAM_PATH="sam_outputs/${DATASET}/test_masks"
 
 # Clear previous outputs to avoid mixing runs
-rm -rf "${SAL_PATH}" "${COARSE_PATH}" "${SAM_PATH}"
+rm -rf "${SAL_PATH}" "${COARSE_PATH}" "${SAM_PATH}" 
 mkdir -p "${SAL_PATH}" "${COARSE_PATH}" "${SAM_PATH}"
 
 python saliency_maps/generate_saliency_maps.py \
 --input-path ${DATASET}/test_images \
 --output-path saliency_map_outputs/${DATASET}/test_masks \
 --model-name BiomedCLIP \
---finetuned \
---json-path saliency_maps/text_prompts/breast_tumors_testing.json \
+# --finetuned \
+# --checkpoint-path "logs_finetuning/egobridge_stage2_pos_neg_20260211_154826/epoch_10" \
+--json-path saliency_maps/text_prompts/UDIAT_testing.json \
 --reproduce \
 --vvar 1.0 \
 --vbeta 1.0 \
