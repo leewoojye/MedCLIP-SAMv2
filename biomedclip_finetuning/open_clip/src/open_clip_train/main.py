@@ -27,6 +27,9 @@ try:
 except ImportError:
     hvd = None
 
+import open_clip
+print(f"DEBUG: open_clip imported from {open_clip.__file__}")
+
 from open_clip import create_model_and_transforms, trace_model, get_tokenizer, create_loss
 from open_clip_train.data import get_data
 from open_clip_train.distributed import is_master, init_distributed_device, broadcast_object

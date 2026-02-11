@@ -10,7 +10,7 @@ CUDA_VISIBLE_DEVICES=0 python3 -m open_clip_train.main \
     --logs="logs" \
     --dataset-type csv \
     --csv-separator="," \
-    --train-data data/medpix_dataset/medpix_dataset.csv \
+    --train-data data/medpix_dataset/medpix_dataset_clean.csv \
     --csv-img-key filename \
     --csv-caption-key Caption \
     --lr=1e-3 \

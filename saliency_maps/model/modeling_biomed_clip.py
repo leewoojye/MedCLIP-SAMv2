@@ -53,8 +53,12 @@ from transformers.utils import (
 )
 from transformers.models.clip.configuration_clip import CLIPConfig, CLIPTextConfig, CLIPVisionConfig
 from transformers.models.clip.modeling_clip import *
+from transformers.models.clip.modeling_clip import CLIPVisionEmbeddings, CLIPTextEmbeddings, CLIPEncoder, CLIPAttention, CLIPMLP, CLIPOutput
 
-from .configuration_biomed_clip import BiomedCLIPTextProjectionConfig, BiomedCLIPConfig
+try:
+    from .configuration_biomed_clip import BiomedCLIPTextProjectionConfig, BiomedCLIPConfig
+except ImportError:
+    from configuration_biomed_clip import BiomedCLIPTextProjectionConfig, BiomedCLIPConfig
 
 
 logger = logging.get_logger(__name__)

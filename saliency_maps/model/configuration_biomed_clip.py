@@ -58,3 +58,15 @@ class BiomedCLIPConfig(CLIPConfig):
             text_projection_config = BiomedCLIPTextProjectionConfig(**text_projection_config)
             
         self.text_projection_config = text_projection_config
+
+    def to_dict(self):
+        """
+        Serializes this instance to a Python dictionary. Override the default [`~PretrainedConfig.to_dict`].
+
+        Returns:
+            `Dict[str, Any]`: Dictionary of all the attributes that make up this configuration instance,
+        """
+        output = super().to_dict()
+        if isinstance(self.text_projection_config, PretrainedConfig):
+            output["text_projection_config"] = self.text_projection_config.to_dict()
+        return output

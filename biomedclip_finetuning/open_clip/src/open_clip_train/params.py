@@ -494,6 +494,30 @@ def parse_args(args):
         default=0.15,
         help="Beta2 for DHN-NCE loss.",
     )
+    parser.add_argument(
+        "--dhn-entropy-loss",
+        default=False,
+        action="store_true",
+        help="Use DHN-NCE with Entropy Regularization.",
+    )
+    parser.add_argument(
+        "--dhn-feature-entropy-loss",
+        default=False,
+        action="store_true",
+        help="Use DHN-NCE with Feature Entropy Regularization.",
+    )
+    parser.add_argument(
+        "--dhn-base-entropy-loss",
+        default=False,
+        action="store_true",
+        help="Use baseline DHN-NCE with spatial entropy regularization.",
+    )
+    parser.add_argument(
+        "--entropy-weight",
+        type=float,
+        default=0.0,
+        help="Weight for Entropy Regularization.",
+    )
 
     args = parser.parse_args(args)
 

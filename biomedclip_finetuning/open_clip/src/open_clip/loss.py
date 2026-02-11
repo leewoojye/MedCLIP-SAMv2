@@ -147,7 +147,7 @@ class HardNegativeLoss(nn.Module):
         self.alpha = alpha
         self.batch_size = batch_size
 
-    def forward(self, image_features, text_features, logit_scale, output_dict=False):
+    def forward(self, image_features, text_features, logit_scale=None, logit_bias=None, feature_maps=None, output_dict=False):
         # Normalize features
         image_features = F.normalize(image_features, p=2, dim=1)
         text_features = F.normalize(text_features, p=2, dim=1)

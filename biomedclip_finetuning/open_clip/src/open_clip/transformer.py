@@ -167,6 +167,7 @@ class Attention(nn.Module):
                 if attn_mask is not None:
                     attn += attn_mask
                 attn = attn.softmax(dim=-1)
+                self.attn_map = attn
                 attn = self.attn_drop(attn)
                 x = torch.bmm(attn, v)
 

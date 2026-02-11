@@ -128,6 +128,7 @@ def _build_vision_tower(
             patch_drop=vision_cfg.patch_dropout if vision_cfg.patch_dropout > 0 else None,
             embed_dim=embed_dim,
             image_size=vision_cfg.image_size,
+            output_tokens=vision_cfg.output_tokens,
         )
     elif isinstance(vision_cfg.layers, (tuple, list)):
         vision_heads = vision_cfg.width * 32 // vision_cfg.head_width
@@ -310,6 +311,56 @@ class CLIP(nn.Module):
             }
             if self.logit_bias is not None:
                 out_dict['logit_bias'] = self.logit_bias
+            
+            # --- For Feature Entropy Loss: Retrieve feature maps (tokens) ---
+            # Temporarily enable output_tokens if possible and re-run visual for tokens
+            # Or assume someone enabled it. To be safe in standard training loop:
+            if image is not None:
+                has_attr = hasattr(self.visual, 'output_tokens')
+                
+                # DEBUG PRINT: Only print once per batch or randomly to avoid spam?
+                # For now just print every time since we crash quickly anyway or user sees error
+                # actually print only if false
+                if not has_attr:
+                     print(f"DEBUG ERROR: model.visual (type {type(self.visual)}) does NOT have 'output_tokens' attribute.")
+                
+                if has_attr:
+                    # Hack: manually invoke visual with output_tokens=True behavior
+                    # But visual() usually calls transformer which checks self.output_tokens
+                    
+                    # Check if we can just grab it from a hook or last forward... no.
+                    # Let's do a Forward Pass with token return if output_dict is True
+                    # Be careful about efficiency.
+                    
+                    prev_output_tokens = getattr(self.visual, 'output_tokens', False)
+                    if not prev_output_tokens:
+                         self.visual.output_tokens = True
+                         try:
+                             # We need to re-run visual tower to get tokens. 
+                             # encode_image calls it, but discards tokens if output_tokens was False when called.
+                             # This doubles visual compute cost. 
+                             # OPTIMIZATION: In params.py or factory.py, we should set output_tokens=True globally for this loss.
+                             # But as a fallback:
+                             
+                             features_and_tokens = self.visual(image) # Returns (pooled, tokens)
+                             if isinstance(features_and_tokens, tuple):
+                                 _, tokens = features_and_tokens
+                                 out_dict['feature_maps'] = tokens
+                             else:
+                                 print(f"DEBUG WARN: self.visual(image) did NOT return tuple for output_tokens=True. Type: {type(features_and_tokens)}")
+                                 pass
+                         except Exception as e:
+                             print(f"DEBUG ERROR in feature extraction: {e}")
+                             import traceback
+                             traceback.print_exc()
+                             pass
+                         finally:
+                             self.visual.output_tokens = prev_output_tokens
+                    else:
+                        # If it was already True, encode_image might have returned a tuple?
+                        pass
+
+
             return out_dict
 
         if self.logit_bias is not None:
@@ -388,6 +439,24 @@ class CustomTextCLIP(nn.Module):
             }
             if self.logit_bias is not None:
                 out_dict['logit_bias'] = self.logit_bias
+            
+            # --- For Feature Entropy Loss: Retrieve feature maps (tokens) ---
+            # Added logic to extract feature maps for CustomTextCLIP
+            if image is not None and hasattr(self.visual, 'output_tokens'):
+                prev_output_tokens = getattr(self.visual, 'output_tokens', False)
+                if not prev_output_tokens:
+                     self.visual.output_tokens = True
+                     try:
+                         # Re-run visual tower to get tokens
+                         features_and_tokens = self.visual(image) 
+                         if isinstance(features_and_tokens, tuple):
+                             _, tokens = features_and_tokens
+                             out_dict['feature_maps'] = tokens
+                     except Exception:
+                         pass
+                     finally:
+                         self.visual.output_tokens = prev_output_tokens
+
             return out_dict
 
         if self.logit_bias is not None:

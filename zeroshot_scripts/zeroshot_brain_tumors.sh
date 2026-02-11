@@ -3,7 +3,15 @@
 # custom config
 
 # Enter the path to your dataset
-DATASET=$1
+DATASET="data/brain_tumors"
+
+SAL_PATH="saliency_map_outputs/${DATASET}/test_masks"
+COARSE_PATH="coarse_outputs/${DATASET}/test_masks"
+SAM_PATH="sam_outputs/${DATASET}/test_masks"
+
+# Clear previous outputs to avoid mixing runs
+rm -rf "${SAL_PATH}" "${COARSE_PATH}" "${SAM_PATH}"
+mkdir -p "${SAL_PATH}" "${COARSE_PATH}" "${SAM_PATH}"
 
 python saliency_maps/generate_saliency_maps.py \
 --input-path ${DATASET}/test_images \

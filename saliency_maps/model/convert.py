@@ -125,7 +125,9 @@ if __name__ == "__main__":
     pt_files = glob.glob(f"saliency_maps/model/*.pt")
     if pt_files:
         # Load the first .pt file found
-        state_dict = torch.load(pt_files[0])
+        state_dict = torch.load(pt_files[0], map_location='cpu', weights_only=False)
+        if "state_dict" in state_dict:
+            state_dict = state_dict["state_dict"]
         print(f"Loaded model: {pt_files[0]}")
     else:
         print("No .pt files found in the directory.")
@@ -141,8 +143,8 @@ if __name__ == "__main__":
     text_config = openclip_model.text.config
     state_dict = convert_state_dict(openclip_model.state_dict())
     from transformers import AutoModel, AutoProcessor, AutoTokenizer
-    model = AutoModel.from_pretrained("chuhac/BiomedCLIP-vit-bert-hf", trust_remote_code=True)
-    processor = AutoProcessor.from_pretrained("chuhac/BiomedCLIP-vit-bert-hf", trust_remote_code=True)
-    tokenizer = AutoTokenizer.from_pretrained("chuhac/BiomedCLIP-vit-bert-hf", trust_remote_code=True)
+    # model = AutoModel.from_pretrained("chuhac/BiomedCLIP-vit-bert-hf", trust_remote_code=True)
+    # processor = AutoProcessor.from_pretrained("chuhac/BiomedCLIP-vit-bert-hf", trust_remote_code=True)
+    # tokenizer = AutoTokenizer.from_pretrained("chuhac/BiomedCLIP-vit-bert-hf", trust_remote_code=True)
     torch.save(state_dict, "saliency_maps/model/pytorch_model.bin")
     

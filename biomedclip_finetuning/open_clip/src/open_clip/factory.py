@@ -15,6 +15,9 @@ from .model import CLIP, CustomTextCLIP, convert_weights_to_lp, convert_to_custo
     resize_pos_embed, get_cast_dtype, resize_text_pos_embed, set_model_preprocess_cfg
 from .coca_model import CoCa
 from .loss import ClipLoss, DistillClipLoss, CoCaLoss, SigLipLoss, HardNegativeLoss
+from .dhn_entropy_loss import HardNegativeEntropyLoss
+from .dhn_feature_entropy_loss import HardNegativeFeatureEntropyLoss
+from .dhn_core_entropy_loss import HardNegativeLossWithEntropy
 from .pretrained import is_pretrained_cfg, get_pretrained_cfg, download_pretrained,\
     list_pretrained_tags_by_model, download_pretrained_from_hf
 from .transform import image_transform_v2, AugmentationCfg, PreprocessCfg, merge_preprocess_dict, merge_preprocess_kwargs
@@ -51,6 +54,45 @@ def _rescan_model_configs():
 
 
 _rescan_model_configs()  # initial populate of model config registry
+
+# Monkey patch timm Attention to capture attention maps for Entropy Loss
+# try:
+#     import timm.models.vision_transformer
+#     from timm.models.vision_transformer import Attention as TimmAttention
+    
+#     def patched_attention_forward(self, x, attn_mask=None):
+#         B, N, C = x.shape
+#         qkv = self.qkv(x).reshape(B, N, 3, self.num_heads, self.head_dim).permute(2, 0, 3, 1, 4)
+#         q, k, v = qkv.unbind(0)
+#         q, k = self.q_norm(q), self.k_norm(k)
+
+#         # Force manual attention to capture weights (disable fused_attn path)
+#         q = q * self.scale
+#         attn = q @ k.transpose(-2, -1)
+        
+#         if attn_mask is not None:
+#             # Simple add, assuming mask is additive (e.g. -inf)
+#             attn = attn + attn_mask
+            
+#         attn = attn.softmax(dim=-1)
+#         self.attn_map = attn # Capture attention map
+        
+#         attn = self.attn_drop(attn)
+#         x = attn @ v
+
+#         x = x.transpose(1, 2).reshape(B, N, C)
+#         x = self.norm(x)
+#         x = self.proj(x)
+#         x = self.proj_drop(x)
+#         return x
+
+#     TimmAttention.forward = patched_attention_forward
+#     logging.info("Successfully patched timm.models.vision_transformer.Attention to capture attention maps.")
+
+# except ImportError:
+#     logging.warning("Could not patch timm Attention. Entropy loss may not work for Timm models.")
+# except Exception as e:
+#     logging.warning(f"Failed to patch timm Attention: {e}")
 
 
 def list_models():
@@ -441,6 +483,28 @@ def create_loss(args):
             rank=args.rank,
             world_size=args.world_size,
         )
+    elif args.dhn_entropy_loss:
+        return HardNegativeEntropyLoss(temperature=args.temperature_dhnnce,
+                                 alpha = args.alpha_dhnnce,
+                                 beta1 = args.beta1_dhnnce,
+                                 beta2 = args.beta2_dhnnce,
+                                 batch_size= args.batch_size,
+                                 entropy_weight=args.entropy_weight)
+    elif args.dhn_feature_entropy_loss:
+        return HardNegativeFeatureEntropyLoss(temperature=args.temperature_dhnnce,
+                                 alpha = args.alpha_dhnnce,
+                                 beta1 = args.beta1_dhnnce,
+                                 beta2 = args.beta2_dhnnce,
+                                 batch_size= args.batch_size,
+                                 entropy_weight=args.entropy_weight)
+    elif args.dhn_base_entropy_loss:
+        return HardNegativeLossWithEntropy(
+                                 temperature=args.temperature_dhnnce,
+                                 alpha=args.alpha_dhnnce,
+                                 beta1=args.beta1_dhnnce,
+                                 beta2=args.beta2_dhnnce,
+                                 batch_size=args.batch_size,
+                                 entropy_weight=args.entropy_weight)
     elif args.dhnnce_loss:
         return  HardNegativeLoss(temperature=args.temperature_dhnnce, 
                                  alpha = args.alpha_dhnnce,

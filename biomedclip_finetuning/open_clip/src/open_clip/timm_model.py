@@ -42,11 +42,14 @@ class TimmModel(nn.Module):
             drop_path=None,
             patch_drop=None,
             pretrained=False,
+            output_tokens=False,
     ):
         super().__init__()
         if timm is None:
             raise RuntimeError("Please `pip install timm` to use timm models.")
         self.image_size = to_2tuple(image_size)
+        self.output_tokens = output_tokens
+        self.pool = pool
 
         # setup kwargs that may not be common across all models
         timm_kwargs = {}
@@ -148,6 +151,31 @@ class TimmModel(nn.Module):
             logging.warning('grad checkpointing not supported for this timm image tower, continuing without...')
 
     def forward(self, x):
+        if self.output_tokens:
+             features = self.trunk.forward_features(x)
+             # Assume ViT structure [B, L, D] for now if output_tokens is requested
+             # TODO: Support ResNet or other structures if needed.
+             
+             if features.dim() == 3:
+                 if self.pool == 'tok':
+                     pooled = features[:, 0]
+                     tokens = features[:, 1:]
+                 elif self.pool == 'avg':
+                     pooled = features[:, 1:].mean(dim=1)
+                     tokens = features[:, 1:]
+                 else:
+                     pooled = features
+                     tokens = features
+             else:
+                 # Fallback for non-ViT?
+                 pooled = self.trunk(x) # Rerun? No, assumes trunk(x) is pooled.
+                 tokens = features
+             
+             pooled = self.head(pooled)
+             # DEBUG PRINT
+             # print(f"DEBUG: TimmModel returning tokens. Token shape: {tokens.shape}")
+             return pooled, tokens
+
         x = self.trunk(x)
         x = self.head(x)
         return x

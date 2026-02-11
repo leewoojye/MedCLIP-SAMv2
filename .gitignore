@@ -1,0 +1,22 @@
+# User requested extensions
+*.png
+*.bin
+*.pt
+*.jpg
+
+# Common ML/Deep Learning extensions
+*.pth
+*.ckpt
+*.npy
+*.npz
+*.safetensors
+*.pkl
+
+# OS specific
+.DS_Store
+
+# Python/Environment
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.env

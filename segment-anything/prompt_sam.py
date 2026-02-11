@@ -302,7 +302,8 @@ def main(args: argparse.Namespace) -> None:
         targets = [
             f for f in os.listdir(args.input) if not os.path.isdir(os.path.join(args.input, f))
         ]
-        targets = [os.path.join(args.input, f) for f in targets]
+        # targets = [os.path.join(args.input, f) for f in targets]
+        targets = sorted([os.path.join(args.input, f) for f in targets])
 
     if not os.path.isdir(args.mask_input):
         targets_mask = [args.mask_input]
@@ -310,7 +311,8 @@ def main(args: argparse.Namespace) -> None:
         targets_mask = [
             f for f in os.listdir(args.mask_input) if not os.path.isdir(os.path.join(args.mask_input, f))
         ]
-        targets_mask = [os.path.join(args.mask_input, f) for f in targets_mask]
+        # targets_mask = [os.path.join(args.mask_input, f) for f in targets_mask]
+        targets_mask = sorted([os.path.join(args.mask_input, f) for f in targets_mask])
 
     os.makedirs(args.output, exist_ok=True)
 
