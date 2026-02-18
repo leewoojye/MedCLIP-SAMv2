@@ -1,9 +1,15 @@
 #!/bin/bash
 
 # custom config
+# Best Hyperparameter Combination:
+# vbeta           1.000000
+# vvar            2.000000
+# vlayer          8.000000
+# average_dice    0.039843
+# Name: 16, dtype: float64
 
 # Enter the path to your dataset
-DATASET="data/breast_tumors"
+DATASET="data/pancreas"
 
 SAL_PATH="saliency_map_outputs/${DATASET}/masks"
 COARSE_PATH="coarse_outputs/${DATASET}/masks"
@@ -18,9 +24,10 @@ python saliency_maps/generate_saliency_maps.py \
 --output-path saliency_map_outputs/${DATASET}/masks \
 --val-path ${DATASET}/val_images \
 --model-name BiomedCLIP \
---finetuned \
 --hyper-opt \
 --val-path ${DATASET}/val_images
+# --finetuned \
+# --json-path saliency_maps/text_prompts/pancreas_testing.json \
 
 python postprocessing/postprocess_saliency_maps.py \
 --input-path ${DATASET}/test_images \

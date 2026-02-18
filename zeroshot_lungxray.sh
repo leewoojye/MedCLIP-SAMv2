@@ -1,9 +1,15 @@
 #!/bin/bash
 
 # custom config
+# Best Hyperparameter Combination:
+# vbeta           2.000000
+# vvar            2.000000
+# vlayer          9.000000
+# average_dice    0.328549
+# Name: 26, dtype: float64
 
 # Enter the path to your dataset
-DATASET="data/breast_tumors"
+DATASET="data/lung_Xray"
 
 SAL_PATH="saliency_map_outputs/${DATASET}/masks"
 COARSE_PATH="coarse_outputs/${DATASET}/masks"
@@ -27,8 +33,8 @@ python postprocessing/postprocess_saliency_maps.py \
 --output-path coarse_outputs/${DATASET}/masks \
 --sal-path saliency_map_outputs/${DATASET}/masks \
 --postprocess kmeans \
---filter
-# --num-contours 2 # number of contours to extract, for lungs, use 2 contours
+--filter \
+--num-contours 2 # number of contours to extract, for lungs, use 2 contours
 
 python segment-anything/prompt_sam.py \
 --input ${DATASET}/test_images \
@@ -37,7 +43,7 @@ python segment-anything/prompt_sam.py \
 --model-type vit_h \
 --checkpoint segment-anything/sam_checkpoints/sam_vit_h_4b8939.pth \
 --prompts boxes \
-# --multicontour # for lungs, use this flag
+--multicontour # for lungs, use this flag
 
 python evaluation/eval.py \
 --gt_path ${DATASET}/test_masks \

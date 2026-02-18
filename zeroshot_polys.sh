@@ -3,7 +3,7 @@
 # custom config
 
 # Enter the path to your dataset
-DATASET="data/breast_tumors"
+DATASET="data/polyp"
 
 SAL_PATH="saliency_map_outputs/${DATASET}/masks"
 COARSE_PATH="coarse_outputs/${DATASET}/masks"
@@ -27,7 +27,7 @@ python postprocessing/postprocess_saliency_maps.py \
 --output-path coarse_outputs/${DATASET}/masks \
 --sal-path saliency_map_outputs/${DATASET}/masks \
 --postprocess kmeans \
---filter
+--filter \
 # --num-contours 2 # number of contours to extract, for lungs, use 2 contours
 
 python segment-anything/prompt_sam.py \
