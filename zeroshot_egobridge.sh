@@ -19,15 +19,17 @@ python saliency_maps/generate_saliency_maps.py \
 --val-path ${DATASET}/val_images \
 --model-name BiomedCLIP \
 --finetuned \
+--checkpoint-path "logs_finetuning/egobridge_stage2_pos_neg_20260211_154826/epoch_10" \
+--json-path saliency_maps/text_prompts/polyp_testing.json \
 --hyper-opt \
---val-path ${DATASET}/val_images
+--val-path ${DATASET}/val_images \
 
 python postprocessing/postprocess_saliency_maps.py \
 --input-path ${DATASET}/test_images \
 --output-path coarse_outputs/${DATASET}/masks \
 --sal-path saliency_map_outputs/${DATASET}/masks \
 --postprocess kmeans \
---filter \
+--filter
 # --num-contours 2 # number of contours to extract, for lungs, use 2 contours
 
 python segment-anything/prompt_sam.py \

@@ -33,7 +33,7 @@ def calculate_dice_coefficient(mask1, mask2):
     return dice_coefficient
 
 # Function to evaluate a model on a sample image and calculate the Dice score
-def evaluate_on_sample(model, processor, tokenizer, text, image_paths, args):
+def evaluate_on_sample(model, processor, tokenizer, text, image_paths, args, json_decoded={}):
     dice_scores = []  # Store Dice scores for each image
     for image_id in tqdm(image_paths):  # Iterate through images
         try:
@@ -46,7 +46,11 @@ def evaluate_on_sample(model, processor, tokenizer, text, image_paths, args):
         image_feat = processor(images=image, return_tensors="pt")['pixel_values'].to(args.device)
         
         # Tokenize the input text
-        text_ids = torch.tensor([tokenizer.encode(text, add_special_tokens=True)]).to(args.device)
+        current_text = text
+        if json_decoded and image_id in json_decoded:
+            current_text = json_decoded[image_id]
+        
+        text_ids = torch.tensor([tokenizer.encode(current_text, add_special_tokens=True)]).to(args.device)
         
         # Generate a visual attention map using a custom method
         vmap = vision_heatmap_iba(text_ids, image_feat, model, args.vlayer, args.vbeta, args.vvar, ensemble=args.ensemble, progbar=False)
@@ -70,7 +74,7 @@ def evaluate_on_sample(model, processor, tokenizer, text, image_paths, args):
     return average_dice
 
 # Function to perform hyperparameter optimization
-def hyper_opt(model, processor, tokenizer, text, args):
+def hyper_opt(model, processor, tokenizer, text, args, json_decoded={}):
     print("Running Hyperparameter Optimization ...")
 
     # Define lists of possible hyperparameter values
@@ -101,7 +105,7 @@ def hyper_opt(model, processor, tokenizer, text, args):
         for i in range(3):
             random.seed(i)
             sampled_images = random.sample(all_image_ids, 1)
-            avg_dice = evaluate_on_sample(model, processor, tokenizer, text, sampled_images, args)
+            avg_dice = evaluate_on_sample(model, processor, tokenizer, text, sampled_images, args, json_decoded)
             sample_dice_scores.append(avg_dice)
             print(f"  Sample {i+1}: Average Dice Score = {avg_dice}")
 
@@ -155,13 +159,19 @@ def main(args):
     elif(args.model_name == "CLIP" and args.finetuned):
         model = AutoModel.from_pretrained("./model", trust_remote_code=True).to(args.device)
 
-    if(not args.reproduce):
+    json_decoded = {}
+    if os.path.exists(args.json_path):
+        with open(args.json_path) as json_file:
+            json_decoded = json.load(json_file)
+
+    text = ""
+    if(not args.reproduce and not json_decoded):
         # Get user input for the text to generate saliency maps
         text = str(input("Enter the text: "))
 
     # Perform hyperparameter optimization if required
     if(args.hyper_opt):
-        best_combo = hyper_opt(model, processor, tokenizer, text, args)
+        best_combo = hyper_opt(model, processor, tokenizer, text, args, json_decoded)
         args.vbeta = best_combo['vbeta']
         args.vvar = best_combo['vvar']
         args.vlayer = int(best_combo['vlayer'])
