@@ -162,3 +162,113 @@ class EgoBridgeDataset(Dataset):
         else:
              raise ValueError(f"Unknown stage: {self.stage}")
 
+
+class PairedBioMedDataset(Dataset):
+    def __init__(self, pos_dir, neg_dir, mask_dir=None, transform=None):
+        """
+        Paired Dataset for Stage 3 (Pos -> Neg Bridge) with Mask Support.
+        Args:
+            pos_dir (str): Directory containing positive (tumor) images.
+            neg_dir (str): Directory containing negative (generated healthy) images.
+            mask_dir (str, optional): Directory containing tumor masks.
+            transform (callable, optional): Transform to be applied.
+        """
+        self.pos_dir = pos_dir
+        self.neg_dir = neg_dir
+        self.mask_dir = mask_dir
+        self.transform = transform
+        
+        self.image_pairs = []
+        
+        # Scan neg_dir (Generated images) to find available pairs
+        print(f"Scanning paired dataset...")
+        print(f" Positive (Source): {pos_dir}")
+        print(f" Negative (Target): {neg_dir}")
+        if mask_dir:
+            print(f" Masks: {mask_dir}")
+        
+        if not os.path.exists(pos_dir) or not os.path.exists(neg_dir):
+            raise ValueError(f"One of the directories does not exist: {pos_dir}, {neg_dir}")
+            
+        valid_exts = ('.png', '.jpg', '.jpeg')
+        neg_files = sorted([f for f in os.listdir(neg_dir) if f.lower().endswith(valid_exts)])
+        
+        for filename in neg_files:
+            pos_path = os.path.join(pos_dir, filename)
+            neg_path = os.path.join(neg_dir, filename)
+            
+            # Simple check
+            if not os.path.exists(pos_path):
+                 continue
+
+            item = {'pos': pos_path, 'neg': neg_path, 'mask': None}
+            
+            # Find Mask if directory provided
+            if self.mask_dir:
+                # Try exact match first
+                mask_path = os.path.join(self.mask_dir, filename)
+                if not os.path.exists(mask_path):
+                    # Try _mask suffix
+                    name, ext = os.path.splitext(filename)
+                    mask_path = os.path.join(self.mask_dir, f"{name}_mask{ext}")
+                
+                if os.path.exists(mask_path):
+                    item['mask'] = mask_path
+                else:
+                    # If mask is missing, skip or warn? 
+                    # For now, we will create a dummy mask or skip. 
+                    # User said "masks 데이터가 다 있으니까", so let's warn if missing but keep item
+                    # (will handle None in getitem)
+                    pass
+
+            self.image_pairs.append(item)
+                
+        print(f"Found {len(self.image_pairs)} paired images.")
+        
+        # Image Transform
+        if self.transform is None:
+             self.transform = transforms.Compose([
+                transforms.Resize((224, 224), interpolation=transforms.InterpolationMode.BICUBIC),
+                transforms.ToTensor(),
+                transforms.Normalize(mean=[0.48145466, 0.4578275, 0.40821073], std=[0.26862954, 0.26130258, 0.27577711])
+            ])
+            
+        # Mask Transform (Resize + ToTensor, No Norm)
+        self.mask_transform = transforms.Compose([
+            transforms.Resize((224, 224), interpolation=transforms.InterpolationMode.NEAREST),
+            transforms.ToTensor()
+        ])
+
+    def __len__(self):
+        return len(self.image_pairs)
+        
+    def __getitem__(self, idx):
+        pair = self.image_pairs[idx]
+        
+        img_pos = Image.open(pair['pos']).convert('RGB')
+        img_neg = Image.open(pair['neg']).convert('RGB')
+        
+        img_pos = self.transform(img_pos)
+        img_neg = self.transform(img_neg)
+        
+        mask_tensor = None
+        if pair['mask'] and os.path.exists(pair['mask']):
+            mask_img = Image.open(pair['mask']).convert('L')
+            mask_tensor = self.mask_transform(mask_img)
+            # Threshold to 0/1
+            mask_tensor = (mask_tensor > 0.5).float()
+        else:
+            # Fallback: All ones (= Tumor everywhere? No, usually Mask=1 means Inpaint Area)
+            # If no mask found, maybe treat as full image inpainting?
+            # Or empty mask?
+            # Let's assume Mask=1 is "Tumor/Region to Change".
+            # If we don't have mask, maybe we shouldn't change anything? Or change everything?
+            # Safe default: Full image mask (change everything)
+            mask_tensor = torch.ones((1, 224, 224))
+            
+        return {
+            'image_pos': img_pos,
+            'image_neg': img_neg,
+            'mask': mask_tensor, # [1, H, W]
+            'type': 'paired'
+        }

@@ -1,0 +1,5 @@
+Starting guided generation...
+Input: /home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/brain_tumors/test_images
+Output: /home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/generated_neg_output/brain_tumors_guided
+Terminated
+Done. Outputs in /home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/generated_neg_output/brain_tumors_guided

@@ -88,7 +88,7 @@ def generate_healthy_brain(image_path, mask_path, save_path):
     # 3. 프롬프트 설정 (Brain MRI 특성 강조)
     # 종양(Tumor, Mass)을 언급하지 않고 '건강한 조직'임을 명시
     prompt = "healthy brain MRI, homogeneous brain tissue, T1 weighted, medical imaging, high quality"
-    negative_prompt = "tumor, mass, lesion, cyst, edema, abnormal growth, cancer, artifact, text, watermark"
+    negative_prompt = "tumor, mass, lesion, cyst, edema, abnormal growth, cancer, glioma, meningioma, pituitary"
 
     # 4. 인페인팅 실행
     output = pipe(
