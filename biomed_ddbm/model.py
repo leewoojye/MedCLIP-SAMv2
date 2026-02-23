@@ -261,6 +261,10 @@ class BioMedDDBM(nn.Module):
         c_factors = self.scaling_net(t, scaling_cond)
         c_in, c_out, c_skip = c_factors.chunk(3, dim=-1)
         
+        # Apply c_skip scaling (generalization tip for inference)
+        if getattr(self, 'c_skip_boost', None) is not None:
+            c_skip = c_skip * self.c_skip_boost
+            
         # Expand for broadcast
         c_in = c_in.view(-1, 1, 1, 1)
         c_out = c_out.view(-1, 1, 1, 1)

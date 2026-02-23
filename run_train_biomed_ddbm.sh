@@ -9,6 +9,6 @@
     --neg_dir generated_neg_output/breast_tumors \
     --mask_dir data/breast_tumors/test_masks \
     --output_dir biomed_ddbm_output \
-    --epochs 50 \
+    --epochs 20 \
     --batch_size 8 \
     --lr 1e-4

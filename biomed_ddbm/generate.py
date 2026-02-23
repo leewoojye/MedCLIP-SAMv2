@@ -31,7 +31,9 @@ def generate(args):
         in_channels=7 # MASK GUIDED
     ).to(device)
     
-    # Handle state dict load (ignore missing keys if architecture changed? No, must match)
+    if getattr(args, 'c_skip_boost', None) is not None:
+        model.c_skip_boost = args.c_skip_boost
+        print(f"Applying c_skip_boost: {model.c_skip_boost}x")
     # If checkpoint is from old training (3ch), this will fail.
     # User knows we are retraining.
     try:
@@ -119,6 +121,8 @@ def generate(args):
              
         c_text = c_text.unsqueeze(1) # [1, 1, 512]
         
+
+        
     # 6. Sampling Loop
     num_steps = 1000
     # Schedule
@@ -129,29 +133,102 @@ def generate(args):
     alphas_cumprod = torch.cumprod(alphas, dim=0)
     alphas_cumprod_prev = torch.cat([torch.tensor([1.0], device=device), alphas_cumprod[:-1]])
     
-    # Start: Pure Noise in Mask Region? Or SDEdit from Noisy Source?
-    # User standard SD Inpainting usually starts from Pure Noise (random `x_T`).
-    # Because we want to re-generate structure.
-    # But for "Bridge", maybe we want to bridge `x_source` to `x_target`.
-    # Let's use Pure Noise initialization for the hole, and Noised Context for the rest?
-    # Or just Pure Noise everywhere, and let the model fix the background using context?
-    # Standard: Initialize `x_T` = random noise.
-    # At each step, we can enforce `x_{t-1} = mask * predicted + (1-mask) * noised_source`.
-    
     x_t = torch.randn_like(x_source)
     
     model.eval()
     timesteps = list(range(num_steps - 1, -1, -1))
     
+    # Pre-compute text features for guidance to avoid re-computing
+    if args.clip_guidance_scale > 0:
+        # We need the text embedding from the TEXT MODEL (not projected yet if we use raw similarity, but usually projected)
+        # BioMedCLIP uses projected features for similarity.
+        # c_text is already projected if model handles it, let's check.
+        # In generate loop we passed c_text to model.
+        # Let's re-compute a detached reference for guidance.
+        with torch.no_grad():
+            inputs = biomed_processor(text=[args.prompt], return_tensors="pt", padding=True).to(device)
+            text_features = biomed_model.get_text_features(**inputs)
+            text_features = text_features / text_features.norm(dim=-1, keepdim=True)
+    
     for i, t_idx in enumerate(tqdm(timesteps)):
         t = torch.tensor([t_idx], device=device).long()
         
-        # 1. Model Prediction
-        # Input: [x_t, mask, masked_context]
-        model_input = torch.cat([x_t, mask, masked_context], dim=1)
-        
-        with torch.no_grad():
+        # 1. Gradient Guidance (Require Grad on x_t)
+        if args.clip_guidance_scale > 0:
+            # We need to optimize x_t to minimize distance to text
+            # But standard way is to modify pred_noise
+            x_in = x_t.detach().requires_grad_(True)
+            
+            # Model Forward
+            model_input = torch.cat([x_in, mask, masked_context], dim=1)
             pred_noise = model(model_input, t, c_img, c_text)
+            
+            # Check dimensions and alignment
+            # pred_noise can be diff due to internal model logic, but here it should be same shape
+            
+            # Est x_0
+            alpha_cumprod_t = alphas_cumprod[t_idx]
+            pred_x0 = (x_in - torch.sqrt(1 - alpha_cumprod_t) * pred_noise) / torch.sqrt(alpha_cumprod_t)
+            
+            # Post-process for CLIP (Denormalize from [-1,1] to [0,1], then Normalize using CLIP mean/std)
+            # BioMedCLIP processor usually handles raw images.
+            # We need differentiable transform.
+            # 1. [-1, 1] -> [0, 1]
+            pred_x0_norm = (pred_x0 + 1) / 2
+            
+            # 2. Resize to 224x224 (BioMedCLIP size)
+            pred_x0_resized = F.interpolate(pred_x0_norm, size=(224, 224), mode='bilinear', align_corners=False)
+            
+            # 3. Normalize (Manual stats for BioMedCLIP/OpenAI CLIP usually)
+            # BioMedCLIP uses: mean=(0.48145466, 0.4578275, 0.40821073), std=(0.26862954, 0.26130258, 0.27577711)
+            mu = torch.tensor([0.48145466, 0.4578275, 0.40821073], device=device).view(1, 3, 1, 1)
+            sigma = torch.tensor([0.26862954, 0.26130258, 0.27577711], device=device).view(1, 3, 1, 1)
+            clip_in = (pred_x0_resized - mu) / sigma
+            
+            # Get Image Features
+            image_features = biomed_model.get_image_features(pixel_values=clip_in)
+            image_features = image_features / image_features.norm(dim=-1, keepdim=True)
+            
+            # Similarity Loss (Negative Cosine Similarity)
+            loss = -(image_features * text_features).sum()
+            
+            # Gradient
+            grad = torch.autograd.grad(loss, x_in)[0]
+            
+            # Update Noise
+            # score = score - sqrt(1-alpha)*grad
+            # epsilon = epsilon + sqrt(1-alpha)*grad
+            # We want to minimize loss -> move x_t against gradient of loss w.r.t x_t?
+            # grad calculated is d(loss)/d(x_t).
+            # So we shift x_t in direction -grad.
+            # In terms of epsilon space: eps_new = eps + scale * grad?
+            # Let's look at GLIDE: eps = eps - scale * sqrt(1-alpha) * grad(score)
+            # Our "score" is -loss.
+            # So eps = eps - scale * sqrt(1-alpha) * grad(-loss) = eps + scale * ... * grad(loss)
+            # Confusing.
+            # Simpler thinking:
+            # We want x_0 to look more like text.
+            # grad = d(loss)/d(x_t). Loss is high if bad.
+            # We want x_t to move in -grad direction.
+            # x_{t-1} is derived from x_t - eps.
+            # If we modify eps: x_{t-1} ~ x_t - (eps + correction).
+            # = x_t - eps - correction.
+            # We want -correction to be -grad?
+            # So correction = grad.
+            # So eps_new = eps + scale * grad.
+            
+            pred_noise = pred_noise.detach() + args.clip_guidance_scale * torch.sqrt(1 - alpha_cumprod_t) * grad
+            
+            # detach checks
+            pred_noise = pred_noise.detach()
+            
+        else:
+            # Standard Prediction
+            # Input: [x_t, mask, masked_context]
+            model_input = torch.cat([x_t, mask, masked_context], dim=1)
+            
+            with torch.no_grad():
+                pred_noise = model(model_input, t, c_img, c_text)
             
         # 2. DDPM Update (Reverse Process)
         beta_t = betas[t_idx]
@@ -210,6 +287,8 @@ if __name__ == "__main__":
     parser.add_argument("--prompt", type=str, default="healthy tissue")
     parser.add_argument("--checkpoint", type=str, required=True)
     parser.add_argument("--output", type=str, default="output.png")
+    parser.add_argument("--clip_guidance_scale", type=float, default=0.0, help="BioMedCLIP Gradient Guidance Scale")
+    parser.add_argument("--c_skip_boost", type=float, default=1.0, help="Multiply c_skip by this factor (e.g., 1.2 for +20%) to preserve original context")
     args = parser.parse_args()
     
     generate(args)

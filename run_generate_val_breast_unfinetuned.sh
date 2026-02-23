@@ -1,18 +1,19 @@
 #!/bin/bash
-# Generate Healthy Samples (Validation Set) - Brain
-# Source: data/brain_tumors/val_images
-# Masks: data/brain_tumors/val_masks
-# Target: generated_neg_output/brain_val_ddbm
+# Generate Healthy Samples (Validation Set) using Un-Finetuned Model
+# Source: data/breast_tumors/val_images
+# Target: generated_neg_output/breast_val_ddbm_unfinetuned
 
-CHECKPOINT="biomed_ddbm_output/biomed_ddbm_epoch_50.pt"
-INPUT_DIR="data/brain_tumors/val_images"
-MASK_DIR="data/brain_tumors/val_masks"
-OUTPUT_DIR="generated_neg_output/brain_val_ddbm"
-PROMPT="healthy brain MRI, no tumor, normal brain tissue"
+# Use a dummy checkpoint name to trigger the exception block in generate.py
+# that catches missing/incompatible checkpoints and starts fresh (un-finetuned)
+CHECKPOINT="dummy_unfinetuned_checkpoint.pt"
+INPUT_DIR="data/breast_tumors/val_images"
+MASK_DIR="data/breast_tumors/val_masks"
+OUTPUT_DIR="generated_neg_output/breast_val_ddbm_unfinetuned"
+PROMPT="healthy breast tissue, no tumor, normal mammogram"
 
 mkdir -p $OUTPUT_DIR
 
-echo "Generating Healthy Samples for 10 Validation Images (Brain)..."
+echo "Generating Healthy Samples for 10 Validation Images using Un-finetuned Model..."
 
 # Limit to 10 images
 count=0
@@ -27,7 +28,6 @@ for img in "$INPUT_DIR"/*.png "$INPUT_DIR"/*.jpg; do
     
     # Find Mask
     mask=""
-    # Try exact match or with _mask suffix or just same name in mask dir
     if [ -f "$MASK_DIR/$filename" ]; then
         mask="$MASK_DIR/$filename"
     elif [ -f "$MASK_DIR/${filename%.*}_mask.png" ]; then
@@ -47,8 +47,7 @@ for img in "$INPUT_DIR"/*.png "$INPUT_DIR"/*.jpg; do
         --mask_image "$mask" \
         --output "$OUTPUT_DIR/$filename" \
         --prompt "$PROMPT" \
-        --clip_guidance_scale 150.0 \
-        --c_skip_boost 1.2
+
         
     count=$((count + 1))
 done

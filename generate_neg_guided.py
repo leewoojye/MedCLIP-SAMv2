@@ -259,7 +259,7 @@ def generate_healthy_guided(image_path, mask_path, save_path, guidance_target_te
     image = pipe.vae.decode(latents, return_dict=False)[0]
     image = (image / 2 + 0.5).clamp(0, 1)
     # Convert to PIL
-    image = image.cpu().permute(0, 2, 3, 1).float().numpy()
+    image = image.detach().cpu().permute(0, 2, 3, 1).float().numpy()
     image = pipe.numpy_to_pil(image)[0]
     
     # Save
