@@ -17,7 +17,7 @@ tokenizer = AutoTokenizer.from_pretrained(base_model_name, trust_remote_code=Tru
 import sys
 
 # Image Path
-image_path = sys.argv[1] if len(sys.argv) > 1 else "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/zero_shot_translation/output_text_alpha_1.5.png"
+image_path = sys.argv[1] if len(sys.argv) > 1 else "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/zero_shot_translation/output_text_alpha_4.0.png"
 
 if not os.path.exists(image_path):
     print(f"Error: Image not found at {image_path}")
