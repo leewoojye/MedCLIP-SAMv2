@@ -1,0 +1,6 @@
+nohup: ignoring input
+Starting UDIAT vector injection generation...
+Input Directory: /home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/UDIAT
+Output Base Directory: /home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/generated_neg_output/udiat_vector_injection
+Processing Category: Benign
+  -> Generating for: 000001.png
