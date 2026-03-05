@@ -47,6 +47,21 @@ def parse_args(args):
         default=None,
         help="Path to file(s) with validation data",
     )
+    
+    # DPO Arguments
+    parser.add_argument(
+        "--dpo-loss",
+        default=False,
+        action="store_true",
+        help="Whether to use DPO loss."
+    )
+    parser.add_argument(
+        "--beta-dpo",
+        type=float,
+        default=0.1,
+        help="Beta parameter for DPO loss."
+    )
+
     parser.add_argument(
         "--train-num-samples",
         type=int,
@@ -61,7 +76,7 @@ def parse_args(args):
     )
     parser.add_argument(
         "--dataset-type",
-        choices=["webdataset", "csv", "synthetic", "auto", "egobridge"],
+        choices=["webdataset", "csv", "synthetic", "auto"],
         default="auto",
         help="Which type of dataset to process."
     )
@@ -88,6 +103,18 @@ def parse_args(args):
         type=str,
         default="title",
         help="For csv-like datasets, the name of the key for the captions."
+    )
+    parser.add_argument(
+        "--csv-img-neg-key",
+        type=str,
+        default="filename_neg",
+        help="For DPO csv-like datasets, the name of the key for the negative images."
+    )
+    parser.add_argument(
+        "--csv-caption-neg-key",
+        type=str,
+        default="Caption_neg",
+        help="For DPO csv-like datasets, the name of the key for the negative captions."
     )
     parser.add_argument(
         "--imagenet-val",
@@ -453,6 +480,12 @@ def parse_args(args):
         help='Which pre-trained weights to distill from, if any.'
     )
     parser.add_argument(
+        "--dpo-ref-checkpoint",
+        default='/home/bongdong2/bongdong2_workspace/checkpoint/open_clip_pytorch_model_paper_DHN.pt',
+        type=str,
+        help='Path to the reference model checkpoint for DPO training.'
+    )
+    parser.add_argument(
         "--use-bnb-linear",
         default=None,
         help='Replace the network linear layers from the bitsandbytes library. '
@@ -493,63 +526,6 @@ def parse_args(args):
         type=float,
         default=0.15,
         help="Beta2 for DHN-NCE loss.",
-    )
-    parser.add_argument(
-        "--dhn-entropy-loss",
-        default=False,
-        action="store_true",
-        help="Use DHN-NCE with Entropy Regularization.",
-    )
-    parser.add_argument(
-        "--dhn-feature-entropy-loss",
-        default=False,
-        action="store_true",
-        help="Use DHN-NCE with Feature Entropy Regularization.",
-    )
-    parser.add_argument(
-        "--dhn-base-entropy-loss",
-        default=False,
-        action="store_true",
-        help="Use baseline DHN-NCE with spatial entropy regularization.",
-    )
-    parser.add_argument(
-        "--entropy-weight",
-        type=float,
-        default=0.0,
-        help="Weight for Entropy Regularization.",
-    )
-    
-    # EgoBridge Arguments
-    parser.add_argument(
-        "--egobridge-mode",
-        type=str,
-        default="none",
-        choices=["none", "stage1", "stage2"],
-        help="EgoBridge fine-tuning mode: 'stage1' (Pos-Pos) or 'stage2' (Pos-Neg)."
-    )
-    parser.add_argument(
-        "--sinkhorn-epsilon",
-        type=float,
-        default=0.05,
-        help="Epsilon parameter for Sinkhorn distance (entropic regularization)."
-    )
-    parser.add_argument(
-        "--sinkhorn-max-iters",
-        type=int,
-        default=50,
-        help="Max iterations for Sinkhorn algorithm."
-    )
-    parser.add_argument(
-        "--contrastive-lambda",
-        type=float,
-        default=1.0,
-        help="Weight for the contrastive loss component in EgoBridge."
-    )
-    parser.add_argument(
-        "--mask-key",
-        type=str,
-        default="mask_path",
-        help="CSV key for mask paths (if using CSV dataset for EgoBridge)."
     )
 
     args = parser.parse_args(args)

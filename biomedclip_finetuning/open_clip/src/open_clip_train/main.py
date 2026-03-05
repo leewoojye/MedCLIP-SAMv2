@@ -30,8 +30,6 @@ except ImportError:
 import open_clip
 print(f"DEBUG: open_clip imported from {open_clip.__file__}")
 
-from open_clip.loss import EgoBridgeLoss
-
 from open_clip import create_model_and_transforms, trace_model, get_tokenizer, create_loss
 from open_clip_train.data import get_data
 from open_clip_train.distributed import is_master, init_distributed_device, broadcast_object
@@ -444,13 +442,9 @@ def main(args):
         evaluate(model, data, start_epoch, args, tb_writer=writer, tokenizer=tokenizer)
         return
 
-    if args.egobridge_mode != 'none':
-        loss = EgoBridgeLoss(
-            mode=args.egobridge_mode,
-            sinkhorn_eps=args.sinkhorn_epsilon,
-            sinkhorn_max_iter=args.sinkhorn_max_iters,
-            contrastive_lambda=args.contrastive_lambda
-        )
+    if getattr(args, 'dpo_loss', False):
+        from open_clip.loss import DpoLoss
+        loss = DpoLoss(beta=getattr(args, 'beta_dpo', 10.0))
     else:
         loss = create_loss(args)
 
