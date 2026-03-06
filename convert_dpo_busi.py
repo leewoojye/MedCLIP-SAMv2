@@ -63,8 +63,8 @@ def convert_state_dict(state_dict):
     return new_state_dict
 
 if __name__ == "__main__":
-    checkpoint_path = "biomedclip_finetuning/open_clip/src/logs/biomedclip_dpo_busi_v6/checkpoints/epoch_3.pt"
-    output_path = "saliency_maps/model/pytorch_model_dpo_busi_v6.bin"
+    checkpoint_path = "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/biomedclip_finetuning/open_clip/src/logs/biomedclip_dpo_udiat_v16/checkpoints/epoch_10.pt"
+    output_path = "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/saliency_maps/model/pytorch_model_dpo_v16.bin"
 
     print(f"Loading checkpoint from {checkpoint_path}")
     ckpt = torch.load(checkpoint_path, map_location="cpu")

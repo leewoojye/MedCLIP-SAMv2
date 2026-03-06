@@ -1,9 +1,9 @@
 #!/bin/bash
 
-# Default to benign, but can be overridden (e.g., ./zeroshot_breast_tumors.sh malignant)
-FOLDER=${1:-benign}
+# Dedicated script for BUSI 'normal' dataset inference
+FOLDER="normal"
 
-# Prepare BUSI dataset (separating images and combining masks) for target folder
+# Prepare BUSI dataset (separating images and creating zero-masks) for normal folder
 python3 -c "
 import os, cv2, glob, shutil, numpy as np
 import json
@@ -25,44 +25,27 @@ if os.path.exists(src_folder):
         if '_mask' in f: continue
         
         img_path = os.path.join(src_folder, f)
-        base_name = f.replace('.png', '')
+        img = cv2.imread(img_path, cv2.IMREAD_GRAYSCALE)
         
-        masks = glob.glob(os.path.join(src_folder, f'{base_name}_mask*.png'))
+        # For normal case, GT mask is always zero
+        combined_mask = np.zeros_like(img)
         
-        combined_mask = None
-        if len(masks) == 0:
-            if folder == 'normal':
-                img = cv2.imread(img_path, cv2.IMREAD_GRAYSCALE)
-                combined_mask = np.zeros_like(img)
-        else:    
-            for m in masks:
-                mask = cv2.imread(m, cv2.IMREAD_GRAYSCALE)
-                if mask is None: continue
-                if combined_mask is None:
-                    combined_mask = mask
-                else:
-                    combined_mask = np.maximum(combined_mask, mask)
-        
-        if combined_mask is not None:
-            if not os.path.exists(os.path.join(img_dst, f)):
-                shutil.copy(img_path, os.path.join(img_dst, f))
-            cv2.imwrite(os.path.join(mask_dst, f), combined_mask)
+        if not os.path.exists(os.path.join(img_dst, f)):
+            shutil.copy(img_path, os.path.join(img_dst, f))
+        cv2.imwrite(os.path.join(mask_dst, f), combined_mask)
 
 print(f'Dataset preparation complete. Preparing text prompts for {folder}...')
 
-json_path_in = 'saliency_maps/text_prompts/breast_tumors_testing.json'
 json_path_out = f'saliency_maps/text_prompts/busi_{folder}_testing.json'
 
-with open(json_path_in, 'r') as f:
-    data = json.load(f)
+# Use a specific prompt for 'normal' cases
+normal_prompt = \"A medical breast mammogram with no visible tumors or abnormalities.\"
 
-default_tumor_prompt = \"A medical breast mammogram revealing an area of concern suggestive of a breast tumor.\"
-
+data = {}
 folder_path = os.path.join(dst_dir, folder, 'images')
 if os.path.exists(folder_path):
     for f in os.listdir(folder_path):
-        if f not in data:
-            data[f] = default_tumor_prompt
+        data[f] = normal_prompt
 
 with open(json_path_out, 'w') as f:
     json.dump(data, f, indent=4)
@@ -70,7 +53,7 @@ print('Text prompts prepared.')
 " "$FOLDER"
 
 # custom config
-DATASET="BUSI_${FOLDER}"
+DATASET="BUSI_${FOLDER}_DPO"
 INPUT_PATH="Dataset_BUSI_eval/${FOLDER}/images"
 GT_PATH="Dataset_BUSI_eval/${FOLDER}/masks"
 JSON_PATH="saliency_maps/text_prompts/busi_${FOLDER}_testing.json"
@@ -88,7 +71,7 @@ python saliency_maps/generate_saliency_maps.py \
 --output-path "${SAL_PATH}" \
 --model-name BiomedCLIP \
 --finetuned \
---checkpoint-path "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/biomedclip_finetuning/open_clip/src/logs/biomedclip_dpo_udiat_v11/hf_model" \
+--checkpoint-path "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/biomedclip_finetuning/open_clip/src/logs/biomedclip_dpo_udiat_v13/hf_model" \
 --json-path "${JSON_PATH}" \
 --reproduce \
 --vvar 1.0 \

@@ -4,28 +4,24 @@
 # Uses the breast-specific vector_injection_breast.py script.
 
 ROOT_DIR="/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2"
-UDIAT_DIR="$ROOT_DIR/UDIAT"
-OUT_BASE_DIR="$ROOT_DIR/generated_neg_output/udiat_vector_injection_breast2"
+UDIAT_DIR="$ROOT_DIR/UDIAT3"
+OUT_BASE_DIR="$ROOT_DIR/generated_neg_output/busi_vector_injection_breast3"
 
 echo "Starting UDIAT Vector Injection (Breast Anchor) generation..."
 echo "Input Directory: $UDIAT_DIR"
 echo "Output Base Directory: $OUT_BASE_DIR"
 
-# Process both Benign and Malignant folders
-for category in "Benign" "Malignant"; do
-    IMG_DIR="$UDIAT_DIR/$category"
-    MASK_DIR="$UDIAT_DIR/${category}_mask"
-    OUT_DIR="$OUT_BASE_DIR/$category"
+# Process UDIAT3 splits (train)
+for split in "train"; do
+    IMG_DIR="$UDIAT_DIR/${split}_images"
+    MASK_DIR="$UDIAT_DIR/${split}_masks"
 
-    echo "Processing Category: $category"
+    echo "Processing Split: $split"
 
     if [[ ! -d "$IMG_DIR" ]]; then
         echo "Directory not found: $IMG_DIR. Skipping."
         continue
     fi
-
-    # Ensure output directory exists for this category
-    mkdir -p "$OUT_DIR"
 
     for img_path in "$IMG_DIR"/*.png; do
         # Check if the file exists to handle the case where the directory might be empty
@@ -36,6 +32,16 @@ for category in "Benign" "Malignant"; do
 
         filename=$(basename "$img_path")
         mask_path="$MASK_DIR/$filename"
+        
+        # Determine original category to save in the correct output folder (for CSV compatibility)
+        if [[ -f "$ROOT_DIR/UDIAT/Benign/$filename" ]]; then
+            category="Benign"
+        else
+            category="Malignant"
+        fi
+        
+        OUT_DIR="$OUT_BASE_DIR/$category"
+        mkdir -p "$OUT_DIR"
         out_path="$OUT_DIR/$filename"
 
         # Check if the corresponding mask exists
@@ -44,10 +50,9 @@ for category in "Benign" "Malignant"; do
             continue
         fi
 
-        echo "  -> Generating for: $filename"
+        echo "  [$split -> $category] Generating for: $filename"
         
         # Run the specialized breast vector injection python script
-        # Alpha=1.0 by default, using explicit anchor text
         conda run -n medclipsamv2 python -u "$ROOT_DIR/zero_shot_translation/vector_injection_breast.py" \
             --image "$img_path" \
             --mask "$mask_path" \

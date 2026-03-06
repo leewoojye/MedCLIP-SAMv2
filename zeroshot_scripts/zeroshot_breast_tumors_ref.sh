@@ -3,14 +3,14 @@
 # custom config
 
 # Enter the path to your dataset
-DATASET="data/breast_tumors"
+DATASET="UDIAT2"
 
 SAL_PATH="saliency_map_outputs/${DATASET}/test_masks"
-COARSE_PATH="coarse_outputs/${DATASET}/test_masks" 
+COARSE_PATH="coarse_outputs/${DATASET}/test_masks"
 SAM_PATH="sam_outputs/${DATASET}/test_masks"
 
 # Clear previous outputs to avoid mixing runs
-rm -rf "${SAL_PATH}" "${COARSE_PATH}" "${SAM_PATH}" 
+rm -rf "${SAL_PATH}" "${COARSE_PATH}" "${SAM_PATH}"
 mkdir -p "${SAL_PATH}" "${COARSE_PATH}" "${SAM_PATH}"
 
 python saliency_maps/generate_saliency_maps.py \
@@ -24,8 +24,6 @@ python saliency_maps/generate_saliency_maps.py \
 --vbeta 1.0 \
 --vlayer 9 \
 --seed 12
-# --checkpoint-path "logs_finetuning/egobridge_stage2_pos_neg_20260211_154826/epoch_10" \
-# --전달인자 중간에 주석 줄 있으면 다음줄부터 실행되지 않는다는
 
 python postprocessing/postprocess_saliency_maps.py \
 --input-path ${DATASET}/test_images \
