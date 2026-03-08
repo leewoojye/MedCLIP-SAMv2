@@ -3,8 +3,8 @@
 # BiomedCLIP DPO Training on BUSI (v6 - Local Noise Sigma 60, Beta 10)
 # Goal: Train model to recognize tumor area by destroying it in negative samples.
 # 사용법: ./biomedclip_dpo_busi_v6.sh [버전이름] (예: ./biomedclip_dpo_busi_v6.sh biomedclip_dpo_udiat_v14)
-VERSION=${1:-biomedclip_dpo_udiat_v20}
-EPOCHS=10
+VERSION=${1:-biomedclip_dpo_udiat_v21}
+EPOCHS=3
 
 cd /home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/biomedclip_finetuning/open_clip/src
 
@@ -13,7 +13,7 @@ export PYTHONPATH=$PYTHONPATH:$(pwd)
 # 학습 후 자동으로 hf_model로 변환하는 명령어를 nohup으로 묶어서 실행
 nohup bash -c "
     python open_clip_train/main.py \
-        --train-data /home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/BUSI_TEST/busi_test_dpo_v2.csv \
+        --train-data /home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/BUSI3/busi_train_dpo.csv \
         --csv-separator ',' \
         --csv-img-key filename \
         --csv-img-neg-key filename_neg \
