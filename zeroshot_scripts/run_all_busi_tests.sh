@@ -1,6 +1,8 @@
 #!/bin/bash
 
 # Master runner for BUSI_TEST multi-GPU inference
+# BUSI 전체를 테스트셋으로 해서 추론진행
+# 테스트셋만 동일하다면 모델명/생성법 달라져도 적용가능
 
 ROOT_DIR="/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2"
 LOG_DIR="$ROOT_DIR/logs/busi_test_runs"

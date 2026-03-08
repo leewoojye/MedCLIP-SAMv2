@@ -13,17 +13,55 @@ import convert
 from convert import convert_state_dict
 from open_clip import create_model_from_pretrained
 
+def find_best_epoch(log_path):
+    import re
+    if not os.path.exists(log_path):
+        print(f"Warning: Log file not found at {log_path}")
+        return None
+    
+    best_epoch = None
+    min_loss = float('inf')
+    
+    # Looking for lines like: Train Epoch: 6 [ 96/114 (100%)] ... Dpo_loss: 0.54657 (0.56558)
+    # capturing epoch and the average loss (value in parentheses)
+    epoch_pattern = re.compile(r"Train Epoch:\s+(\d+).*?\(100%\)\].*?Loss:\s+[0-9.]+\s+\(([0-9.]+)\)", re.IGNORECASE)
+    
+    with open(log_path, 'r') as f:
+        for line in f:
+            match = epoch_pattern.search(line)
+            if match:
+                epoch = int(match.group(1)) + 1
+                loss = float(match.group(2))
+                if loss < min_loss:
+                    min_loss = loss
+                    best_epoch = epoch
+                    
+    return best_epoch
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--name', type=str, required=True, help='Version name (e.g., biomedclip_dpo_udiat_v13)')
-    parser.add_argument('--epoch', type=int, default=10, help='Epoch number to convert')
+    parser.add_argument('--epoch', type=int, default=10, help='Epoch number to convert (ignored if --auto-best is used)')
+    parser.add_argument('--auto-best', action='store_true', help='Automatically find the epoch with lowest loss from logs')
+    parser.add_argument('--save-dir', type=str, default='hf_model', help='Subdirectory name to save the converted model (e.g., hf_model, best_params)')
     args = parser.parse_args()
 
-    print(f'Starting conversion for {args.name} (epoch {args.epoch})...')
+    version_log_dir = f'/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/biomedclip_finetuning/open_clip/src/logs/{args.name}'
+    
+    if args.auto_best:
+        log_file = f'/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/biomedclip_finetuning/open_clip/src/train_{args.name}.log'
+        best_epoch = find_best_epoch(log_file)
+        if best_epoch:
+            print(f'Found best epoch: {best_epoch}')
+            args.epoch = best_epoch
+        else:
+            print(f'Could not find best epoch from log. Using provided epoch: {args.epoch}')
+
+    print(f'Starting conversion for {args.name} (epoch {args.epoch}) -> {args.save_dir}...')
     
     openclip_model, _ = create_model_from_pretrained('hf-hub:microsoft/BiomedCLIP-PubMedBERT_256-vit_base_patch16_224')
 
-    checkpoint_path = f'/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/biomedclip_finetuning/open_clip/src/logs/{args.name}/checkpoints/epoch_{args.epoch}.pt'
+    checkpoint_path = os.path.join(version_log_dir, f'checkpoints/epoch_{args.epoch}.pt')
     
     print(f'Loading checkpoint from {checkpoint_path}...')
     if not os.path.exists(checkpoint_path):
@@ -44,7 +82,7 @@ def main():
     openclip_model.load_state_dict(checkpoint)
     hf_state_dict = convert_state_dict(openclip_model.state_dict())
 
-    output_dir = f'/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/biomedclip_finetuning/open_clip/src/logs/{args.name}/hf_model'
+    output_dir = os.path.join(version_log_dir, args.save_dir)
     os.makedirs(output_dir, exist_ok=True)
 
     # Copy necessary HF config files from original BiomedCLIP
@@ -57,7 +95,7 @@ def main():
     if os.path.exists(proc_file):
         shutil.copy(proc_file, f'{output_dir}/processing_biomed_clip.py')
 
-    print('Saving pytorch_model.bin...')
+    print(f'Saving pytorch_model.bin to {output_dir}...')
     torch.save(hf_state_dict, f'{output_dir}/pytorch_model.bin')
     print('Success!')
 

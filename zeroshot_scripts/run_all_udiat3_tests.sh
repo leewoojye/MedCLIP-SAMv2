@@ -10,7 +10,7 @@ echo "Starting UDIAT3 inference on 3 GPUs..."
 
 # GPU 3: Baseline
 echo "[GPU 3] Starting Baseline (High-Fidelity)..."
-CUDA_VISIBLE_DEVICES=3 bash "$ROOT_DIR/zeroshot_scripts/zeroshot_udiat3_baseline_hf.sh" > "$LOG_DIR/baseline_hf.log" 2>&1 &
+CUDA_VISIBLE_DEVICES=3 bash "$ROOT_DIR/zeroshot_scripts/zeroshot_udiat3_baseline_test.sh" > "$LOG_DIR/baseline_hf.log" 2>&1 &
 P1=$!
 
 # GPU 1: DPO

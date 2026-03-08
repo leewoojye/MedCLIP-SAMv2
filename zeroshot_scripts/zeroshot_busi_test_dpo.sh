@@ -13,11 +13,11 @@ PYTHON="/home/woojye2020/.conda/envs/medclipsamv2/bin/python"
 ROOT_DIR="/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2"
 DATASET="$ROOT_DIR/BUSI_TEST"
 JSON_PROMPTS="$ROOT_DIR/saliency_maps/text_prompts/busi_test_prompts.json"
-CHECKPOINT="/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/biomedclip_finetuning/open_clip/src/logs/biomedclip_dpo_udiat_v17/hf_model"
+CHECKPOINT="/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/biomedclip_finetuning/open_clip/src/logs/biomedclip_dpo_udiat_v27/best_params"
 
-SAL_PATH="saliency_map_outputs/BUSI_TEST_DPO_v17_HF/test_masks"
-COARSE_PATH="coarse_outputs/BUSI_TEST_DPO_v17_HF/test_masks"
-SAM_PATH="sam_outputs/BUSI_TEST_DPO_v17_HF/test_masks"
+SAL_PATH="saliency_map_outputs/BUSI_TEST_DPO_v27_HF/test_masks"
+COARSE_PATH="coarse_outputs/BUSI_TEST_DPO_v27_HF/test_masks"
+SAM_PATH="sam_outputs/BUSI_TEST_DPO_v27_HF/test_masks"
 
 mkdir -p "${SAL_PATH}" "${COARSE_PATH}" "${SAM_PATH}"
 
