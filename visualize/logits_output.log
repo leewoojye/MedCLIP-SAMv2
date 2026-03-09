@@ -1,0 +1,24 @@
+/home/woojye2020/.local/lib/python3.12/site-packages/torch/cuda/__init__.py:184: UserWarning: CUDA initialization: Unexpected error from cudaGetDeviceCount(). Did you run some cuda functions before calling NumCudaDevices() that might have already set an error? Error 304: OS call failed or operation not supported on this OS (Triggered internally at /pytorch/c10/cuda/CUDAFunctions.cpp:119.)
+  return torch._C._cuda_getDeviceCount() > 0
+Asking to truncate to max_length but no maximum length is provided and the model has no predefined maximum length. Default to no truncation.
+Loading model from local checkpoint: /home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/biomedclip_finetuning/open_clip/src/logs/biomedclip_dpo_udiat_v28/best_params
+Model/processor ready.
+Processing 163 pairs...
+[10/163] logit_pos=26.7548, logit_neg=28.8809
+[20/163] logit_pos=36.5913, logit_neg=31.1390
+[30/163] logit_pos=36.2693, logit_neg=31.9336
+[40/163] logit_pos=37.8845, logit_neg=32.6380
+[50/163] logit_pos=38.1783, logit_neg=36.1960
+[60/163] logit_pos=32.9587, logit_neg=34.4134
+[70/163] logit_pos=42.0690, logit_neg=32.4124
+[80/163] logit_pos=34.2785, logit_neg=38.8789
+[90/163] logit_pos=27.2284, logit_neg=32.7067
+[100/163] logit_pos=25.9451, logit_neg=3.6185
+[110/163] logit_pos=18.2983, logit_neg=20.3338
+[120/163] logit_pos=32.9303, logit_neg=29.5201
+[130/163] logit_pos=26.7349, logit_neg=31.5963
+[140/163] logit_pos=32.4960, logit_neg=37.6774
+[150/163] logit_pos=45.3390, logit_neg=30.2760
+[160/163] logit_pos=31.5420, logit_neg=20.5151
+Saved: /home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/visualize/logits_scores.csv
+Saved: /home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/visualize/logits_plot.png
