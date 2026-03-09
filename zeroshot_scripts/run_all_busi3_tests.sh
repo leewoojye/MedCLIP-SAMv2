@@ -3,7 +3,7 @@
 # Master runner for BUSI3 multi-GPU inference
 
 ROOT_DIR="/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2"
-LOG_DIR="$ROOT_DIR/logs/busi3_test_runs"
+LOG_DIR="$ROOT_DIR/logs/busi_aug_test_runs"
 mkdir -p "$LOG_DIR"
 
 echo "Starting BUSI3 inference on 3 GPUs..."

@@ -3,14 +3,17 @@
 # BiomedCLIP DPO Training on BUSI (v6 - Local Noise Sigma 60, Beta 10)
 # Goal: Train model to recognize tumor area by destroying it in negative samples.
 # 사용법: ./biomedclip_dpo_busi_v6.sh [버전이름] (예: ./biomedclip_dpo_busi_v6.sh biomedclip_dpo_udiat_v14)
-# v23, closedform dataset, udiat70% train
-# v24, closedform dataset, udiat100% train
+# v23, closedform dataset, udiat70%
+# v24, closedform dataset, udiat100%
 # v25, closedform dataset, UDIATnBUSI 7:3
 # v26, closedform augmented dataset, UDIAT70%
 # v27, closedform augmented dataset, UDIAT100%
+# v28, augmented dataset, BUSI100%
+# v29, augmented dataset, UDIATnBUSI 7:3
+# v30, augmented dataset, BUSI70%
 
-VERSION=${1:-biomedclip_dpo_udiat_v27}
-EPOCHS=10
+VERSION=${1:-biomedclip_dpo_udiat_v30}
+EPOCHS=5
 
 cd /home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/biomedclip_finetuning/open_clip/src
 
@@ -19,7 +22,7 @@ export PYTHONPATH=$PYTHONPATH:$(pwd)
 # 학습 후 자동으로 hf_model로 변환하는 명령어를 nohup으로 묶어서 실행
 nohup bash -c "
     python open_clip_train/main.py \
-        --train-data /home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/biomedclip_finetuning/open_clip/src/data/breast_dataset/udiat_train_dpo_v6.csv \
+        --train-data /home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/BUSI_aug/busi_train_dpo.csv \
         --csv-separator ',' \
         --csv-img-key filename \
         --csv-img-neg-key filename_neg \

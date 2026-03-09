@@ -7,13 +7,13 @@
 GPU=${CUDA_VISIBLE_DEVICES:-1}
 PYTHON="/home/woojye2020/.conda/envs/medclipsamv2/bin/python"
 ROOT_DIR="/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2"
-DATASET="$ROOT_DIR/UDIATnBUSI"
-JSON_PROMPTS="$ROOT_DIR/saliency_maps/text_prompts/udiatnbusi_test_prompts.json"
-CHECKPOINT="/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/biomedclip_finetuning/open_clip/src/logs/biomedclip_dpo_udiat_v25/best_params"
+DATASET="$ROOT_DIR/UDIAT7nBUSI7_aug"
+JSON_PROMPTS="$ROOT_DIR/saliency_maps/text_prompts/udiat7nbusi7_aug_test_prompts.json"
+CHECKPOINT="/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/biomedclip_finetuning/open_clip/src/logs/biomedclip_dpo_udiat_v29/best_params"
 
-SAL_PATH="saliency_map_outputs/UDIATnBUSI_TEST_DPO_v25_HF/test_masks"
-COARSE_PATH="coarse_outputs/UDIATnBUSI_TEST_DPO_v25_HF/test_masks"
-SAM_PATH="sam_outputs/UDIATnBUSI_TEST_DPO_v25_HF/test_masks"
+SAL_PATH="saliency_map_outputs/UDIAT7nBUSI7_aug_TEST_DPO_v29_HF/test_masks"
+COARSE_PATH="coarse_outputs/UDIAT7nBUSI7_aug_TEST_DPO_v29_HF/test_masks"
+SAM_PATH="sam_outputs/UDIAT7nBUSI7_aug_TEST_DPO_v29_HF/test_masks"
 
 mkdir -p "${SAL_PATH}" "${COARSE_PATH}" "${SAM_PATH}"
 

@@ -3,7 +3,7 @@
 # Master runner for UDIATnBUSI_TEST multi-GPU inference
 
 ROOT_DIR="/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2"
-LOG_DIR="$ROOT_DIR/logs/udiatnbusi_test_runs"
+LOG_DIR="$ROOT_DIR/logs/udiat7nbusi7_aug_test_runs"
 mkdir -p "$LOG_DIR"
 
 echo "Starting UDIATnBUSI_TEST inference on 3 GPUs..."

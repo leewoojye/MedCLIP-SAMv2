@@ -4,16 +4,16 @@ set -euo pipefail
 ROOT_DIR="/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2"
 
 # Use BUSI as generating directory
-IMG_DIR="$ROOT_DIR/BUSI_TEST/test_images"
-MASK_DIR="$ROOT_DIR/BUSI_TEST/test_masks"
+IMG_DIR="$ROOT_DIR/BUSI_processed_text_only/test_images"
+MASK_DIR="$ROOT_DIR/BUSI_processed_text_only/test_masks"
 
 # Normal image reference (passed as image prompt)
 NORMAL_IMAGE="$ROOT_DIR/Dataset_BUSI_with_GT/normal/normal (1).png"
 
-OUT_DIR="$ROOT_DIR/generated_neg_output/busi_clip_image2prompt_closedformv0"
+OUT_DIR="$ROOT_DIR/generated_neg_output/busi_clip_image2prompt_closedformv1"
 COMPARE_DIR="$OUT_DIR/comparisons"
 PROJECTOR_PATH="$ROOT_DIR/zero_shot_translation/closed_form_projector.pt"
-DILATE_MASK="3"
+DILATE_MASK="5"
 
 mkdir -p "$OUT_DIR"
 mkdir -p "$COMPARE_DIR"

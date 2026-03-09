@@ -1,6 +1,3 @@
 nohup: ignoring input
-DEBUG: open_clip imported from /home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/biomedclip_finetuning/open_clip/src/open_clip/__init__.py
-Traceback (most recent call last):
-  File "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/biomedclip_finetuning/open_clip/src/open_clip_train/main.py", line 33, in <module>
-    from open_clip.loss import EgoBridgeLoss
-ImportError: cannot import name 'EgoBridgeLoss' from 'open_clip.loss' (/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/biomedclip_finetuning/open_clip/src/open_clip/loss.py)
+Training and conversion for biomedclip_dpo_udiat_v28 started in background.
+Logs: /home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/biomedclip_finetuning/open_clip/src/train_biomedclip_dpo_udiat_v28.log
