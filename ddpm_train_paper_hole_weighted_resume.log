@@ -1,0 +1,123 @@
+Resumed from /home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/DDPM/outputs/paper_run_hole_weighted/checkpoints/step_004000.pt
+Training paper-style DDPM
+Device: cuda
+Train samples: 1462
+Val samples: 1002
+Model parameters: 113,670,913
+step=4100 loss=0.004405
+step=4200 loss=0.005079
+step=4300 loss=0.005004
+step=4400 loss=0.004992
+step=4500 loss=0.006313
+step=4600 loss=0.005610
+step=4700 loss=0.004668
+step=4800 loss=0.005270
+step=4900 loss=0.004802
+step=5000 loss=0.004380
+step=5100 loss=0.003456
+step=5200 loss=0.004697
+step=5300 loss=0.005681
+step=5400 loss=0.004396
+step=5500 loss=0.004900
+step=5600 loss=0.004205
+step=5700 loss=0.005425
+step=5800 loss=0.005230
+step=5900 loss=0.004074
+step=6000 loss=0.004961
+org mr torch.Size([1, 2, 224, 224])
+Saved checkpoint to /home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/DDPM/outputs/paper_run_hole_weighted/checkpoints/step_006000.pt
+step=6100 loss=0.005984
+step=6200 loss=0.003696
+step=6300 loss=0.003816
+step=6400 loss=0.004835
+step=6500 loss=0.004892
+step=6600 loss=0.003891
+step=6700 loss=0.003470
+step=6800 loss=0.004039
+step=6900 loss=0.003585
+step=7000 loss=0.004391
+step=7100 loss=0.004330
+step=7200 loss=0.003952
+step=7300 loss=0.004398
+step=7400 loss=0.004346
+step=7500 loss=0.004428
+step=7600 loss=0.003589
+step=7700 loss=0.004094
+step=7800 loss=0.004740
+step=7900 loss=0.003588
+step=8000 loss=0.004230
+org mr torch.Size([1, 2, 224, 224])
+Saved checkpoint to /home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/DDPM/outputs/paper_run_hole_weighted/checkpoints/step_008000.pt
+step=8100 loss=0.004121
+step=8200 loss=0.004195
+step=8300 loss=0.003187
+step=8400 loss=0.004967
+step=8500 loss=0.004267
+step=8600 loss=0.003547
+step=8700 loss=0.004056
+step=8800 loss=0.005511
+step=8900 loss=0.005530
+step=9000 loss=0.004830
+step=9100 loss=0.004209
+step=9200 loss=0.003462
+step=9300 loss=0.003834
+step=9400 loss=0.004102
+step=9500 loss=0.003349
+step=9600 loss=0.002774
+step=9700 loss=0.003650
+step=9800 loss=0.004907
+step=9900 loss=0.004010
+step=10000 loss=0.004179
+org mr torch.Size([1, 2, 224, 224])
+Saved checkpoint to /home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/DDPM/outputs/paper_run_hole_weighted/checkpoints/step_010000.pt
+step=10100 loss=0.005069
+step=10200 loss=0.003576
+step=10300 loss=0.004715
+step=10400 loss=0.004158
+step=10500 loss=0.004647
+step=10600 loss=0.004071
+step=10700 loss=0.004624
+step=10800 loss=0.004173
+step=10900 loss=0.003891
+step=11000 loss=0.003033
+step=11100 loss=0.003739
+step=11200 loss=0.003233
+step=11300 loss=0.004423
+step=11400 loss=0.003696
+step=11500 loss=0.003781
+step=11600 loss=0.003125
+step=11700 loss=0.003606
+step=11800 loss=0.005242
+step=11900 loss=0.003359
+step=12000 loss=0.004358
+org mr torch.Size([1, 2, 224, 224])
+Saved checkpoint to /home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/DDPM/outputs/paper_run_hole_weighted/checkpoints/step_012000.pt
+step=12100 loss=0.003609
+step=12200 loss=0.003649
+step=12300 loss=0.004158
+step=12400 loss=0.004641
+step=12500 loss=0.004183
+step=12600 loss=0.003252
+step=12700 loss=0.005360
+step=12800 loss=0.004058
+step=12900 loss=0.004153
+step=13000 loss=0.004080
+step=13100 loss=0.003570
+step=13200 loss=0.003667
+step=13300 loss=0.005513
+step=13400 loss=0.004312
+step=13500 loss=0.004938
+step=13600 loss=0.003332
+step=13700 loss=0.003514
+step=13800 loss=0.004331
+step=13900 loss=0.003570
+step=14000 loss=0.003362
+org mr torch.Size([1, 2, 224, 224])
+Saved checkpoint to /home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/DDPM/outputs/paper_run_hole_weighted/checkpoints/step_014000.pt
+step=14100 loss=0.004037
+step=14200 loss=0.003068
+step=14300 loss=0.003687
+step=14400 loss=0.003481
+step=14500 loss=0.003534
+step=14600 loss=0.004081
+step=14700 loss=0.003739

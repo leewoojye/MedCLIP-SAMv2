@@ -1,0 +1,64 @@
+Training paper-style DDPM
+Device: cuda
+Train samples: 1462
+Val samples: 1002
+Model parameters: 113,670,913
+step=100 loss=0.188993
+step=200 loss=0.016181
+step=300 loss=0.011396
+step=400 loss=0.010582
+step=500 loss=0.013330
+step=600 loss=0.008634
+step=700 loss=0.008436
+step=800 loss=0.007853
+step=900 loss=0.007027
+step=1000 loss=0.005652
+step=1100 loss=0.004376
+step=1200 loss=0.006285
+step=1300 loss=0.007604
+step=1400 loss=0.005379
+step=1500 loss=0.006119
+step=1600 loss=0.004658
+step=1700 loss=0.006528
+step=1800 loss=0.006399
+step=1900 loss=0.005313
+step=2000 loss=0.006299
+org mr torch.Size([1, 2, 224, 224])
+Saved checkpoint to /home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/DDPM/outputs/paper_run_hole_weighted/checkpoints/step_002000.pt
+step=2100 loss=0.006983
+step=2200 loss=0.004618
+step=2300 loss=0.004616
+step=2400 loss=0.006440
+step=2500 loss=0.005584
+step=2600 loss=0.004674
+step=2700 loss=0.003792
+step=2800 loss=0.004873
+step=2900 loss=0.004034
+step=3000 loss=0.005256
+step=3100 loss=0.004505
+step=3200 loss=0.004370
+step=3300 loss=0.004352
+step=3400 loss=0.005162
+step=3500 loss=0.005390
+step=3600 loss=0.003715
+step=3700 loss=0.004726
+step=3800 loss=0.005654
+step=3900 loss=0.004934
+step=4000 loss=0.004905
+org mr torch.Size([1, 2, 224, 224])
+Saved checkpoint to /home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/DDPM/outputs/paper_run_hole_weighted/checkpoints/step_004000.pt
+step=4100 loss=0.004699
+step=4200 loss=0.004522
+step=4300 loss=0.003835
+step=4400 loss=0.005699
+step=4500 loss=0.004659
+step=4600 loss=0.004304
+step=4700 loss=0.004477
+step=4800 loss=0.006117
+step=4900 loss=0.006965
+step=5000 loss=0.005614
+step=5100 loss=0.004494
+step=5200 loss=0.003661
+step=5300 loss=0.004040
+step=5400 loss=0.003919
+step=5500 loss=0.003204

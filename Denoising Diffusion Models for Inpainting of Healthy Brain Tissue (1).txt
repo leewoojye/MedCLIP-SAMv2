@@ -1,0 +1,211 @@
+
+Denoising Diffusion Models for Inpainting of Healthy Brain Tissue
+
+Alicia Durrer[0009-0007-8970-909X], Philippe C. Cattin[0000-0001-8785-2713], and Julia Wolleb[0000-0003-4087-5920]
+Center for medical Image Analysis and Navigation, Department of Biomedical Engineering, University of Basel, Allschwil, Switzerland
+
+
+Abstract. This paper is a contribution to the "BraTS 2023 Local Syn- thesis of Healthy Brain Tissue via Inpainting Challenge". The task of this challenge is to transform tumor tissue into healthy tissue in brain magnetic resonance (MR) images. This idea originates from the problem that MR images can be evaluated using automatic processing tools, how- ever, many of these tools are optimized for the analysis of healthy tissue. By solving the given inpainting task, we enable the automatic analysis of images featuring lesions, and further downstream tasks.
+Our approach builds on denoising diffusion probabilistic models. We use a 2D model that is trained using slices in which healthy tissue was cropped out and is learned to be inpainted again. This allows us to use the ground truth healthy tissue during training. In the sampling stage, we replace the slices containing diseased tissue in the original 3D volume with the slices containing the healthy tissue inpainting. With our approach, we achieve the second place in the challenge. On the test set our model achieves a mean SSIM of 0.8271, a PSNR of 20.4949 and a MSE of 0.0115. In fu- ture we plan to extend our 2D model to a 3D model, allowing to inpaint the region of interest as a whole without losing context information of neighboring slices.
+
+Keywords: BraTS challenge · Inpainting · Diffusion Models.
+
+1 Introduction
+Magnetic Resonance (MR) images of the brain and the subsequent automatic processing of these images are essential for monitoring pathologies. However, many automatic processing tools are built to e.g., register or segment only healthy tissue and are not as reliable for processing diseased brain regions [1,2,3]. As illustrated in Figure 1, it is therefore required to transform diseased tissue into healthy tissue to benefit from these automatic processing tools. This paper is a contribution to the "BraTS [4,5,6,7] 2023 Local Synthesis of Healthy Brain Tis- sue via Inpainting Challenge" [8] that focuses on synthesizing healthy brain tissue in brains affected by tumors by transforming tumor tissue into healthy tissue. The challenge organizers provide T1-scans from the multi-modal BraTS 2022 segmentation challenge [4,5,6,9]. In these scans, the areas affected by glioma,
+
+
+tumors originating from glial cells in the brain or spinal cord [10], need to be in- painted in three dimensions with healthy brain tissue. For this task, we propose a method based on denoising diffusion probabilistic models (DDPMs) [11,12,13]. We build on a method we previously applied to the task of contrast harmoniza- tion between different MR scanners [14].
+
+
+
+Fig. 1. Illustration of the problem. MR scans not showing pathologies can be fed di- rectly into automatic processing tools. Often, scans containing pathologies need to be modified first. The task of this challenge is to replace pathological brain tissue with healthy brain tissue. The suggested inpainting requires a masked scan, whereby the masked region will be filled by an inpainting process, for which we suggest a DDPM- based model, visualized by the bold blue arrow. The output, denoted as the transformed scan, then shows a healthy scan. The transformed scan can then be fed into automatic processing tools for further analysis, denoted by the dashed blue arrow.
+
+
+
+1.1 BraTS challenge
+
+BraTS [4,5,6,7], short for "International Brain Tumor Segmentation", provides challenges within the International Conference for Medical Image Computing and Computer-Assisted Intervention (MICCAI). The here discussed challenge "Local Synthesis of Healthy Brain Tissue via Inpainting"[8], is one of several challenges offered in the BraTS 2023 cluster of challenges.
+
+1.2 Contribution
+
+Based on our existing image-to-image translation method [14], we train a slice- wise 2D DDPM to solve this inpainting task.
+
+
+2 Method
+
+2.1 Denoising Diffusion Probabilistic Models
+
+DDPMs are generative models consisting of an iterative noising process q and a learned denoising process p?. Gaussian noise is added to an image x for T time steps t during the noising process q. Each resulting image x0, x1, ..., xT contains a higher amount of noise than the previous image, as the noise level increases with each time step t until it reaches a maximum at t = T . The equation
+                  q(xt|xt-1) := N(xt; ?1 - ßtxt-1, ßtI),	(1) describes the forward noising process q, whereby I is the identity matrix and
+ß1, ..., ßT are the forward process variances. Defining at := 1 -ßt, at := lt	as
+and applying the reparameterization trick, xt can be written as
+               xt =vatx0 +v1 - at?,	with ? ~ N(0, I).	(2)
+During the denoising process p?, the goal is to reverse the forward process. Therefore, we want to predict xt-1 from xt for t  T, ..., 1 , whereby p? is defined as a normal distribution with mean µ? and variance S?. The aim is to determine µ? and S? such that p? and q match. The denoising process p? can be written as
+p?(xt-1|xt) := Ntxt-1; µ?(xt, t), S?(xt, t)).	(3)
+By learning µ?, a model ?? can be trained to denoise an image step by step. In
+[11] it was shown that S? can be fixed to s2I and does not need to be learned. The model ?? is a U-Net [15] that predicts the noise pattern ??(xt, t) at time step t to generate a slightly denoised image xt-1. In their original form, DDPMs are generative models that can sample images starting from random noise. This sampling process is given through:
+
+
+ 1 
+t-1	va
+
+ 1 - at
+
+
+t
+
++ stz,	with z ~ N(0, I),	(4)
+
+
+whereby we start from xT   (0, I) and apply Equation 4 for all time steps t T, ..., 1 . The final prediction is x0. Section 2.2 describes how this well- known method is modified for inpainting.
+
+2.2 Inpainting of masked region
+
+The goal of this challenge is to replace tumor tissue with healthy tissue. We use the great performance of DDPMs in image synthesis to inpaint healthy tissue in masked regions of the brain. Figure 2 gives an overview.
+
+
+
+
+Fig. 2. Overview of the training process. Context information is provided through the concatenation of input bi and mask mi with the noisy image xi,t, which originated from the ground truth x0 = xi,GT using Equation 2. The concatenated image Xt is used by the diffusion model to predict a slightly denoised image xi,t-1 from xi,t using Equation 5. The diffusion model is trained using an MSE loss between the real and the predicted noise, summarized in Equation 6.
+
+Training For the training process of the proposed approach, we need the ground truth image xGT , a predefined mask m that masks out some healthy tissue of the ground truth image, as well as the masked ground truth image denoted as
+b. Due to the high computation costs of 3D volumes, we propose a 2D approach on slices of the respective volumes. Therefore, we slice all 3D volumes into 2D slices, and consider only the slices i with a non-zero mask for training. We take a random time step t  1, ..., T and compute a noisy image xi,t from the ground truth slice xi,GT by applying Equation 2 with x0 = xi,GT . The goal is to predict the slightly denoised xi,t-1. We add the slice context information of our baseline image bi and the mask mi through channel-wise concatenation. The concatenated image Xt := xi,t bi mi serves as input for our diffusion model. The computation of xi,t-1 can be done via a denoising step with
+
+
+ 1 
+i,t-1	va
+
+ 1 - at
+
+
+t
+
++ stz,	with z ~ N(0, I),	(5)
+
+where ??(Xt, t) is the diffusion model output at time step t, st is the variance scheme and z covers the stochastic component of the process. As shown in [14], to train the diffusion model ?? the following loss term with ? ~ N(0, I) is used:
+
+|| ? - ? (X , t) ||2 = || ? - ? ((va¯ x
+
++ ?(1 - a¯ )?) ? b
+
+? m ), t)
+
+
+.	(6)
+
+
+
+
+Fig. 3. Sampling method. During sampling, we apply the denoising described by Equa- tion 5 for each of the T denoising steps for each slice bi with a non-zero mask mi. We then replace the slices bi in b with the samples xi,0, containing the inpainting, to obtain our transformed 3D scan.
+
+Sampling During sampling, shown in Figure 3, we loop through the slices of the masked 3D volume and only modify the slices with a non-zero mask. For each of these slices, the starting point xi,T is set to random Gaussian noise
+    (0, I). We use the masked T1 slice bi and the corresponding mask mi to guide the denoising process for each time step t for each of the slices. This means, we start from xi,1000  (0, I) and apply Equation 5 until we get the prediction xi,0 for each slice affected by a lesion. We replace the masked slices bi in the 3D scan b with the predicted slices xi,0 to get the transformed scan. This transformed scan can be used for further downstream tasks, as illustrated in Figure 1.
+
+
+3 Data Set and Training Details
+3.1 Data Preprocessing
+The data set consists of T1 scans from the multi-modal BraTS 2022 glioma segmentation challenge [4,5,6,9]. The data is a retrospective collection of brain tumor MR scans originating from multiple different institutions using different equipment and imaging protocols but all working under standard clinical con- ditions. For each patient, the challenge organizers provide T1 scans of brains affected by tumors, masks of the tumor regions, masks of healthy tissue regions, combined masks of the tumor and healthy regions as well as "T1-voided" scans, in which the combined masks are cropped out from the original T1 image. For our approach, we use the T1 images and the healthy region masks during train- ing. As our final goal is to learn to replace healthy tissue, for training, we crop out the healthy masks from the T1 images to obtain a masked T1 image in which only a healthy region is missing. We remove the top and bottom 0.1 percentile of voxel intensities and normalize the scans to voxel values between 0 and 1. As our model is constructed for 2D data, we slice each 3D scan into axial slices that are then cropped to a size of [224, 224]. Only background pixels are affected by the cropping. For training, we only use slices showing a non-zero mask. The provided training set consists of 1251 subjects which were used for a two-fold cross-validation, each using 1241 subjects for training and 10 for validation.
+
+3.2 Training Details
+We trained our model on an NVIDIA A100-SXM4-40GB with batch size 8 for 2'850'000 iterations, taking about two and a half weeks. The number of channels in the first layer of the model is 128, as proposed in [13]. Furthermore, one at- tention head is used at resolution 16, resulting in 113'672'066 model parameters. The learning rate is set to 10-4 for the used Adam optimizer. T is defined as 1000. For the evaluation of the validation and test set, we use the model saved with an exponential moving average (EMA) over model parameters with a rate of 0.9999. Further details on hyperparameters and architecture can be found in [16].
+
+3.3 Postprocessing and Evaluation
+After sampling, we apply a Gaussian filter with a standard deviation sigma =
+1.075 for the Gaussian kernel to smooth borders between the slices. In addi- tion to the training data, the challenge organizers provided a validation set of 219 subjects that could be evaluated using our model and submitted to the Synapse [17] platform to obtain structural similarity index measure (SSIM), peak signal-to-noise ratio (PSNR) and mean squared error (MSE). For submission to the Synapse platform, each model output is normalized to the intensity range of the corresponding input image from which the first and last 0.5 percentile were clipped. After submission of the final model as a MLCube [18], it was evaluated by the challenge organizers on a non-public test set of 568 cases.
+
+
+4 Results
+
+4.1 Cross-validation using Train-Validation Splits from Training Data Set
+
+We evaluated both models we trained for the cross-validation on our validation splits using the evaluation script provided by the organizers. The calculated metrics are SSIM, PSNR and MSE for the inpainted region only. Table 1 provides the results of our cross-validation.
+
+Table 1. Results of the two-fold cross validation.
+
+SSIMPSNRMSEModel 10.8003 [±0.1081]18.7572 [±1.8850]0.0146 [±0.0063]Model 20.7764 [±0.1292]18.7310 [±1.5019]0.0142 [±0.0049]Average0.7884 [±0.1187]18.7441 [±1.6935]0.0144 [±0.0056]
+
+Figure 4 provides examples of a given 2D masked slice, the corresponding mask, the generated sample and the ground truth. In 2D, our approach manages to generate consistent results. However, if we look at the whole 3D volume, stripe artifacts appear in the sagittal and coronal plane if multiple sequential axial slices are replaced within the volume. This is shown in Figure 5. One possibility to reduce the visibility of these artifacts is the application of a Gaussian filter, also demonstrated in Figure 5.
+
+4.2 Validation on Synapse Server
+
+We evaluated both models that we trained for the cross-validation on the val- idation set provided by the organizers. The evaluation was performed on the Synapse server. Again, SSIM, PSNR and MSE are only evaluated for the in- painted region. Table 2 provides the results for our cross-validation. Regarding all metrics, we achieve comparable results as the other challenge participants.
+
+Table 2. Results of the evaluation of our model's performance on the validation set, evaluated on the Synapse server.
+
+SSIMPSNRMSEModel 10.7802 [±0.1273]20.3220 [±2.8306]0.0113 [±0.0076]Model 20.7805 [±0.1255]20.3830 [±2.7619]0.0112 [±0.0074]Average0.7804 [±0.1264]20.3525 [±2.7963]0.0113 [±0.0075]
+
+
+
+
+
+
+
+Fig. 4. Axial slices of images from our validation set. The masked slice, the mask, the generated sample, and the ground truth are provided. In general, the 2D generated samples are of good quality. Moreover, they show a high similarity to the corresponding ground truth. The SSIM, MSE and PSNR that are reported refer to the comparison of the whole generated volume (obtained by stacking of the generated slices) and the corresponding ground truth volume.
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+ 
+
+
+
+Fig. 5. Exemplary image of our validation set in the coronal (top) and sagittal (bottom) view. We observe stripe artifacts (blue boxes) due to the stacking of multiple axial slices. These artifacts can be reduced by applying a Gaussian filter (standard deviation sigma = 1.075 for Gaussian kernel).
+
+
+4.3 Test Set Scores
+Model 2 was submitted as a MLCube for the evaluation on the non-public test set. The evaluation was performed by the challenge organizers. Table 3 provides the obtained results. Again, SSIM, PSNR and MSE are only evaluated for the inpainted region. Using this model, we achieve the second place in the inpainting challenge.
+
+Table 3. Results of the evaluation of our model on the non-public test set.
+
+SSIMPSNRMSEModel 20.8271 [±0.1308]20.4949 [±3.1141]0.0115 [±0.0096]
+
+
+5 Discussion
+We present an approach for healthy tissue inpainting based on 2D DDPMs. Tak- ing advantage of the excellent image synthesis performance of DDPMs, we apply these models to masked brain MR images. Image context of the masked image is provided by concatenating the masked image to the input of the diffusion model in every time step t. These concatenated images are created to guide the denois- ing process. As only healthy tissue is cropped out, the ground truth is available during training. Regarding the validation, we achieve similar results in terms of SSIM, PSNR and MSE as the other challenge participants. Our model creates good results in 2D, but a drawback of our method is that the stacking of the 2D slices can lead to stripe artifacts, which we tried to reduce using a Gaussian filter. As an alternative, we tried to avoid the stripe artifacts using a sequential approach, where we included the previous ground truth slice as an additional channel that was concatenated with the noisy image during training. During sampling, the previously sampled slice was concatenated with the noisy image. However, this approach still needs modifications, as it seemed as if the errors accumulated over the sequence of slices. An advantage of the model we used for this challenge is that due to the two-dimensionality, it needs less computational resources than 3D models and shows a stable training progression. Nevertheless, in future, we aim to expand our approach to a 3D model, e.g., similar to [19]. So far we experimented with a 3D model using the same framework as presented in this paper, but it was limited regarding memory consumption, which led to limitations in network architecture tuning. A drawback of diffusion models in general is the slow sampling speed compared to other generative models. We aim to improve this using e.g., Heun sampling schemes [20] or consistency mod- els [21]. We conclude that our method provides a baseline that shows a good performance for the task, resulting in the second place in the competition, and has potential to be fine-tuned using different architectural and sampling changes.
+
+
+References
+
+1. Jenkinson, M., Beckmann, C. F., Behrens, T. E., Woolrich, M. W., Smith, S. M.: Fsl. Neuroimage, 62(2), pp. 182-790 (2012)
+2. Farazi, M. R., Faisal, F., Zaman, Z., Farhan, S.: Inpainting multiple sclerosis lesions for improving registration performance with brain atlas. In: International Confer- ence on Medical Engineering, Health Informatics and Technology (2016)
+3. Almansour, M., Ghanem, N. M., Bassiouny, S.: High-Resolution MRI Brain Inpaint- ing. In: IEEE EMBS International Conference on Biomedical and Health Informatics (2021)
+4. Menze, B. H., Jakab, A., Bauer, S., Kalpathy-Cramer, J., Farahani, K., Kirby, J., Burren, Y.,Porz, N., Slotboom, J., Wiest, R., et al.: The multimodal brain tumor im- age segmentation benchmark (brats). IEEE transactions on medical imaging 34(10) 1993-2024 (2014)
+5. Bakas, S., Akbari, H., Sotiras, A., Bilello, M., Rozycki, M., Kirby, J. S., Freymann, J.B., Farahani, K., Davatzikos, C.: Advancing the cancer genome atlas glioma mri collections with expert segmentation labels and radiomic features. Scientific data 4(1) 1-13 (2017)
+6. Bakas, S., Reyes, M., Jakab, A., Bauer, S., Rempfler, M., Crimi, A., Shinohara, R. T, Berger, C., Ha, S. M., Rozycki, M., et al.: Identifying the best machine learn- ing algorithms for brain tumor segmentation, progression assessment, and overall survival prediction in the brats challenge. arXiv preprint arXiv:1811.02629 (2018)
+7. Baid, U., Ghodasara, S., Mohan, S., Bilello, M., Calabrese, E., Colak, E., Farahani, K., Kalpathy-Cramer, J., Kitamura, F. C., Pati, S., et al.: The rsna-asnr-miccai brats 2021 benchmark on brain tumor segmentation and radiogenomic classification. arXiv preprint arXiv:2107.02314 (2021)
+8. Kofler, F., et al.: The Brain Tumor Segmentation (BraTS) Challenge 2023: Local Synthesis of Healthy Brain Tissue via Inpainting. arXiv preprint arXiv:2305.08992 (2023)
+9. Karargyris, A., Umeton, R., Sheller, M. J., Aristizabal, A., George, J., Wuest, A., Pati, S., et al.: Federated benchmarking of medical artificial intelligence with Med- Perf. Nature Machine Intelligence, 5, pp. 799--810 (2023)
+10. Mamelak, A. N., Jacoby, D. B.: Targeted delivery of antitumoral therapy to glioma and other malignancies with synthetic chlorotoxin (TM-601). Expert Opinion on Drug Delivery, 4(2), 175-182 (2007)
+11. Ho, J., Jain, A., Abbeel, P.: Denoising diffusion probabilistic models. Advances in Neural Information Processing Systems, 33, pp. 6840-6851 (2020)
+12. Saharia, C., Chan, W., Chang, H., Lee, C., Ho, J., Salimans, T, Fleet, D., Norouzi, M.: Palette: Image-to-image diffusion models. In: ACM SIGGRAPH 2022 Confer- ence Proceedings, pp. 1-10 (2022)
+13. Wolleb, J., Sandkühler, R., Bieder, F., Valmaggia, P., Cattin, P.C: Diffusion Mod- els for Implicit Image Segmentation Ensembles. In: Medical Imaging with Deep Learning, pp. 1336-1358. PMLR (2022)
+14. Durrer, A., Wolleb J., Bieder F., Sinnecker, T., Weigel M., Sandkühler, R., Granziera, C., Yaldizli, Ö, Cattin, P.C: Diffusion Models for Contrast Harmoniza- tion of Magnetic Resonance Images. arXiv preprint, arXiv:2303.08189 (2023)
+15. Ronneberger, O., Fischer, P., Brox, T.: Convolutional networks for biomedical im- age segmentation. In: International Conference on Medical image computing and computer-assisted intervention, pp. 234-241. Springer (2021)
+
+
+16. Nichol, A. Q., Dhariwal, P.: Improved denoising diffusion probabilistic models. In: International Conference on Machine Learning, pp. 8162-8171. PMLR (2021)
+17. Synapse Homepage, https://www.synapse.org/. Last accessed 11 August 2023
+18. MLCube, https://mlcommons.github.io/mlcube/. Last accessed 11 August 2023
+19. Bieder, F., Wolleb, J., Durrer, A., Sandkuehler, R., Cattin, P.C.: Memory-Efficient 3D Denoising Diffusion Models for Medical Image Processing. In: Medical Imaging with Deep Learning (2023)
+20. Karras, T., Aittala, M., Aila, T., Laine, S.: Elucidating the design space of diffusion- based generative models. Advances in Neural Information Processing Systems, 35,
+pp. 26565-26577 (2022)
+21. Song, Y., Dhariwal, P., Chen, M., Sutskever, I.: Consistency Models. arXiv preprint, arXiv:2303.01469 (2023)
+
+
+
+
