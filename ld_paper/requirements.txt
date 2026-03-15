@@ -1,0 +1,12 @@
+diffusers>=0.30.0
+transformers>=4.40.0
+accelerate>=0.30.0
+torch>=2.0.0
+torchvision>=0.15.0
+scipy
+scikit-image
+numpy
+Pillow
+tqdm
+lpips          # optional – for LPIPS evaluation; pip install lpips
+tensorboard    # for training logging

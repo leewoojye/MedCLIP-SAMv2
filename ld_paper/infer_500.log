@@ -1,0 +1,79 @@
+/home/woojye2020/.conda/envs/medclipsamv2/lib/python3.9/site-packages/pandas/core/computation/expressions.py:21: UserWarning: Pandas requires version '2.8.4' or newer of 'numexpr' (version '2.8.1' currently installed).
+  from pandas.core.computation.check import NUMEXPR_INSTALLED
+
+Loading pipeline components...:   0%|          | 0/6 [00:00<?, ?it/s]`torch_dtype` is deprecated! Use `dtype` instead!
+
+Loading pipeline components...:  17%|█▋        | 1/6 [00:00<00:00,  6.70it/s]
+Loading pipeline components...:  33%|███▎      | 2/6 [00:00<00:00,  8.17it/s]
+Loading pipeline components...:  50%|█████     | 3/6 [00:01<00:01,  2.24it/s]
+Loading pipeline components...: 100%|██████████| 6/6 [00:01<00:00,  5.18it/s]
+
+Editing:   0%|          | 0/5 [00:00<?, ?it/s]
+Editing:  20%|██        | 1/5 [00:26<01:47, 26.82s/it]
+Editing:  40%|████      | 2/5 [00:52<01:18, 26.25s/it]
+Editing:  60%|██████    | 3/5 [01:18<00:52, 26.16s/it]
+Editing:  80%|████████  | 4/5 [01:44<00:26, 26.06s/it]
+Editing: 100%|██████████| 5/5 [02:06<00:00, 24.64s/it]
+Editing: 100%|██████████| 5/5 [02:06<00:00, 25.35s/it]
+
+Loading pipeline from: ./checkpoints/checkpoint-500
+[로드 완료] accelerate 체크포인트에서 U-Net 가중치 교체: checkpoint-500
+
+Source label   : tumor  →  'MRI scan of a brain with tumor lesion'
+Target label   : healthy  →  'an axial brain MRI with normal appearance'
+Latent Drift δ : +0.100
+Guidance τ     : 0.1
+CFG scale      : 7.5
+
+Processing 5 images …
+
+
+[1/5] 100.png
+  Source: a brain MRI of a patient with an intracranial mass
+  Target: MRI scan of a normal healthy brain
+  δ = +0.100  |  τ = 0.1  |  w = 7.5
+  [1/3] DDIM inversion …
+  [2/3] Collecting source cross-attention maps …
+  [3/3] Denoising with target prompt + LD …
+  Done.
+
+[2/5] 1004.png
+  Source: a brain MRI scan showing a brain tumor
+  Target: brain MRI of a patient with no abnormality
+  δ = +0.100  |  τ = 0.1  |  w = 7.5
+  [1/3] DDIM inversion …
+  [2/3] Collecting source cross-attention maps …
+  [3/3] Denoising with target prompt + LD …
+  Done.
+
+[3/5] 1007.png
+  Source: a brain MRI with abnormal mass
+  Target: brain MRI of a patient with no abnormality
+  δ = +0.100  |  τ = 0.1  |  w = 7.5
+  [1/3] DDIM inversion …
+  [2/3] Collecting source cross-attention maps …
+  [3/3] Denoising with target prompt + LD …
+  Done.
+
+[4/5] 1008.png
+  Source: MRI scan showing brain tumor pathology
+  Target: brain MRI scan with no signs of disease
+  δ = +0.100  |  τ = 0.1  |  w = 7.5
+  [1/3] DDIM inversion …
+  [2/3] Collecting source cross-attention maps …
+  [3/3] Denoising with target prompt + LD …
+  Done.
+
+[5/5] 1011.png
+  Source: brain MRI with hyperintense tumor region
+  Target: a brain MRI showing no signs of tumor
+  δ = +0.100  |  τ = 0.1  |  w = 7.5
+  [1/3] DDIM inversion …
+  [2/3] Collecting source cross-attention maps …
+  [3/3] Denoising with target prompt + LD …
+  Done.
+
+✓ Generated 5 counterfactual images.
+  Counterfactuals : generated/checkpoint-500/counterfactual
+  Metadata        : generated/checkpoint-500/metadata.json
+

@@ -3,6 +3,7 @@
 *.bin
 *.pt
 *.jpg
+*.nii
 
 # Common ML/Deep Learning extensions
 *.pth
@@ -22,3 +23,10 @@ __pycache__/
 .env
 envs/
 .venv*/
+
+# Local datasets
+IXI-T1/
+roco-dataset/
+roco_dataset/
+mri_IXI_480_2/
+mri_IXI_480_2_middle_png/

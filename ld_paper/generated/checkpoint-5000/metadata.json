@@ -1,0 +1,52 @@
+[
+  {
+    "source_path": "data/test/tumor/100.png",
+    "output_path": "generated/checkpoint-5000/counterfactual/100_counterfactual.png",
+    "source_label": "tumor",
+    "target_label": "healthy",
+    "source_prompt": "MRI scan of a brain with tumor lesion",
+    "target_prompt": "brain MRI scan showing normal brain structure",
+    "delta": 0.1,
+    "seed": 42
+  },
+  {
+    "source_path": "data/test/tumor/1004.png",
+    "output_path": "generated/checkpoint-5000/counterfactual/1004_counterfactual.png",
+    "source_label": "tumor",
+    "target_label": "healthy",
+    "source_prompt": "an axial brain MRI showing brain tumor",
+    "target_prompt": "a medical brain MRI image of a healthy brain",
+    "delta": 0.1,
+    "seed": 43
+  },
+  {
+    "source_path": "data/test/tumor/1007.png",
+    "output_path": "generated/checkpoint-5000/counterfactual/1007_counterfactual.png",
+    "source_label": "tumor",
+    "target_label": "healthy",
+    "source_prompt": "a T1-weighted brain MRI with brain tumor",
+    "target_prompt": "brain MRI scan showing normal brain structure",
+    "delta": 0.1,
+    "seed": 44
+  },
+  {
+    "source_path": "data/test/tumor/1008.png",
+    "output_path": "generated/checkpoint-5000/counterfactual/1008_counterfactual.png",
+    "source_label": "tumor",
+    "target_label": "healthy",
+    "source_prompt": "brain MRI of a patient with brain tumor diagnosis",
+    "target_prompt": "a brain MRI of a cognitively normal patient",
+    "delta": 0.1,
+    "seed": 45
+  },
+  {
+    "source_path": "data/test/tumor/1011.png",
+    "output_path": "generated/checkpoint-5000/counterfactual/1011_counterfactual.png",
+    "source_label": "tumor",
+    "target_label": "healthy",
+    "source_prompt": "a brain MRI of a patient with an intracranial mass",
+    "target_prompt": "a brain MRI of a cognitively normal patient",
+    "delta": 0.1,
+    "seed": 46
+  }
+]
