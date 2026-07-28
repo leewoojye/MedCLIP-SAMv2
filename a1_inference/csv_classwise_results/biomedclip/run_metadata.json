@@ -1,0 +1,21 @@
+{
+  "created_at_utc": "2026-07-28T21:25:42.748689+00:00",
+  "model_key": "biomedclip",
+  "model_id": "microsoft/BiomedCLIP-PubMedBERT_256-vit_base_patch16_224",
+  "backend": "open_clip",
+  "device": "cuda",
+  "n_samples": 326,
+  "class_order": [
+    "benign",
+    "malignant",
+    "normal"
+  ],
+  "captions": [
+    "There is a benign tumor.",
+    "There is malignant tumor.",
+    "There is no visible tumor."
+  ],
+  "score_definition": "raw L2-normalised image/text cosine similarity",
+  "metric_implementation": "clip4retrofit_ovr_metrics.py (unchanged)",
+  "cache_dir": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/a1_inference/.hf_cache"
+}

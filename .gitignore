@@ -24,6 +24,11 @@ __pycache__/
 envs/
 .venv*/
 
+# Reproducible local inference dependencies and downloaded checkpoints
+a1_inference/.hf_cache/
+a1_inference/pydeps/
+a1_inference/model/
+
 # Local datasets
 IXI-T1/
 roco-dataset/

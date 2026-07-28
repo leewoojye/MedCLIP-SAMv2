@@ -1,0 +1,23 @@
+{
+  "created_at_utc": "2026-07-28T21:48:57.383170+00:00",
+  "checkpoint_path": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/a1_inference/model/buscot-upstream/global_ind_gmpo/epoch_3.pt",
+  "checkpoint_epoch": 3,
+  "checkpoint_name": "global_ind_gmpo_seed12",
+  "n_samples": 326,
+  "class_order": [
+    "benign",
+    "malignant",
+    "normal"
+  ],
+  "captions": [
+    "There is a benign tumor.",
+    "There is malignant tumor.",
+    "There is no visible tumor."
+  ],
+  "score_definition": "raw L2-normalised image/text cosine similarity",
+  "metric_implementation": "clip4retrofit_ovr_metrics.py (unchanged)",
+  "cache_dir": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/a1_inference/.hf_cache",
+  "base_architecture": "hf-hub:microsoft/BiomedCLIP-PubMedBERT_256-vit_base_patch16_224",
+  "image_preprocess": "Compose(\n    Resize(size=224, interpolation=bicubic, max_size=None, antialias=True)\n    CenterCrop(size=(224, 224))\n    <function _convert_to_rgb at 0x7069317dd1b0>\n    ToTensor()\n    Normalize(mean=[0.48145466, 0.4578275, 0.40821073], std=[0.26862954, 0.26130258, 0.27577711])\n)",
+  "checkpoint_state_key_count": 351
+}

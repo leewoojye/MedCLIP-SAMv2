@@ -1,0 +1,57 @@
+{
+  "protocol": {
+    "name": "Clip4Retrofit-style per-class one-vs-rest ROC-AUC",
+    "score": "raw per-class confidence; cosine similarity for paper reproduction",
+    "auroc": "sklearn roc_curve followed by trapezoidal sklearn auc",
+    "macro_auroc": "unweighted arithmetic mean of per-class AUROCs",
+    "fpr_at_target_tpr": "first attainable ROC point with TPR >= target_tpr",
+    "macro_fpr_at_target_tpr": "unweighted arithmetic mean of per-class FPR@targetTPR"
+  },
+  "n_samples": 6128,
+  "n_classes": 4,
+  "target_tpr": 0.95,
+  "macro_auroc": 0.8371218454225948,
+  "macro_fpr_at_target_tpr": 0.5286970002061274,
+  "per_class": [
+    {
+      "class_index": 0,
+      "class_label": "meningioma",
+      "class_name": "meningioma",
+      "positive_count": 708,
+      "negative_count": 5420,
+      "auroc": 0.9106041653636875,
+      "fpr_at_target_tpr": 0.45166051660516604,
+      "threshold_at_target_tpr": 0.23091831339012125
+    },
+    {
+      "class_index": 1,
+      "class_label": "glioma",
+      "class_name": "glioma",
+      "positive_count": 1426,
+      "negative_count": 4702,
+      "auroc": 0.7444701398288932,
+      "fpr_at_target_tpr": 0.6933219906422798,
+      "threshold_at_target_tpr": 0.15791221595407073
+    },
+    {
+      "class_index": 2,
+      "class_label": "pituitary",
+      "class_name": "pituitary",
+      "positive_count": 930,
+      "negative_count": 5198,
+      "auroc": 0.865051074234507,
+      "fpr_at_target_tpr": 0.5021161985378992,
+      "threshold_at_target_tpr": 0.2947847887568936
+    },
+    {
+      "class_index": 3,
+      "class_label": "normal",
+      "class_name": "normal",
+      "positive_count": 3064,
+      "negative_count": 3064,
+      "auroc": 0.8283620022632917,
+      "fpr_at_target_tpr": 0.4676892950391645,
+      "threshold_at_target_tpr": 0.20276756016606334
+    }
+  ]
+}

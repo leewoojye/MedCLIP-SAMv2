@@ -1,0 +1,4 @@
+class_index,class_label,class_name,positive_count,negative_count,auroc,fpr_at_tpr_0.95,threshold_at_tpr_0.95
+0,benign,benign,109,217,0.444383376316,0.953917050691,-0.10080268655
+1,malignant,malignant,54,272,0.544866557734,0.849264705882,-0.0687448245992
+2,normal,normal,163,163,0.400654898566,0.98773006135,-0.0660406678321

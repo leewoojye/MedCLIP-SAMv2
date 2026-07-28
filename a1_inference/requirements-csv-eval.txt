@@ -1,0 +1,5 @@
+# Installed only into a1_inference/pydeps by setup_csv_classwise_eval.sh.
+# The shared project environment already supplies torch, torchvision, timm,
+# transformers, Pillow, NumPy, and scikit-learn.
+open-clip-torch==2.23.0
+sentencepiece==0.2.0

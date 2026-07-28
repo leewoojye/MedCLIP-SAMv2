@@ -1,0 +1,327 @@
+image_path,class_label,caption
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT/Benign/000001.png,benign,There is a benign tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT/Benign/000002.png,benign,There is a benign tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT/Benign/000003.png,benign,There is a benign tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT/Benign/000004.png,benign,There is a benign tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT/Benign/000005.png,benign,There is a benign tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT/Benign/000006.png,benign,There is a benign tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT/Benign/000007.png,benign,There is a benign tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT/Benign/000008.png,benign,There is a benign tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT/Benign/000009.png,benign,There is a benign tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT/Benign/000010.png,benign,There is a benign tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT/Benign/000011.png,benign,There is a benign tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT/Benign/000012.png,benign,There is a benign tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT/Benign/000013.png,benign,There is a benign tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT/Benign/000014.png,benign,There is a benign tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT/Benign/000015.png,benign,There is a benign tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT/Benign/000016.png,benign,There is a benign tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT/Benign/000017.png,benign,There is a benign tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT/Benign/000019.png,benign,There is a benign tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT/Benign/000020.png,benign,There is a benign tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT/Benign/000021.png,benign,There is a benign tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT/Benign/000022.png,benign,There is a benign tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT/Benign/000026.png,benign,There is a benign tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT/Benign/000032.png,benign,There is a benign tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT/Benign/000033.png,benign,There is a benign tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT/Benign/000034.png,benign,There is a benign tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT/Benign/000035.png,benign,There is a benign tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT/Benign/000036.png,benign,There is a benign tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT/Benign/000037.png,benign,There is a benign tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT/Benign/000038.png,benign,There is a benign tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT/Benign/000039.png,benign,There is a benign tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT/Benign/000040.png,benign,There is a benign tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT/Benign/000042.png,benign,There is a benign tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT/Benign/000051.png,benign,There is a benign tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT/Benign/000052.png,benign,There is a benign tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT/Benign/000056.png,benign,There is a benign tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT/Benign/000058.png,benign,There is a benign tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT/Benign/000059.png,benign,There is a benign tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT/Benign/000060.png,benign,There is a benign tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT/Benign/000061.png,benign,There is a benign tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT/Benign/000062.png,benign,There is a benign tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT/Benign/000063.png,benign,There is a benign tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT/Benign/000064.png,benign,There is a benign tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT/Benign/000065.png,benign,There is a benign tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT/Benign/000066.png,benign,There is a benign tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT/Benign/000067.png,benign,There is a benign tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT/Benign/000068.png,benign,There is a benign tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT/Benign/000069.png,benign,There is a benign tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT/Benign/000070.png,benign,There is a benign tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT/Benign/000071.png,benign,There is a benign tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT/Benign/000072.png,benign,There is a benign tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT/Benign/000073.png,benign,There is a benign tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT/Benign/000074.png,benign,There is a benign tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT/Benign/000075.png,benign,There is a benign tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT/Benign/000076.png,benign,There is a benign tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT/Benign/000077.png,benign,There is a benign tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT/Benign/000078.png,benign,There is a benign tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT/Benign/000079.png,benign,There is a benign tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT/Benign/000080.png,benign,There is a benign tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT/Benign/000081.png,benign,There is a benign tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT/Benign/000082.png,benign,There is a benign tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT/Benign/000083.png,benign,There is a benign tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT/Benign/000084.png,benign,There is a benign tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT/Benign/000085.png,benign,There is a benign tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT/Benign/000086.png,benign,There is a benign tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT/Benign/000087.png,benign,There is a benign tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT/Benign/000088.png,benign,There is a benign tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT/Benign/000089.png,benign,There is a benign tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT/Benign/000090.png,benign,There is a benign tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT/Benign/000091.png,benign,There is a benign tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT/Benign/000092.png,benign,There is a benign tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT/Benign/000093.png,benign,There is a benign tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT/Benign/000094.png,benign,There is a benign tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT/Benign/000095.png,benign,There is a benign tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT/Benign/000096.png,benign,There is a benign tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT/Benign/000097.png,benign,There is a benign tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT/Benign/000098.png,benign,There is a benign tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT/Benign/000099.png,benign,There is a benign tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT/Benign/000100.png,benign,There is a benign tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT/Benign/000101.png,benign,There is a benign tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT/Benign/000102.png,benign,There is a benign tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT/Benign/000103.png,benign,There is a benign tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT/Benign/000104.png,benign,There is a benign tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT/Benign/000105.png,benign,There is a benign tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT/Benign/000106.png,benign,There is a benign tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT/Benign/000107.png,benign,There is a benign tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT/Benign/000108.png,benign,There is a benign tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT/Benign/000109.png,benign,There is a benign tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT/Benign/000110.png,benign,There is a benign tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT/Benign/000111.png,benign,There is a benign tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT/Benign/000112.png,benign,There is a benign tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT/Benign/000113.png,benign,There is a benign tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT/Benign/000114.png,benign,There is a benign tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT/Benign/000115.png,benign,There is a benign tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT/Benign/000116.png,benign,There is a benign tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT/Benign/000117.png,benign,There is a benign tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT/Benign/000118.png,benign,There is a benign tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT/Benign/000119.png,benign,There is a benign tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT/Benign/000120.png,benign,There is a benign tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT/Benign/000121.png,benign,There is a benign tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT/Benign/000122.png,benign,There is a benign tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT/Benign/000123.png,benign,There is a benign tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT/Benign/000124.png,benign,There is a benign tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT/Benign/000125.png,benign,There is a benign tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT/Benign/000126.png,benign,There is a benign tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT/Benign/000127.png,benign,There is a benign tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT/Benign/000128.png,benign,There is a benign tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT/Benign/000129.png,benign,There is a benign tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT/Benign/000130.png,benign,There is a benign tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT/Benign/000131.png,benign,There is a benign tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT/Malignant/000018.png,malignant,There is malignant tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT/Malignant/000023.png,malignant,There is malignant tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT/Malignant/000024.png,malignant,There is malignant tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT/Malignant/000025.png,malignant,There is malignant tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT/Malignant/000027.png,malignant,There is malignant tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT/Malignant/000028.png,malignant,There is malignant tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT/Malignant/000029.png,malignant,There is malignant tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT/Malignant/000030.png,malignant,There is malignant tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT/Malignant/000031.png,malignant,There is malignant tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT/Malignant/000041.png,malignant,There is malignant tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT/Malignant/000043.png,malignant,There is malignant tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT/Malignant/000044.png,malignant,There is malignant tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT/Malignant/000045.png,malignant,There is malignant tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT/Malignant/000046.png,malignant,There is malignant tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT/Malignant/000047.png,malignant,There is malignant tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT/Malignant/000048.png,malignant,There is malignant tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT/Malignant/000049.png,malignant,There is malignant tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT/Malignant/000050.png,malignant,There is malignant tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT/Malignant/000053.png,malignant,There is malignant tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT/Malignant/000054.png,malignant,There is malignant tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT/Malignant/000055.png,malignant,There is malignant tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT/Malignant/000057.png,malignant,There is malignant tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT/Malignant/000132.png,malignant,There is malignant tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT/Malignant/000133.png,malignant,There is malignant tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT/Malignant/000134.png,malignant,There is malignant tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT/Malignant/000135.png,malignant,There is malignant tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT/Malignant/000136.png,malignant,There is malignant tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT/Malignant/000137.png,malignant,There is malignant tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT/Malignant/000138.png,malignant,There is malignant tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT/Malignant/000139.png,malignant,There is malignant tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT/Malignant/000140.png,malignant,There is malignant tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT/Malignant/000141.png,malignant,There is malignant tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT/Malignant/000142.png,malignant,There is malignant tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT/Malignant/000143.png,malignant,There is malignant tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT/Malignant/000144.png,malignant,There is malignant tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT/Malignant/000145.png,malignant,There is malignant tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT/Malignant/000146.png,malignant,There is malignant tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT/Malignant/000147.png,malignant,There is malignant tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT/Malignant/000295.png,malignant,There is malignant tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT/Malignant/000296.png,malignant,There is malignant tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT/Malignant/000297.png,malignant,There is malignant tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT/Malignant/000298.png,malignant,There is malignant tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT/Malignant/000299.png,malignant,There is malignant tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT/Malignant/000300.png,malignant,There is malignant tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT/Malignant/000301.png,malignant,There is malignant tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT/Malignant/000302.png,malignant,There is malignant tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT/Malignant/000303.png,malignant,There is malignant tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT/Malignant/000304.png,malignant,There is malignant tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT/Malignant/000305.png,malignant,There is malignant tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT/Malignant/000306.png,malignant,There is malignant tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT/Malignant/000307.png,malignant,There is malignant tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT/Malignant/000308.png,malignant,There is malignant tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT/Malignant/000309.png,malignant,There is malignant tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT/Malignant/000310.png,malignant,There is malignant tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT2/UDIAT음성샘플(closedform crossattention Ver)/000001.png,normal,There is no visible tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT2/UDIAT음성샘플(closedform crossattention Ver)/000002.png,normal,There is no visible tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT2/UDIAT음성샘플(closedform crossattention Ver)/000003.png,normal,There is no visible tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT2/UDIAT음성샘플(closedform crossattention Ver)/000004.png,normal,There is no visible tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT2/UDIAT음성샘플(closedform crossattention Ver)/000005.png,normal,There is no visible tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT2/UDIAT음성샘플(closedform crossattention Ver)/000006.png,normal,There is no visible tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT2/UDIAT음성샘플(closedform crossattention Ver)/000007.png,normal,There is no visible tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT2/UDIAT음성샘플(closedform crossattention Ver)/000008.png,normal,There is no visible tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT2/UDIAT음성샘플(closedform crossattention Ver)/000009.png,normal,There is no visible tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT2/UDIAT음성샘플(closedform crossattention Ver)/000010.png,normal,There is no visible tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT2/UDIAT음성샘플(closedform crossattention Ver)/000011.png,normal,There is no visible tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT2/UDIAT음성샘플(closedform crossattention Ver)/000012.png,normal,There is no visible tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT2/UDIAT음성샘플(closedform crossattention Ver)/000013.png,normal,There is no visible tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT2/UDIAT음성샘플(closedform crossattention Ver)/000014.png,normal,There is no visible tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT2/UDIAT음성샘플(closedform crossattention Ver)/000015.png,normal,There is no visible tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT2/UDIAT음성샘플(closedform crossattention Ver)/000016.png,normal,There is no visible tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT2/UDIAT음성샘플(closedform crossattention Ver)/000017.png,normal,There is no visible tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT2/UDIAT음성샘플(closedform crossattention Ver)/000018.png,normal,There is no visible tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT2/UDIAT음성샘플(closedform crossattention Ver)/000019.png,normal,There is no visible tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT2/UDIAT음성샘플(closedform crossattention Ver)/000020.png,normal,There is no visible tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT2/UDIAT음성샘플(closedform crossattention Ver)/000021.png,normal,There is no visible tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT2/UDIAT음성샘플(closedform crossattention Ver)/000022.png,normal,There is no visible tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT2/UDIAT음성샘플(closedform crossattention Ver)/000023.png,normal,There is no visible tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT2/UDIAT음성샘플(closedform crossattention Ver)/000024.png,normal,There is no visible tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT2/UDIAT음성샘플(closedform crossattention Ver)/000025.png,normal,There is no visible tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT2/UDIAT음성샘플(closedform crossattention Ver)/000026.png,normal,There is no visible tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT2/UDIAT음성샘플(closedform crossattention Ver)/000027.png,normal,There is no visible tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT2/UDIAT음성샘플(closedform crossattention Ver)/000028.png,normal,There is no visible tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT2/UDIAT음성샘플(closedform crossattention Ver)/000029.png,normal,There is no visible tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT2/UDIAT음성샘플(closedform crossattention Ver)/000030.png,normal,There is no visible tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT2/UDIAT음성샘플(closedform crossattention Ver)/000031.png,normal,There is no visible tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT2/UDIAT음성샘플(closedform crossattention Ver)/000032.png,normal,There is no visible tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT2/UDIAT음성샘플(closedform crossattention Ver)/000033.png,normal,There is no visible tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT2/UDIAT음성샘플(closedform crossattention Ver)/000034.png,normal,There is no visible tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT2/UDIAT음성샘플(closedform crossattention Ver)/000035.png,normal,There is no visible tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT2/UDIAT음성샘플(closedform crossattention Ver)/000036.png,normal,There is no visible tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT2/UDIAT음성샘플(closedform crossattention Ver)/000037.png,normal,There is no visible tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT2/UDIAT음성샘플(closedform crossattention Ver)/000038.png,normal,There is no visible tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT2/UDIAT음성샘플(closedform crossattention Ver)/000039.png,normal,There is no visible tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT2/UDIAT음성샘플(closedform crossattention Ver)/000040.png,normal,There is no visible tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT2/UDIAT음성샘플(closedform crossattention Ver)/000041.png,normal,There is no visible tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT2/UDIAT음성샘플(closedform crossattention Ver)/000042.png,normal,There is no visible tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT2/UDIAT음성샘플(closedform crossattention Ver)/000043.png,normal,There is no visible tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT2/UDIAT음성샘플(closedform crossattention Ver)/000044.png,normal,There is no visible tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT2/UDIAT음성샘플(closedform crossattention Ver)/000045.png,normal,There is no visible tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT2/UDIAT음성샘플(closedform crossattention Ver)/000046.png,normal,There is no visible tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT2/UDIAT음성샘플(closedform crossattention Ver)/000047.png,normal,There is no visible tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT2/UDIAT음성샘플(closedform crossattention Ver)/000048.png,normal,There is no visible tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT2/UDIAT음성샘플(closedform crossattention Ver)/000049.png,normal,There is no visible tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT2/UDIAT음성샘플(closedform crossattention Ver)/000050.png,normal,There is no visible tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT2/UDIAT음성샘플(closedform crossattention Ver)/000051.png,normal,There is no visible tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT2/UDIAT음성샘플(closedform crossattention Ver)/000052.png,normal,There is no visible tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT2/UDIAT음성샘플(closedform crossattention Ver)/000053.png,normal,There is no visible tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT2/UDIAT음성샘플(closedform crossattention Ver)/000054.png,normal,There is no visible tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT2/UDIAT음성샘플(closedform crossattention Ver)/000055.png,normal,There is no visible tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT2/UDIAT음성샘플(closedform crossattention Ver)/000056.png,normal,There is no visible tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT2/UDIAT음성샘플(closedform crossattention Ver)/000057.png,normal,There is no visible tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT2/UDIAT음성샘플(closedform crossattention Ver)/000058.png,normal,There is no visible tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT2/UDIAT음성샘플(closedform crossattention Ver)/000059.png,normal,There is no visible tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT2/UDIAT음성샘플(closedform crossattention Ver)/000060.png,normal,There is no visible tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT2/UDIAT음성샘플(closedform crossattention Ver)/000061.png,normal,There is no visible tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT2/UDIAT음성샘플(closedform crossattention Ver)/000062.png,normal,There is no visible tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT2/UDIAT음성샘플(closedform crossattention Ver)/000063.png,normal,There is no visible tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT2/UDIAT음성샘플(closedform crossattention Ver)/000064.png,normal,There is no visible tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT2/UDIAT음성샘플(closedform crossattention Ver)/000065.png,normal,There is no visible tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT2/UDIAT음성샘플(closedform crossattention Ver)/000066.png,normal,There is no visible tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT2/UDIAT음성샘플(closedform crossattention Ver)/000067.png,normal,There is no visible tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT2/UDIAT음성샘플(closedform crossattention Ver)/000068.png,normal,There is no visible tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT2/UDIAT음성샘플(closedform crossattention Ver)/000069.png,normal,There is no visible tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT2/UDIAT음성샘플(closedform crossattention Ver)/000070.png,normal,There is no visible tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT2/UDIAT음성샘플(closedform crossattention Ver)/000071.png,normal,There is no visible tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT2/UDIAT음성샘플(closedform crossattention Ver)/000072.png,normal,There is no visible tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT2/UDIAT음성샘플(closedform crossattention Ver)/000073.png,normal,There is no visible tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT2/UDIAT음성샘플(closedform crossattention Ver)/000074.png,normal,There is no visible tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT2/UDIAT음성샘플(closedform crossattention Ver)/000075.png,normal,There is no visible tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT2/UDIAT음성샘플(closedform crossattention Ver)/000076.png,normal,There is no visible tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT2/UDIAT음성샘플(closedform crossattention Ver)/000077.png,normal,There is no visible tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT2/UDIAT음성샘플(closedform crossattention Ver)/000078.png,normal,There is no visible tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT2/UDIAT음성샘플(closedform crossattention Ver)/000079.png,normal,There is no visible tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT2/UDIAT음성샘플(closedform crossattention Ver)/000080.png,normal,There is no visible tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT2/UDIAT음성샘플(closedform crossattention Ver)/000081.png,normal,There is no visible tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT2/UDIAT음성샘플(closedform crossattention Ver)/000082.png,normal,There is no visible tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT2/UDIAT음성샘플(closedform crossattention Ver)/000083.png,normal,There is no visible tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT2/UDIAT음성샘플(closedform crossattention Ver)/000084.png,normal,There is no visible tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT2/UDIAT음성샘플(closedform crossattention Ver)/000085.png,normal,There is no visible tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT2/UDIAT음성샘플(closedform crossattention Ver)/000086.png,normal,There is no visible tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT2/UDIAT음성샘플(closedform crossattention Ver)/000087.png,normal,There is no visible tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT2/UDIAT음성샘플(closedform crossattention Ver)/000088.png,normal,There is no visible tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT2/UDIAT음성샘플(closedform crossattention Ver)/000089.png,normal,There is no visible tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT2/UDIAT음성샘플(closedform crossattention Ver)/000090.png,normal,There is no visible tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT2/UDIAT음성샘플(closedform crossattention Ver)/000091.png,normal,There is no visible tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT2/UDIAT음성샘플(closedform crossattention Ver)/000092.png,normal,There is no visible tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT2/UDIAT음성샘플(closedform crossattention Ver)/000093.png,normal,There is no visible tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT2/UDIAT음성샘플(closedform crossattention Ver)/000094.png,normal,There is no visible tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT2/UDIAT음성샘플(closedform crossattention Ver)/000095.png,normal,There is no visible tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT2/UDIAT음성샘플(closedform crossattention Ver)/000096.png,normal,There is no visible tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT2/UDIAT음성샘플(closedform crossattention Ver)/000097.png,normal,There is no visible tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT2/UDIAT음성샘플(closedform crossattention Ver)/000098.png,normal,There is no visible tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT2/UDIAT음성샘플(closedform crossattention Ver)/000099.png,normal,There is no visible tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT2/UDIAT음성샘플(closedform crossattention Ver)/000100.png,normal,There is no visible tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT2/UDIAT음성샘플(closedform crossattention Ver)/000101.png,normal,There is no visible tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT2/UDIAT음성샘플(closedform crossattention Ver)/000102.png,normal,There is no visible tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT2/UDIAT음성샘플(closedform crossattention Ver)/000103.png,normal,There is no visible tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT2/UDIAT음성샘플(closedform crossattention Ver)/000104.png,normal,There is no visible tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT2/UDIAT음성샘플(closedform crossattention Ver)/000105.png,normal,There is no visible tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT2/UDIAT음성샘플(closedform crossattention Ver)/000106.png,normal,There is no visible tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT2/UDIAT음성샘플(closedform crossattention Ver)/000107.png,normal,There is no visible tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT2/UDIAT음성샘플(closedform crossattention Ver)/000108.png,normal,There is no visible tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT2/UDIAT음성샘플(closedform crossattention Ver)/000109.png,normal,There is no visible tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT2/UDIAT음성샘플(closedform crossattention Ver)/000110.png,normal,There is no visible tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT2/UDIAT음성샘플(closedform crossattention Ver)/000111.png,normal,There is no visible tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT2/UDIAT음성샘플(closedform crossattention Ver)/000112.png,normal,There is no visible tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT2/UDIAT음성샘플(closedform crossattention Ver)/000113.png,normal,There is no visible tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT2/UDIAT음성샘플(closedform crossattention Ver)/000114.png,normal,There is no visible tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT2/UDIAT음성샘플(closedform crossattention Ver)/000115.png,normal,There is no visible tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT2/UDIAT음성샘플(closedform crossattention Ver)/000116.png,normal,There is no visible tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT2/UDIAT음성샘플(closedform crossattention Ver)/000117.png,normal,There is no visible tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT2/UDIAT음성샘플(closedform crossattention Ver)/000118.png,normal,There is no visible tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT2/UDIAT음성샘플(closedform crossattention Ver)/000119.png,normal,There is no visible tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT2/UDIAT음성샘플(closedform crossattention Ver)/000120.png,normal,There is no visible tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT2/UDIAT음성샘플(closedform crossattention Ver)/000121.png,normal,There is no visible tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT2/UDIAT음성샘플(closedform crossattention Ver)/000122.png,normal,There is no visible tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT2/UDIAT음성샘플(closedform crossattention Ver)/000123.png,normal,There is no visible tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT2/UDIAT음성샘플(closedform crossattention Ver)/000124.png,normal,There is no visible tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT2/UDIAT음성샘플(closedform crossattention Ver)/000125.png,normal,There is no visible tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT2/UDIAT음성샘플(closedform crossattention Ver)/000126.png,normal,There is no visible tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT2/UDIAT음성샘플(closedform crossattention Ver)/000127.png,normal,There is no visible tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT2/UDIAT음성샘플(closedform crossattention Ver)/000128.png,normal,There is no visible tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT2/UDIAT음성샘플(closedform crossattention Ver)/000129.png,normal,There is no visible tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT2/UDIAT음성샘플(closedform crossattention Ver)/000130.png,normal,There is no visible tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT2/UDIAT음성샘플(closedform crossattention Ver)/000131.png,normal,There is no visible tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT2/UDIAT음성샘플(closedform crossattention Ver)/000132.png,normal,There is no visible tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT2/UDIAT음성샘플(closedform crossattention Ver)/000133.png,normal,There is no visible tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT2/UDIAT음성샘플(closedform crossattention Ver)/000134.png,normal,There is no visible tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT2/UDIAT음성샘플(closedform crossattention Ver)/000135.png,normal,There is no visible tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT2/UDIAT음성샘플(closedform crossattention Ver)/000136.png,normal,There is no visible tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT2/UDIAT음성샘플(closedform crossattention Ver)/000137.png,normal,There is no visible tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT2/UDIAT음성샘플(closedform crossattention Ver)/000138.png,normal,There is no visible tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT2/UDIAT음성샘플(closedform crossattention Ver)/000139.png,normal,There is no visible tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT2/UDIAT음성샘플(closedform crossattention Ver)/000140.png,normal,There is no visible tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT2/UDIAT음성샘플(closedform crossattention Ver)/000141.png,normal,There is no visible tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT2/UDIAT음성샘플(closedform crossattention Ver)/000142.png,normal,There is no visible tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT2/UDIAT음성샘플(closedform crossattention Ver)/000143.png,normal,There is no visible tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT2/UDIAT음성샘플(closedform crossattention Ver)/000144.png,normal,There is no visible tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT2/UDIAT음성샘플(closedform crossattention Ver)/000145.png,normal,There is no visible tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT2/UDIAT음성샘플(closedform crossattention Ver)/000146.png,normal,There is no visible tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT2/UDIAT음성샘플(closedform crossattention Ver)/000147.png,normal,There is no visible tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT2/UDIAT음성샘플(closedform crossattention Ver)/000295.png,normal,There is no visible tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT2/UDIAT음성샘플(closedform crossattention Ver)/000296.png,normal,There is no visible tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT2/UDIAT음성샘플(closedform crossattention Ver)/000297.png,normal,There is no visible tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT2/UDIAT음성샘플(closedform crossattention Ver)/000298.png,normal,There is no visible tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT2/UDIAT음성샘플(closedform crossattention Ver)/000299.png,normal,There is no visible tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT2/UDIAT음성샘플(closedform crossattention Ver)/000300.png,normal,There is no visible tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT2/UDIAT음성샘플(closedform crossattention Ver)/000301.png,normal,There is no visible tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT2/UDIAT음성샘플(closedform crossattention Ver)/000302.png,normal,There is no visible tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT2/UDIAT음성샘플(closedform crossattention Ver)/000303.png,normal,There is no visible tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT2/UDIAT음성샘플(closedform crossattention Ver)/000304.png,normal,There is no visible tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT2/UDIAT음성샘플(closedform crossattention Ver)/000305.png,normal,There is no visible tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT2/UDIAT음성샘플(closedform crossattention Ver)/000306.png,normal,There is no visible tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT2/UDIAT음성샘플(closedform crossattention Ver)/000307.png,normal,There is no visible tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT2/UDIAT음성샘플(closedform crossattention Ver)/000308.png,normal,There is no visible tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT2/UDIAT음성샘플(closedform crossattention Ver)/000309.png,normal,There is no visible tumor.
+/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/UDIAT2/UDIAT음성샘플(closedform crossattention Ver)/000310.png,normal,There is no visible tumor.
