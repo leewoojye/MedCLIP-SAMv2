@@ -1,0 +1,12 @@
+[submodule "bioclip"]
+	path = bioclip
+	url = https://github.com/leewoojye/bioclip.git
+	branch = main
+[submodule "bioclip2"]
+	path = bioclip2
+	url = https://github.com/leewoojye/bioclip-2.git
+	branch = main
+[submodule "biomedcoop"]
+	path = biomedcoop
+	url = https://github.com/leewoojye/BiomedCoOp.git
+	branch = main

@@ -90,8 +90,5 @@ mri_IXI_480_2_middle_png/
 logs/
 dilation_tests/
 
-# These are independent third-party Git clones; do not add broken gitlinks to
-# this repository. Their upstream repositories remain the source of truth.
-bioclip/
-bioclip2/
-biomedcoop/
+# Third-party model repositories are tracked as Git submodules. Their own
+# .gitignore files exclude downloaded models, caches, and local environments.
