@@ -1,0 +1,25 @@
+{
+  "created_at_utc": "2026-07-28T22:59:58.978814+00:00",
+  "checkpoint_path": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/a1_inference/model/ct_global/global_ind_gmpo_epoch_3.pt",
+  "checkpoint_epoch": 3,
+  "checkpoint_name": "chest_ct_global_ind_seed12",
+  "n_samples": 800,
+  "class_order": [
+    "bronchus_noise",
+    "heart_noise",
+    "lung_noise",
+    "normal"
+  ],
+  "captions": [
+    "Chest CT image showing preserved cardiac contour and normal-appearing bilateral lung parenchyma.",
+    "Chest CT image showing preserved bilateral lung aeration and patent central airways.",
+    "Chest CT image showing preserved cardiac contour and patent central tracheobronchial structures.",
+    "Chest CT image showing preserved cardiac contour, preserved bilateral lung aeration, and patent central airways."
+  ],
+  "score_definition": "raw L2-normalised image/text cosine similarity",
+  "metric_implementation": "clip4retrofit_ovr_metrics.py (unchanged)",
+  "cache_dir": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/a1_inference/.hf_cache",
+  "base_architecture": "hf-hub:microsoft/BiomedCLIP-PubMedBERT_256-vit_base_patch16_224",
+  "image_preprocess": "Compose(\n    Resize(size=224, interpolation=bicubic, max_size=None, antialias=True)\n    CenterCrop(size=(224, 224))\n    <function _convert_to_rgb at 0x77db9f50d1b0>\n    ToTensor()\n    Normalize(mean=[0.48145466, 0.4578275, 0.40821073], std=[0.26862954, 0.26130258, 0.27577711])\n)",
+  "checkpoint_state_key_count": 351
+}

@@ -1,0 +1,5 @@
+# Installed into this experiment's pydeps directory.  Torch, Transformers,
+# Pillow, and related runtime packages are supplied by bioclip2/.venv.
+diffusers==0.30.3
+accelerate==0.33.0
+psutil==6.0.0

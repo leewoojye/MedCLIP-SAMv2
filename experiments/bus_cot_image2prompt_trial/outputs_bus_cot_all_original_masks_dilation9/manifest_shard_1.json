@@ -1,0 +1,1410 @@
+{
+  "method": "training-free SD-IPC closed-form CLIP image-to-prompt conversion",
+  "paper": "arXiv:2305.12716",
+  "stable_diffusion_model": "stable-diffusion-v1-5/stable-diffusion-inpainting",
+  "scheduler": "DDIM",
+  "normal_reference": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/assets/busi_normal_1.png",
+  "source_dir": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/images_matching_BUS_COT_test_ids",
+  "source_mask_dir": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/masks",
+  "mask_dilation_px": 9,
+  "steps": 50,
+  "guidance_scale": 5.0,
+  "batch_size": 2,
+  "shard_index": 1,
+  "num_shards": 3,
+  "cuda_visible_devices": "1",
+  "converter": {
+    "clip_model": "openai/clip-vit-large-patch14",
+    "clip_vision_hidden_size": 1024,
+    "sd_clip_hidden_size": 768,
+    "kept_singular_values": 607,
+    "svd_threshold": 0.3,
+    "converted_token_l2_norm": 33.06402587890625
+  },
+  "generated_records": [
+    {
+      "index": 1,
+      "source": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/images_matching_BUS_COT_test_ids/000018@0.png",
+      "source_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/masks/000018@0.png",
+      "dilated_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/dilated_masks/000018@0.png",
+      "output": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/000018@0.png",
+      "seed": 20260729
+    },
+    {
+      "index": 4,
+      "source": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/images_matching_BUS_COT_test_ids/000022@0.png",
+      "source_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/masks/000022@0.png",
+      "dilated_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/dilated_masks/000022@0.png",
+      "output": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/000022@0.png",
+      "seed": 20260732
+    },
+    {
+      "index": 7,
+      "source": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/images_matching_BUS_COT_test_ids/000044@0.png",
+      "source_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/masks/000044@0.png",
+      "dilated_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/dilated_masks/000044@0.png",
+      "output": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/000044@0.png",
+      "seed": 20260735
+    },
+    {
+      "index": 10,
+      "source": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/images_matching_BUS_COT_test_ids/000049@0.png",
+      "source_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/masks/000049@0.png",
+      "dilated_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/dilated_masks/000049@0.png",
+      "output": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/000049@0.png",
+      "seed": 20260738
+    },
+    {
+      "index": 13,
+      "source": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/images_matching_BUS_COT_test_ids/000063@0.png",
+      "source_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/masks/000063@0.png",
+      "dilated_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/dilated_masks/000063@0.png",
+      "output": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/000063@0.png",
+      "seed": 20260741
+    },
+    {
+      "index": 16,
+      "source": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/images_matching_BUS_COT_test_ids/000073@0.png",
+      "source_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/masks/000073@0.png",
+      "dilated_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/dilated_masks/000073@0.png",
+      "output": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/000073@0.png",
+      "seed": 20260744
+    },
+    {
+      "index": 19,
+      "source": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/images_matching_BUS_COT_test_ids/000094@0.png",
+      "source_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/masks/000094@0.png",
+      "dilated_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/dilated_masks/000094@0.png",
+      "output": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/000094@0.png",
+      "seed": 20260747
+    },
+    {
+      "index": 22,
+      "source": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/images_matching_BUS_COT_test_ids/000104@0.png",
+      "source_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/masks/000104@0.png",
+      "dilated_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/dilated_masks/000104@0.png",
+      "output": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/000104@0.png",
+      "seed": 20260750
+    },
+    {
+      "index": 25,
+      "source": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/images_matching_BUS_COT_test_ids/000111@0.png",
+      "source_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/masks/000111@0.png",
+      "dilated_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/dilated_masks/000111@0.png",
+      "output": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/000111@0.png",
+      "seed": 20260753
+    },
+    {
+      "index": 28,
+      "source": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/images_matching_BUS_COT_test_ids/000118@0.png",
+      "source_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/masks/000118@0.png",
+      "dilated_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/dilated_masks/000118@0.png",
+      "output": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/000118@0.png",
+      "seed": 20260756
+    },
+    {
+      "index": 31,
+      "source": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/images_matching_BUS_COT_test_ids/000128@0.png",
+      "source_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/masks/000128@0.png",
+      "dilated_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/dilated_masks/000128@0.png",
+      "output": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/000128@0.png",
+      "seed": 20260759
+    },
+    {
+      "index": 34,
+      "source": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/images_matching_BUS_COT_test_ids/000146@0.png",
+      "source_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/masks/000146@0.png",
+      "dilated_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/dilated_masks/000146@0.png",
+      "output": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/000146@0.png",
+      "seed": 20260762
+    },
+    {
+      "index": 37,
+      "source": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/images_matching_BUS_COT_test_ids/000163@0.png",
+      "source_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/masks/000163@0.png",
+      "dilated_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/dilated_masks/000163@0.png",
+      "output": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/000163@0.png",
+      "seed": 20260765
+    },
+    {
+      "index": 40,
+      "source": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/images_matching_BUS_COT_test_ids/000177@0.png",
+      "source_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/masks/000177@0.png",
+      "dilated_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/dilated_masks/000177@0.png",
+      "output": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/000177@0.png",
+      "seed": 20260768
+    },
+    {
+      "index": 43,
+      "source": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/images_matching_BUS_COT_test_ids/000189@0.png",
+      "source_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/masks/000189@0.png",
+      "dilated_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/dilated_masks/000189@0.png",
+      "output": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/000189@0.png",
+      "seed": 20260771
+    },
+    {
+      "index": 46,
+      "source": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/images_matching_BUS_COT_test_ids/000209@0.png",
+      "source_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/masks/000209@0.png",
+      "dilated_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/dilated_masks/000209@0.png",
+      "output": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/000209@0.png",
+      "seed": 20260774
+    },
+    {
+      "index": 49,
+      "source": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/images_matching_BUS_COT_test_ids/000236@0.png",
+      "source_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/masks/000236@0.png",
+      "dilated_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/dilated_masks/000236@0.png",
+      "output": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/000236@0.png",
+      "seed": 20260777
+    },
+    {
+      "index": 52,
+      "source": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/images_matching_BUS_COT_test_ids/000257@0.png",
+      "source_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/masks/000257@0.png",
+      "dilated_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/dilated_masks/000257@0.png",
+      "output": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/000257@0.png",
+      "seed": 20260780
+    },
+    {
+      "index": 55,
+      "source": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/images_matching_BUS_COT_test_ids/000260@0.png",
+      "source_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/masks/000260@0.png",
+      "dilated_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/dilated_masks/000260@0.png",
+      "output": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/000260@0.png",
+      "seed": 20260783
+    },
+    {
+      "index": 58,
+      "source": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/images_matching_BUS_COT_test_ids/000276@0.png",
+      "source_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/masks/000276@0.png",
+      "dilated_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/dilated_masks/000276@0.png",
+      "output": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/000276@0.png",
+      "seed": 20260786
+    },
+    {
+      "index": 61,
+      "source": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/images_matching_BUS_COT_test_ids/000279@0.png",
+      "source_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/masks/000279@0.png",
+      "dilated_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/dilated_masks/000279@0.png",
+      "output": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/000279@0.png",
+      "seed": 20260789
+    },
+    {
+      "index": 64,
+      "source": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/images_matching_BUS_COT_test_ids/000311@0.png",
+      "source_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/masks/000311@0.png",
+      "dilated_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/dilated_masks/000311@0.png",
+      "output": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/000311@0.png",
+      "seed": 20260792
+    },
+    {
+      "index": 67,
+      "source": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/images_matching_BUS_COT_test_ids/000316@0.png",
+      "source_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/masks/000316@0.png",
+      "dilated_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/dilated_masks/000316@0.png",
+      "output": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/000316@0.png",
+      "seed": 20260795
+    },
+    {
+      "index": 70,
+      "source": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/images_matching_BUS_COT_test_ids/000352@0.png",
+      "source_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/masks/000352@0.png",
+      "dilated_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/dilated_masks/000352@0.png",
+      "output": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/000352@0.png",
+      "seed": 20260798
+    },
+    {
+      "index": 73,
+      "source": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/images_matching_BUS_COT_test_ids/000357@0.png",
+      "source_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/masks/000357@0.png",
+      "dilated_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/dilated_masks/000357@0.png",
+      "output": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/000357@0.png",
+      "seed": 20260801
+    },
+    {
+      "index": 76,
+      "source": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/images_matching_BUS_COT_test_ids/000381@0.png",
+      "source_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/masks/000381@0.png",
+      "dilated_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/dilated_masks/000381@0.png",
+      "output": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/000381@0.png",
+      "seed": 20260804
+    },
+    {
+      "index": 79,
+      "source": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/images_matching_BUS_COT_test_ids/000387@0.png",
+      "source_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/masks/000387@0.png",
+      "dilated_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/dilated_masks/000387@0.png",
+      "output": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/000387@0.png",
+      "seed": 20260807
+    },
+    {
+      "index": 82,
+      "source": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/images_matching_BUS_COT_test_ids/000394@0.png",
+      "source_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/masks/000394@0.png",
+      "dilated_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/dilated_masks/000394@0.png",
+      "output": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/000394@0.png",
+      "seed": 20260810
+    },
+    {
+      "index": 85,
+      "source": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/images_matching_BUS_COT_test_ids/000406@0.png",
+      "source_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/masks/000406@0.png",
+      "dilated_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/dilated_masks/000406@0.png",
+      "output": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/000406@0.png",
+      "seed": 20260813
+    },
+    {
+      "index": 88,
+      "source": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/images_matching_BUS_COT_test_ids/000415@0.png",
+      "source_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/masks/000415@0.png",
+      "dilated_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/dilated_masks/000415@0.png",
+      "output": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/000415@0.png",
+      "seed": 20260816
+    },
+    {
+      "index": 91,
+      "source": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/images_matching_BUS_COT_test_ids/000433@0.png",
+      "source_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/masks/000433@0.png",
+      "dilated_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/dilated_masks/000433@0.png",
+      "output": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/000433@0.png",
+      "seed": 20260819
+    },
+    {
+      "index": 94,
+      "source": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/images_matching_BUS_COT_test_ids/000454@0.png",
+      "source_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/masks/000454@0.png",
+      "dilated_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/dilated_masks/000454@0.png",
+      "output": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/000454@0.png",
+      "seed": 20260822
+    },
+    {
+      "index": 97,
+      "source": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/images_matching_BUS_COT_test_ids/000477@0.png",
+      "source_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/masks/000477@0.png",
+      "dilated_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/dilated_masks/000477@0.png",
+      "output": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/000477@0.png",
+      "seed": 20260825
+    },
+    {
+      "index": 100,
+      "source": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/images_matching_BUS_COT_test_ids/000494@0.png",
+      "source_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/masks/000494@0.png",
+      "dilated_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/dilated_masks/000494@0.png",
+      "output": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/000494@0.png",
+      "seed": 20260828
+    },
+    {
+      "index": 103,
+      "source": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/images_matching_BUS_COT_test_ids/000524@0.png",
+      "source_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/masks/000524@0.png",
+      "dilated_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/dilated_masks/000524@0.png",
+      "output": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/000524@0.png",
+      "seed": 20260831
+    },
+    {
+      "index": 106,
+      "source": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/images_matching_BUS_COT_test_ids/000531@0.png",
+      "source_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/masks/000531@0.png",
+      "dilated_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/dilated_masks/000531@0.png",
+      "output": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/000531@0.png",
+      "seed": 20260834
+    },
+    {
+      "index": 109,
+      "source": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/images_matching_BUS_COT_test_ids/000538@0.png",
+      "source_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/masks/000538@0.png",
+      "dilated_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/dilated_masks/000538@0.png",
+      "output": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/000538@0.png",
+      "seed": 20260837
+    },
+    {
+      "index": 112,
+      "source": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/images_matching_BUS_COT_test_ids/000569@0.png",
+      "source_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/masks/000569@0.png",
+      "dilated_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/dilated_masks/000569@0.png",
+      "output": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/000569@0.png",
+      "seed": 20260840
+    },
+    {
+      "index": 115,
+      "source": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/images_matching_BUS_COT_test_ids/000574@0.png",
+      "source_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/masks/000574@0.png",
+      "dilated_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/dilated_masks/000574@0.png",
+      "output": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/000574@0.png",
+      "seed": 20260843
+    },
+    {
+      "index": 118,
+      "source": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/images_matching_BUS_COT_test_ids/000590@0.png",
+      "source_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/masks/000590@0.png",
+      "dilated_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/dilated_masks/000590@0.png",
+      "output": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/000590@0.png",
+      "seed": 20260846
+    },
+    {
+      "index": 121,
+      "source": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/images_matching_BUS_COT_test_ids/000595@0.png",
+      "source_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/masks/000595@0.png",
+      "dilated_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/dilated_masks/000595@0.png",
+      "output": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/000595@0.png",
+      "seed": 20260849
+    },
+    {
+      "index": 124,
+      "source": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/images_matching_BUS_COT_test_ids/000647@0.png",
+      "source_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/masks/000647@0.png",
+      "dilated_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/dilated_masks/000647@0.png",
+      "output": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/000647@0.png",
+      "seed": 20260852
+    },
+    {
+      "index": 127,
+      "source": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/images_matching_BUS_COT_test_ids/000660@0.png",
+      "source_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/masks/000660@0.png",
+      "dilated_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/dilated_masks/000660@0.png",
+      "output": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/000660@0.png",
+      "seed": 20260855
+    },
+    {
+      "index": 130,
+      "source": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/images_matching_BUS_COT_test_ids/000696@0.png",
+      "source_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/masks/000696@0.png",
+      "dilated_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/dilated_masks/000696@0.png",
+      "output": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/000696@0.png",
+      "seed": 20260858
+    },
+    {
+      "index": 133,
+      "source": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/images_matching_BUS_COT_test_ids/000704@0.png",
+      "source_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/masks/000704@0.png",
+      "dilated_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/dilated_masks/000704@0.png",
+      "output": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/000704@0.png",
+      "seed": 20260861
+    },
+    {
+      "index": 136,
+      "source": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/images_matching_BUS_COT_test_ids/000723@0.png",
+      "source_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/masks/000723@0.png",
+      "dilated_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/dilated_masks/000723@0.png",
+      "output": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/000723@0.png",
+      "seed": 20260864
+    },
+    {
+      "index": 139,
+      "source": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/images_matching_BUS_COT_test_ids/000728@0.png",
+      "source_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/masks/000728@0.png",
+      "dilated_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/dilated_masks/000728@0.png",
+      "output": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/000728@0.png",
+      "seed": 20260867
+    },
+    {
+      "index": 142,
+      "source": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/images_matching_BUS_COT_test_ids/000744@0.png",
+      "source_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/masks/000744@0.png",
+      "dilated_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/dilated_masks/000744@0.png",
+      "output": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/000744@0.png",
+      "seed": 20260870
+    },
+    {
+      "index": 145,
+      "source": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/images_matching_BUS_COT_test_ids/000757@0.png",
+      "source_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/masks/000757@0.png",
+      "dilated_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/dilated_masks/000757@0.png",
+      "output": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/000757@0.png",
+      "seed": 20260873
+    },
+    {
+      "index": 148,
+      "source": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/images_matching_BUS_COT_test_ids/000772@0.png",
+      "source_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/masks/000772@0.png",
+      "dilated_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/dilated_masks/000772@0.png",
+      "output": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/000772@0.png",
+      "seed": 20260876
+    },
+    {
+      "index": 151,
+      "source": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/images_matching_BUS_COT_test_ids/000785@0.png",
+      "source_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/masks/000785@0.png",
+      "dilated_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/dilated_masks/000785@0.png",
+      "output": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/000785@0.png",
+      "seed": 20260879
+    },
+    {
+      "index": 154,
+      "source": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/images_matching_BUS_COT_test_ids/000788@0.png",
+      "source_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/masks/000788@0.png",
+      "dilated_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/dilated_masks/000788@0.png",
+      "output": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/000788@0.png",
+      "seed": 20260882
+    },
+    {
+      "index": 157,
+      "source": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/images_matching_BUS_COT_test_ids/000793@0.png",
+      "source_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/masks/000793@0.png",
+      "dilated_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/dilated_masks/000793@0.png",
+      "output": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/000793@0.png",
+      "seed": 20260885
+    },
+    {
+      "index": 160,
+      "source": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/images_matching_BUS_COT_test_ids/000815@0.png",
+      "source_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/masks/000815@0.png",
+      "dilated_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/dilated_masks/000815@0.png",
+      "output": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/000815@0.png",
+      "seed": 20260888
+    },
+    {
+      "index": 163,
+      "source": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/images_matching_BUS_COT_test_ids/001635@0.png",
+      "source_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/masks/001635@0.png",
+      "dilated_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/dilated_masks/001635@0.png",
+      "output": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/001635@0.png",
+      "seed": 20260891
+    },
+    {
+      "index": 166,
+      "source": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/images_matching_BUS_COT_test_ids/001643@0.png",
+      "source_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/masks/001643@0.png",
+      "dilated_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/dilated_masks/001643@0.png",
+      "output": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/001643@0.png",
+      "seed": 20260894
+    },
+    {
+      "index": 169,
+      "source": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/images_matching_BUS_COT_test_ids/001670@0.png",
+      "source_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/masks/001670@0.png",
+      "dilated_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/dilated_masks/001670@0.png",
+      "output": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/001670@0.png",
+      "seed": 20260897
+    },
+    {
+      "index": 172,
+      "source": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/images_matching_BUS_COT_test_ids/001689@0.png",
+      "source_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/masks/001689@0.png",
+      "dilated_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/dilated_masks/001689@0.png",
+      "output": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/001689@0.png",
+      "seed": 20260900
+    },
+    {
+      "index": 175,
+      "source": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/images_matching_BUS_COT_test_ids/001699@0.png",
+      "source_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/masks/001699@0.png",
+      "dilated_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/dilated_masks/001699@0.png",
+      "output": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/001699@0.png",
+      "seed": 20260903
+    },
+    {
+      "index": 178,
+      "source": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/images_matching_BUS_COT_test_ids/001726@0.png",
+      "source_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/masks/001726@0.png",
+      "dilated_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/dilated_masks/001726@0.png",
+      "output": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/001726@0.png",
+      "seed": 20260906
+    },
+    {
+      "index": 181,
+      "source": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/images_matching_BUS_COT_test_ids/001751@0.png",
+      "source_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/masks/001751@0.png",
+      "dilated_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/dilated_masks/001751@0.png",
+      "output": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/001751@0.png",
+      "seed": 20260909
+    },
+    {
+      "index": 184,
+      "source": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/images_matching_BUS_COT_test_ids/001754@0.png",
+      "source_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/masks/001754@0.png",
+      "dilated_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/dilated_masks/001754@0.png",
+      "output": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/001754@0.png",
+      "seed": 20260912
+    },
+    {
+      "index": 187,
+      "source": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/images_matching_BUS_COT_test_ids/001770@0.png",
+      "source_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/masks/001770@0.png",
+      "dilated_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/dilated_masks/001770@0.png",
+      "output": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/001770@0.png",
+      "seed": 20260915
+    },
+    {
+      "index": 190,
+      "source": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/images_matching_BUS_COT_test_ids/001777@0.png",
+      "source_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/masks/001777@0.png",
+      "dilated_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/dilated_masks/001777@0.png",
+      "output": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/001777@0.png",
+      "seed": 20260918
+    },
+    {
+      "index": 193,
+      "source": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/images_matching_BUS_COT_test_ids/001792@0.png",
+      "source_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/masks/001792@0.png",
+      "dilated_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/dilated_masks/001792@0.png",
+      "output": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/001792@0.png",
+      "seed": 20260921
+    },
+    {
+      "index": 196,
+      "source": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/images_matching_BUS_COT_test_ids/001802@0.png",
+      "source_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/masks/001802@0.png",
+      "dilated_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/dilated_masks/001802@0.png",
+      "output": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/001802@0.png",
+      "seed": 20260924
+    },
+    {
+      "index": 199,
+      "source": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/images_matching_BUS_COT_test_ids/001813@0.png",
+      "source_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/masks/001813@0.png",
+      "dilated_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/dilated_masks/001813@0.png",
+      "output": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/001813@0.png",
+      "seed": 20260927
+    },
+    {
+      "index": 202,
+      "source": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/images_matching_BUS_COT_test_ids/001826@0.png",
+      "source_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/masks/001826@0.png",
+      "dilated_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/dilated_masks/001826@0.png",
+      "output": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/001826@0.png",
+      "seed": 20260930
+    },
+    {
+      "index": 205,
+      "source": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/images_matching_BUS_COT_test_ids/001838@0.png",
+      "source_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/masks/001838@0.png",
+      "dilated_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/dilated_masks/001838@0.png",
+      "output": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/001838@0.png",
+      "seed": 20260933
+    },
+    {
+      "index": 208,
+      "source": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/images_matching_BUS_COT_test_ids/001869@0.png",
+      "source_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/masks/001869@0.png",
+      "dilated_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/dilated_masks/001869@0.png",
+      "output": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/001869@0.png",
+      "seed": 20260936
+    },
+    {
+      "index": 211,
+      "source": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/images_matching_BUS_COT_test_ids/001884@0.png",
+      "source_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/masks/001884@0.png",
+      "dilated_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/dilated_masks/001884@0.png",
+      "output": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/001884@0.png",
+      "seed": 20260939
+    },
+    {
+      "index": 214,
+      "source": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/images_matching_BUS_COT_test_ids/001897@0.png",
+      "source_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/masks/001897@0.png",
+      "dilated_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/dilated_masks/001897@0.png",
+      "output": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/001897@0.png",
+      "seed": 20260942
+    },
+    {
+      "index": 217,
+      "source": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/images_matching_BUS_COT_test_ids/001915@0.png",
+      "source_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/masks/001915@0.png",
+      "dilated_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/dilated_masks/001915@0.png",
+      "output": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/001915@0.png",
+      "seed": 20260945
+    },
+    {
+      "index": 220,
+      "source": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/images_matching_BUS_COT_test_ids/001930@0.png",
+      "source_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/masks/001930@0.png",
+      "dilated_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/dilated_masks/001930@0.png",
+      "output": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/001930@0.png",
+      "seed": 20260948
+    },
+    {
+      "index": 223,
+      "source": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/images_matching_BUS_COT_test_ids/001953@0.png",
+      "source_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/masks/001953@0.png",
+      "dilated_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/dilated_masks/001953@0.png",
+      "output": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/001953@0.png",
+      "seed": 20260951
+    },
+    {
+      "index": 226,
+      "source": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/images_matching_BUS_COT_test_ids/001968@0.png",
+      "source_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/masks/001968@0.png",
+      "dilated_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/dilated_masks/001968@0.png",
+      "output": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/001968@0.png",
+      "seed": 20260954
+    },
+    {
+      "index": 229,
+      "source": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/images_matching_BUS_COT_test_ids/001977@0.png",
+      "source_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/masks/001977@0.png",
+      "dilated_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/dilated_masks/001977@0.png",
+      "output": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/001977@0.png",
+      "seed": 20260957
+    },
+    {
+      "index": 232,
+      "source": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/images_matching_BUS_COT_test_ids/001994@0.png",
+      "source_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/masks/001994@0.png",
+      "dilated_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/dilated_masks/001994@0.png",
+      "output": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/001994@0.png",
+      "seed": 20260960
+    },
+    {
+      "index": 235,
+      "source": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/images_matching_BUS_COT_test_ids/002021@0.png",
+      "source_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/masks/002021@0.png",
+      "dilated_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/dilated_masks/002021@0.png",
+      "output": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/002021@0.png",
+      "seed": 20260963
+    },
+    {
+      "index": 238,
+      "source": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/images_matching_BUS_COT_test_ids/002026@0.png",
+      "source_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/masks/002026@0.png",
+      "dilated_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/dilated_masks/002026@0.png",
+      "output": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/002026@0.png",
+      "seed": 20260966
+    },
+    {
+      "index": 241,
+      "source": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/images_matching_BUS_COT_test_ids/003041@0.png",
+      "source_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/masks/003041@0.png",
+      "dilated_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/dilated_masks/003041@0.png",
+      "output": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/003041@0.png",
+      "seed": 20260969
+    },
+    {
+      "index": 244,
+      "source": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/images_matching_BUS_COT_test_ids/003054@0.png",
+      "source_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/masks/003054@0.png",
+      "dilated_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/dilated_masks/003054@0.png",
+      "output": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/003054@0.png",
+      "seed": 20260972
+    },
+    {
+      "index": 247,
+      "source": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/images_matching_BUS_COT_test_ids/003071@0.png",
+      "source_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/masks/003071@0.png",
+      "dilated_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/dilated_masks/003071@0.png",
+      "output": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/003071@0.png",
+      "seed": 20260975
+    },
+    {
+      "index": 250,
+      "source": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/images_matching_BUS_COT_test_ids/003095@0.png",
+      "source_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/masks/003095@0.png",
+      "dilated_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/dilated_masks/003095@0.png",
+      "output": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/003095@0.png",
+      "seed": 20260978
+    },
+    {
+      "index": 253,
+      "source": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/images_matching_BUS_COT_test_ids/003134@0.png",
+      "source_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/masks/003134@0.png",
+      "dilated_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/dilated_masks/003134@0.png",
+      "output": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/003134@0.png",
+      "seed": 20260981
+    },
+    {
+      "index": 256,
+      "source": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/images_matching_BUS_COT_test_ids/003169@0.png",
+      "source_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/masks/003169@0.png",
+      "dilated_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/dilated_masks/003169@0.png",
+      "output": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/003169@0.png",
+      "seed": 20260984
+    },
+    {
+      "index": 259,
+      "source": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/images_matching_BUS_COT_test_ids/003186@0.png",
+      "source_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/masks/003186@0.png",
+      "dilated_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/dilated_masks/003186@0.png",
+      "output": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/003186@0.png",
+      "seed": 20260987
+    },
+    {
+      "index": 262,
+      "source": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/images_matching_BUS_COT_test_ids/003221@0.png",
+      "source_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/masks/003221@0.png",
+      "dilated_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/dilated_masks/003221@0.png",
+      "output": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/003221@0.png",
+      "seed": 20260990
+    },
+    {
+      "index": 265,
+      "source": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/images_matching_BUS_COT_test_ids/003239@0.png",
+      "source_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/masks/003239@0.png",
+      "dilated_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/dilated_masks/003239@0.png",
+      "output": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/003239@0.png",
+      "seed": 20260993
+    },
+    {
+      "index": 268,
+      "source": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/images_matching_BUS_COT_test_ids/003256@0.png",
+      "source_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/masks/003256@0.png",
+      "dilated_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/dilated_masks/003256@0.png",
+      "output": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/003256@0.png",
+      "seed": 20260996
+    },
+    {
+      "index": 271,
+      "source": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/images_matching_BUS_COT_test_ids/003267@0.png",
+      "source_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/masks/003267@0.png",
+      "dilated_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/dilated_masks/003267@0.png",
+      "output": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/003267@0.png",
+      "seed": 20260999
+    },
+    {
+      "index": 274,
+      "source": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/images_matching_BUS_COT_test_ids/003291@0.png",
+      "source_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/masks/003291@0.png",
+      "dilated_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/dilated_masks/003291@0.png",
+      "output": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/003291@0.png",
+      "seed": 20261002
+    },
+    {
+      "index": 277,
+      "source": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/images_matching_BUS_COT_test_ids/003301@0.png",
+      "source_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/masks/003301@0.png",
+      "dilated_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/dilated_masks/003301@0.png",
+      "output": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/003301@0.png",
+      "seed": 20261005
+    },
+    {
+      "index": 280,
+      "source": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/images_matching_BUS_COT_test_ids/003310@0.png",
+      "source_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/masks/003310@0.png",
+      "dilated_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/dilated_masks/003310@0.png",
+      "output": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/003310@0.png",
+      "seed": 20261008
+    },
+    {
+      "index": 283,
+      "source": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/images_matching_BUS_COT_test_ids/003341@0.png",
+      "source_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/masks/003341@0.png",
+      "dilated_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/dilated_masks/003341@0.png",
+      "output": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/003341@0.png",
+      "seed": 20261011
+    },
+    {
+      "index": 286,
+      "source": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/images_matching_BUS_COT_test_ids/003357@0.png",
+      "source_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/masks/003357@0.png",
+      "dilated_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/dilated_masks/003357@0.png",
+      "output": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/003357@0.png",
+      "seed": 20261014
+    },
+    {
+      "index": 289,
+      "source": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/images_matching_BUS_COT_test_ids/003387@0.png",
+      "source_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/masks/003387@0.png",
+      "dilated_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/dilated_masks/003387@0.png",
+      "output": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/003387@0.png",
+      "seed": 20261017
+    },
+    {
+      "index": 292,
+      "source": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/images_matching_BUS_COT_test_ids/003407@0.png",
+      "source_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/masks/003407@0.png",
+      "dilated_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/dilated_masks/003407@0.png",
+      "output": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/003407@0.png",
+      "seed": 20261020
+    },
+    {
+      "index": 295,
+      "source": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/images_matching_BUS_COT_test_ids/003421@0.png",
+      "source_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/masks/003421@0.png",
+      "dilated_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/dilated_masks/003421@0.png",
+      "output": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/003421@0.png",
+      "seed": 20261023
+    },
+    {
+      "index": 298,
+      "source": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/images_matching_BUS_COT_test_ids/003436@0.png",
+      "source_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/masks/003436@0.png",
+      "dilated_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/dilated_masks/003436@0.png",
+      "output": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/003436@0.png",
+      "seed": 20261026
+    },
+    {
+      "index": 301,
+      "source": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/images_matching_BUS_COT_test_ids/003455@0.png",
+      "source_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/masks/003455@0.png",
+      "dilated_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/dilated_masks/003455@0.png",
+      "output": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/003455@0.png",
+      "seed": 20261029
+    },
+    {
+      "index": 304,
+      "source": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/images_matching_BUS_COT_test_ids/003483@0.png",
+      "source_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/masks/003483@0.png",
+      "dilated_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/dilated_masks/003483@0.png",
+      "output": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/003483@0.png",
+      "seed": 20261032
+    },
+    {
+      "index": 307,
+      "source": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/images_matching_BUS_COT_test_ids/003487@0.png",
+      "source_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/masks/003487@0.png",
+      "dilated_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/dilated_masks/003487@0.png",
+      "output": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/003487@0.png",
+      "seed": 20261035
+    },
+    {
+      "index": 310,
+      "source": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/images_matching_BUS_COT_test_ids/003505@0.png",
+      "source_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/masks/003505@0.png",
+      "dilated_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/dilated_masks/003505@0.png",
+      "output": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/003505@0.png",
+      "seed": 20261038
+    },
+    {
+      "index": 313,
+      "source": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/images_matching_BUS_COT_test_ids/003523@0.png",
+      "source_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/masks/003523@0.png",
+      "dilated_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/dilated_masks/003523@0.png",
+      "output": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/003523@0.png",
+      "seed": 20261041
+    },
+    {
+      "index": 316,
+      "source": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/images_matching_BUS_COT_test_ids/003541@0.png",
+      "source_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/masks/003541@0.png",
+      "dilated_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/dilated_masks/003541@0.png",
+      "output": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/003541@0.png",
+      "seed": 20261044
+    },
+    {
+      "index": 319,
+      "source": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/images_matching_BUS_COT_test_ids/003580@0.png",
+      "source_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/masks/003580@0.png",
+      "dilated_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/dilated_masks/003580@0.png",
+      "output": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/003580@0.png",
+      "seed": 20261047
+    },
+    {
+      "index": 322,
+      "source": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/images_matching_BUS_COT_test_ids/003594@0.png",
+      "source_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/masks/003594@0.png",
+      "dilated_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/dilated_masks/003594@0.png",
+      "output": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/003594@0.png",
+      "seed": 20261050
+    },
+    {
+      "index": 325,
+      "source": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/images_matching_BUS_COT_test_ids/003608@0.png",
+      "source_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/masks/003608@0.png",
+      "dilated_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/dilated_masks/003608@0.png",
+      "output": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/003608@0.png",
+      "seed": 20261053
+    },
+    {
+      "index": 328,
+      "source": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/images_matching_BUS_COT_test_ids/003620@0.png",
+      "source_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/masks/003620@0.png",
+      "dilated_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/dilated_masks/003620@0.png",
+      "output": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/003620@0.png",
+      "seed": 20261056
+    },
+    {
+      "index": 331,
+      "source": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/images_matching_BUS_COT_test_ids/003632@0.png",
+      "source_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/masks/003632@0.png",
+      "dilated_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/dilated_masks/003632@0.png",
+      "output": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/003632@0.png",
+      "seed": 20261059
+    },
+    {
+      "index": 334,
+      "source": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/images_matching_BUS_COT_test_ids/003654@0.png",
+      "source_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/masks/003654@0.png",
+      "dilated_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/dilated_masks/003654@0.png",
+      "output": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/003654@0.png",
+      "seed": 20261062
+    },
+    {
+      "index": 337,
+      "source": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/images_matching_BUS_COT_test_ids/003671@0.png",
+      "source_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/masks/003671@0.png",
+      "dilated_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/dilated_masks/003671@0.png",
+      "output": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/003671@0.png",
+      "seed": 20261065
+    },
+    {
+      "index": 340,
+      "source": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/images_matching_BUS_COT_test_ids/003680@0.png",
+      "source_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/masks/003680@0.png",
+      "dilated_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/dilated_masks/003680@0.png",
+      "output": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/003680@0.png",
+      "seed": 20261068
+    },
+    {
+      "index": 343,
+      "source": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/images_matching_BUS_COT_test_ids/006167@0.png",
+      "source_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/masks/006167@0.png",
+      "dilated_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/dilated_masks/006167@0.png",
+      "output": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/006167@0.png",
+      "seed": 20261071
+    },
+    {
+      "index": 346,
+      "source": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/images_matching_BUS_COT_test_ids/006172@0.png",
+      "source_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/masks/006172@0.png",
+      "dilated_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/dilated_masks/006172@0.png",
+      "output": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/006172@0.png",
+      "seed": 20261074
+    },
+    {
+      "index": 349,
+      "source": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/images_matching_BUS_COT_test_ids/006262@0.png",
+      "source_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/masks/006262@0.png",
+      "dilated_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/dilated_masks/006262@0.png",
+      "output": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/006262@0.png",
+      "seed": 20261077
+    },
+    {
+      "index": 352,
+      "source": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/images_matching_BUS_COT_test_ids/006319@0.png",
+      "source_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/masks/006319@0.png",
+      "dilated_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/dilated_masks/006319@0.png",
+      "output": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/006319@0.png",
+      "seed": 20261080
+    },
+    {
+      "index": 355,
+      "source": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/images_matching_BUS_COT_test_ids/006344@0.png",
+      "source_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/masks/006344@0.png",
+      "dilated_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/dilated_masks/006344@0.png",
+      "output": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/006344@0.png",
+      "seed": 20261083
+    },
+    {
+      "index": 358,
+      "source": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/images_matching_BUS_COT_test_ids/006371@0.png",
+      "source_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/masks/006371@0.png",
+      "dilated_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/dilated_masks/006371@0.png",
+      "output": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/006371@0.png",
+      "seed": 20261086
+    },
+    {
+      "index": 361,
+      "source": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/images_matching_BUS_COT_test_ids/006422@0.png",
+      "source_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/masks/006422@0.png",
+      "dilated_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/dilated_masks/006422@0.png",
+      "output": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/006422@0.png",
+      "seed": 20261089
+    },
+    {
+      "index": 364,
+      "source": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/images_matching_BUS_COT_test_ids/006425@0.png",
+      "source_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/masks/006425@0.png",
+      "dilated_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/dilated_masks/006425@0.png",
+      "output": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/006425@0.png",
+      "seed": 20261092
+    },
+    {
+      "index": 367,
+      "source": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/images_matching_BUS_COT_test_ids/006468@0.png",
+      "source_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/masks/006468@0.png",
+      "dilated_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/dilated_masks/006468@0.png",
+      "output": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/006468@0.png",
+      "seed": 20261095
+    },
+    {
+      "index": 370,
+      "source": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/images_matching_BUS_COT_test_ids/006559@0.png",
+      "source_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/masks/006559@0.png",
+      "dilated_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/dilated_masks/006559@0.png",
+      "output": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/006559@0.png",
+      "seed": 20261098
+    },
+    {
+      "index": 373,
+      "source": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/images_matching_BUS_COT_test_ids/006705@0.png",
+      "source_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/masks/006705@0.png",
+      "dilated_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/dilated_masks/006705@0.png",
+      "output": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/006705@0.png",
+      "seed": 20261101
+    },
+    {
+      "index": 376,
+      "source": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/images_matching_BUS_COT_test_ids/006726@0.png",
+      "source_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/masks/006726@0.png",
+      "dilated_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/dilated_masks/006726@0.png",
+      "output": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/006726@0.png",
+      "seed": 20261104
+    },
+    {
+      "index": 379,
+      "source": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/images_matching_BUS_COT_test_ids/006729@0.png",
+      "source_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/masks/006729@0.png",
+      "dilated_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/dilated_masks/006729@0.png",
+      "output": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/006729@0.png",
+      "seed": 20261107
+    },
+    {
+      "index": 382,
+      "source": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/images_matching_BUS_COT_test_ids/007046@0.png",
+      "source_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/masks/007046@0.png",
+      "dilated_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/dilated_masks/007046@0.png",
+      "output": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/007046@0.png",
+      "seed": 20261110
+    },
+    {
+      "index": 385,
+      "source": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/images_matching_BUS_COT_test_ids/007053@0.png",
+      "source_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/masks/007053@0.png",
+      "dilated_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/dilated_masks/007053@0.png",
+      "output": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/007053@0.png",
+      "seed": 20261113
+    },
+    {
+      "index": 388,
+      "source": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/images_matching_BUS_COT_test_ids/007107@0.png",
+      "source_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/masks/007107@0.png",
+      "dilated_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/dilated_masks/007107@0.png",
+      "output": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/007107@0.png",
+      "seed": 20261116
+    },
+    {
+      "index": 391,
+      "source": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/images_matching_BUS_COT_test_ids/007137@0.png",
+      "source_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/masks/007137@0.png",
+      "dilated_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/dilated_masks/007137@0.png",
+      "output": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/007137@0.png",
+      "seed": 20261119
+    },
+    {
+      "index": 394,
+      "source": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/images_matching_BUS_COT_test_ids/007176@0.png",
+      "source_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/masks/007176@0.png",
+      "dilated_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/dilated_masks/007176@0.png",
+      "output": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/007176@0.png",
+      "seed": 20261122
+    },
+    {
+      "index": 397,
+      "source": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/images_matching_BUS_COT_test_ids/007210@0.png",
+      "source_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/masks/007210@0.png",
+      "dilated_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/dilated_masks/007210@0.png",
+      "output": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/007210@0.png",
+      "seed": 20261125
+    },
+    {
+      "index": 400,
+      "source": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/images_matching_BUS_COT_test_ids/007288@0.png",
+      "source_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/masks/007288@0.png",
+      "dilated_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/dilated_masks/007288@0.png",
+      "output": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/007288@0.png",
+      "seed": 20261128
+    },
+    {
+      "index": 403,
+      "source": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/images_matching_BUS_COT_test_ids/007291@0.png",
+      "source_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/masks/007291@0.png",
+      "dilated_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/dilated_masks/007291@0.png",
+      "output": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/007291@0.png",
+      "seed": 20261131
+    },
+    {
+      "index": 406,
+      "source": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/images_matching_BUS_COT_test_ids/007296@0.png",
+      "source_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/masks/007296@0.png",
+      "dilated_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/dilated_masks/007296@0.png",
+      "output": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/007296@0.png",
+      "seed": 20261134
+    },
+    {
+      "index": 409,
+      "source": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/images_matching_BUS_COT_test_ids/007307@0.png",
+      "source_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/masks/007307@0.png",
+      "dilated_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/dilated_masks/007307@0.png",
+      "output": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/007307@0.png",
+      "seed": 20261137
+    },
+    {
+      "index": 412,
+      "source": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/images_matching_BUS_COT_test_ids/007360@0.png",
+      "source_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/masks/007360@0.png",
+      "dilated_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/dilated_masks/007360@0.png",
+      "output": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/007360@0.png",
+      "seed": 20261140
+    },
+    {
+      "index": 415,
+      "source": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/images_matching_BUS_COT_test_ids/007405@0.png",
+      "source_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/masks/007405@0.png",
+      "dilated_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/dilated_masks/007405@0.png",
+      "output": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/007405@0.png",
+      "seed": 20261143
+    },
+    {
+      "index": 418,
+      "source": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/images_matching_BUS_COT_test_ids/007409@0.png",
+      "source_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/masks/007409@0.png",
+      "dilated_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/dilated_masks/007409@0.png",
+      "output": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/007409@0.png",
+      "seed": 20261146
+    },
+    {
+      "index": 421,
+      "source": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/images_matching_BUS_COT_test_ids/007417@0.png",
+      "source_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/masks/007417@0.png",
+      "dilated_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/dilated_masks/007417@0.png",
+      "output": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/007417@0.png",
+      "seed": 20261149
+    },
+    {
+      "index": 424,
+      "source": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/images_matching_BUS_COT_test_ids/007480@0.png",
+      "source_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/masks/007480@0.png",
+      "dilated_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/dilated_masks/007480@0.png",
+      "output": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/007480@0.png",
+      "seed": 20261152
+    },
+    {
+      "index": 427,
+      "source": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/images_matching_BUS_COT_test_ids/007505@0.png",
+      "source_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/masks/007505@0.png",
+      "dilated_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/dilated_masks/007505@0.png",
+      "output": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/007505@0.png",
+      "seed": 20261155
+    },
+    {
+      "index": 430,
+      "source": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/images_matching_BUS_COT_test_ids/007510@0.png",
+      "source_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/masks/007510@0.png",
+      "dilated_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/dilated_masks/007510@0.png",
+      "output": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/007510@0.png",
+      "seed": 20261158
+    },
+    {
+      "index": 433,
+      "source": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/images_matching_BUS_COT_test_ids/007568@0.png",
+      "source_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/masks/007568@0.png",
+      "dilated_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/dilated_masks/007568@0.png",
+      "output": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/007568@0.png",
+      "seed": 20261161
+    },
+    {
+      "index": 436,
+      "source": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/images_matching_BUS_COT_test_ids/007573@0.png",
+      "source_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/masks/007573@0.png",
+      "dilated_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/dilated_masks/007573@0.png",
+      "output": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/007573@0.png",
+      "seed": 20261164
+    },
+    {
+      "index": 439,
+      "source": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/images_matching_BUS_COT_test_ids/007677@0.png",
+      "source_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/masks/007677@0.png",
+      "dilated_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/dilated_masks/007677@0.png",
+      "output": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/007677@0.png",
+      "seed": 20261167
+    },
+    {
+      "index": 442,
+      "source": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/images_matching_BUS_COT_test_ids/007705@0.png",
+      "source_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/masks/007705@0.png",
+      "dilated_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/dilated_masks/007705@0.png",
+      "output": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/007705@0.png",
+      "seed": 20261170
+    },
+    {
+      "index": 445,
+      "source": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/images_matching_BUS_COT_test_ids/007776@0.png",
+      "source_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/masks/007776@0.png",
+      "dilated_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/dilated_masks/007776@0.png",
+      "output": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/007776@0.png",
+      "seed": 20261173
+    },
+    {
+      "index": 448,
+      "source": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/images_matching_BUS_COT_test_ids/007857@0.png",
+      "source_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/masks/007857@0.png",
+      "dilated_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/dilated_masks/007857@0.png",
+      "output": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/007857@0.png",
+      "seed": 20261176
+    },
+    {
+      "index": 451,
+      "source": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/images_matching_BUS_COT_test_ids/007910@0.png",
+      "source_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/masks/007910@0.png",
+      "dilated_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/dilated_masks/007910@0.png",
+      "output": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/007910@0.png",
+      "seed": 20261179
+    },
+    {
+      "index": 454,
+      "source": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/images_matching_BUS_COT_test_ids/008047@0.png",
+      "source_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/masks/008047@0.png",
+      "dilated_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/dilated_masks/008047@0.png",
+      "output": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/008047@0.png",
+      "seed": 20261182
+    },
+    {
+      "index": 457,
+      "source": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/images_matching_BUS_COT_test_ids/008138@0.png",
+      "source_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/masks/008138@0.png",
+      "dilated_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/dilated_masks/008138@0.png",
+      "output": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/008138@0.png",
+      "seed": 20261185
+    },
+    {
+      "index": 460,
+      "source": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/images_matching_BUS_COT_test_ids/008175@0.png",
+      "source_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/masks/008175@0.png",
+      "dilated_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/dilated_masks/008175@0.png",
+      "output": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/008175@0.png",
+      "seed": 20261188
+    },
+    {
+      "index": 463,
+      "source": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/images_matching_BUS_COT_test_ids/008182@0.png",
+      "source_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/masks/008182@0.png",
+      "dilated_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/dilated_masks/008182@0.png",
+      "output": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/008182@0.png",
+      "seed": 20261191
+    },
+    {
+      "index": 466,
+      "source": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/images_matching_BUS_COT_test_ids/008191@0.png",
+      "source_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/masks/008191@0.png",
+      "dilated_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/dilated_masks/008191@0.png",
+      "output": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/008191@0.png",
+      "seed": 20261194
+    },
+    {
+      "index": 469,
+      "source": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/images_matching_BUS_COT_test_ids/008490@0.png",
+      "source_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/masks/008490@0.png",
+      "dilated_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/dilated_masks/008490@0.png",
+      "output": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/008490@0.png",
+      "seed": 20261197
+    },
+    {
+      "index": 472,
+      "source": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/images_matching_BUS_COT_test_ids/008498@0.png",
+      "source_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/masks/008498@0.png",
+      "dilated_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/dilated_masks/008498@0.png",
+      "output": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/008498@0.png",
+      "seed": 20261200
+    },
+    {
+      "index": 475,
+      "source": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/images_matching_BUS_COT_test_ids/008518@0.png",
+      "source_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/masks/008518@0.png",
+      "dilated_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/dilated_masks/008518@0.png",
+      "output": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/008518@0.png",
+      "seed": 20261203
+    },
+    {
+      "index": 478,
+      "source": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/images_matching_BUS_COT_test_ids/008575@0.png",
+      "source_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/masks/008575@0.png",
+      "dilated_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/dilated_masks/008575@0.png",
+      "output": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/008575@0.png",
+      "seed": 20261206
+    },
+    {
+      "index": 481,
+      "source": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/images_matching_BUS_COT_test_ids/008582@0.png",
+      "source_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/masks/008582@0.png",
+      "dilated_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/dilated_masks/008582@0.png",
+      "output": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/008582@0.png",
+      "seed": 20261209
+    },
+    {
+      "index": 484,
+      "source": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/images_matching_BUS_COT_test_ids/008588@0.png",
+      "source_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/masks/008588@0.png",
+      "dilated_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/dilated_masks/008588@0.png",
+      "output": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/008588@0.png",
+      "seed": 20261212
+    },
+    {
+      "index": 487,
+      "source": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/images_matching_BUS_COT_test_ids/008619@0.png",
+      "source_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/masks/008619@0.png",
+      "dilated_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/dilated_masks/008619@0.png",
+      "output": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/008619@0.png",
+      "seed": 20261215
+    },
+    {
+      "index": 490,
+      "source": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/images_matching_BUS_COT_test_ids/008632@0.png",
+      "source_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/masks/008632@0.png",
+      "dilated_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/dilated_masks/008632@0.png",
+      "output": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/008632@0.png",
+      "seed": 20261218
+    },
+    {
+      "index": 493,
+      "source": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/images_matching_BUS_COT_test_ids/008641@0.png",
+      "source_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/masks/008641@0.png",
+      "dilated_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/dilated_masks/008641@0.png",
+      "output": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/008641@0.png",
+      "seed": 20261221
+    },
+    {
+      "index": 496,
+      "source": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/images_matching_BUS_COT_test_ids/008672@0.png",
+      "source_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/masks/008672@0.png",
+      "dilated_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/dilated_masks/008672@0.png",
+      "output": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/008672@0.png",
+      "seed": 20261224
+    },
+    {
+      "index": 499,
+      "source": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/images_matching_BUS_COT_test_ids/008749@0.png",
+      "source_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/masks/008749@0.png",
+      "dilated_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/dilated_masks/008749@0.png",
+      "output": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/008749@0.png",
+      "seed": 20261227
+    },
+    {
+      "index": 502,
+      "source": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/images_matching_BUS_COT_test_ids/008785@0.png",
+      "source_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/masks/008785@0.png",
+      "dilated_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/dilated_masks/008785@0.png",
+      "output": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/008785@0.png",
+      "seed": 20261230
+    },
+    {
+      "index": 505,
+      "source": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/images_matching_BUS_COT_test_ids/008788@0.png",
+      "source_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/masks/008788@0.png",
+      "dilated_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/dilated_masks/008788@0.png",
+      "output": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/008788@0.png",
+      "seed": 20261233
+    },
+    {
+      "index": 508,
+      "source": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/images_matching_BUS_COT_test_ids/008950@0.png",
+      "source_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/masks/008950@0.png",
+      "dilated_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/dilated_masks/008950@0.png",
+      "output": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/008950@0.png",
+      "seed": 20261236
+    },
+    {
+      "index": 511,
+      "source": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/images_matching_BUS_COT_test_ids/009175@0.png",
+      "source_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/masks/009175@0.png",
+      "dilated_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/dilated_masks/009175@0.png",
+      "output": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/009175@0.png",
+      "seed": 20261239
+    },
+    {
+      "index": 514,
+      "source": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/images_matching_BUS_COT_test_ids/009178@0.png",
+      "source_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/masks/009178@0.png",
+      "dilated_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/dilated_masks/009178@0.png",
+      "output": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/009178@0.png",
+      "seed": 20261242
+    },
+    {
+      "index": 517,
+      "source": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/images_matching_BUS_COT_test_ids/009406@0.png",
+      "source_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/masks/009406@0.png",
+      "dilated_mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/dilated_masks/009406@0.png",
+      "output": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_bus_cot_all_original_masks_dilation9/009406@0.png",
+      "seed": 20261245
+    }
+  ]
+}

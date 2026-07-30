@@ -1,0 +1,5 @@
+class_index,class_label,class_name,positive_count,negative_count,auroc,fpr_at_tpr_0.95,threshold_at_tpr_0.95
+0,bronchus_noise,bronchus_noise,200,600,0.672158333333,0.865,-0.0343264479061
+1,heart_noise,heart_noise,200,600,0.320675,0.981666666667,-0.0735672575309
+2,lung_noise,lung_noise,200,600,0.554475,0.88,-0.0583713148835
+3,normal,normal,200,600,0.455441666667,0.988333333333,-0.0710393386193

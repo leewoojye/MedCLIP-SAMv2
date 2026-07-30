@@ -35,3 +35,63 @@ roco-dataset/
 roco_dataset/
 mri_IXI_480_2/
 mri_IXI_480_2_middle_png/
+
+# Large binary data, archives, and image assets generated or downloaded locally
+*.zip
+*.tar
+*.tar.gz
+*.tgz
+*.gz
+*.bz2
+*.xz
+*.7z
+*.rar
+*.[Jj][Pp][Ee][Gg]
+*.[Jj][Pp][Gg]
+*.[Pp][Nn][Gg]
+*.[Gg][Ii][Ff]
+*.[Bb][Mm][Pp]
+*.[Tt][Ii][Ff]
+*.[Tt][Ii][Ff][Ff]
+*.[Ww][Ee][Bb][Pp]
+*.dcm
+*.DICOM
+
+# Additional model/checkpoint formats
+*.onnx
+*.h5
+*.hdf5
+*.tflite
+*.pb
+*.weights
+*.model
+*.torchscript
+
+# Download/install caches and local Python environments
+.tmp_bioclip_setup/
+.cache/
+.hf_cache/
+.hf_download_cache/
+.pip_cache/
+**/.hf_cache/
+**/.hf_download_cache/
+**/.pip_cache/
+**/.venv/
+**/.venv_*/
+**/env/
+**/envs/
+**/pydeps/
+**/__pycache__/
+*.whl
+
+# Local run by-products
+*.log
+*.pid
+logs/
+dilation_tests/
+
+# These are independent third-party Git clones; do not add broken gitlinks to
+# this repository. Their upstream repositories remain the source of truth.
+bioclip/
+bioclip2/
+biomedcoop/

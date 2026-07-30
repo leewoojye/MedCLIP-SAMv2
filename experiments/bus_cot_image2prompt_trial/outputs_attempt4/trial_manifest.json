@@ -1,0 +1,44 @@
+{
+  "method": "BiomedCLIP normal-image hidden-state injection into Stable Diffusion inpainting",
+  "normal_reference": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/assets/busi_normal_1.png",
+  "manual_trial_masks": true,
+  "mask_dilation_px": 5,
+  "records": [
+    {
+      "source": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/images_matching_BUS_COT_test_ids/000015@0.png",
+      "output": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_attempt4/000015@0.png",
+      "mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_attempt4/trial_masks/000015@0.png",
+      "ellipse_relative_xywh": [
+        0.51,
+        0.34,
+        0.17,
+        0.15
+      ],
+      "seed": 20260728
+    },
+    {
+      "source": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/images_matching_BUS_COT_test_ids/000019@0.png",
+      "output": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_attempt4/000019@0.png",
+      "mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_attempt4/trial_masks/000019@0.png",
+      "ellipse_relative_xywh": [
+        0.535,
+        0.18,
+        0.2,
+        0.13
+      ],
+      "seed": 20260729
+    },
+    {
+      "source": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/images_matching_BUS_COT_test_ids/000020@0.png",
+      "output": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_attempt4/000020@0.png",
+      "mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_attempt4/trial_masks/000020@0.png",
+      "ellipse_relative_xywh": [
+        0.29,
+        0.185,
+        0.29,
+        0.21
+      ],
+      "seed": 20260730
+    }
+  ]
+}

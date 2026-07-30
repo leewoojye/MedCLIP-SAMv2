@@ -1,0 +1,47 @@
+{
+  "protocol": {
+    "name": "Clip4Retrofit-style per-class one-vs-rest ROC-AUC",
+    "score": "raw per-class confidence; cosine similarity for paper reproduction",
+    "auroc": "sklearn roc_curve followed by trapezoidal sklearn auc",
+    "macro_auroc": "unweighted arithmetic mean of per-class AUROCs",
+    "fpr_at_target_tpr": "first attainable ROC point with TPR >= target_tpr",
+    "macro_fpr_at_target_tpr": "unweighted arithmetic mean of per-class FPR@targetTPR"
+  },
+  "n_samples": 326,
+  "n_classes": 3,
+  "target_tpr": 0.95,
+  "macro_auroc": 0.47512804330094066,
+  "macro_fpr_at_target_tpr": 0.9310556698436351,
+  "per_class": [
+    {
+      "class_index": 0,
+      "class_label": "benign",
+      "class_name": "benign",
+      "positive_count": 109,
+      "negative_count": 217,
+      "auroc": 0.6810129793260897,
+      "fpr_at_target_tpr": 0.880184331797235,
+      "threshold_at_target_tpr": 0.22470427693519845
+    },
+    {
+      "class_index": 1,
+      "class_label": "malignant",
+      "class_name": "malignant",
+      "positive_count": 54,
+      "negative_count": 272,
+      "auroc": 0.5941584967320263,
+      "fpr_at_target_tpr": 0.9191176470588235,
+      "threshold_at_target_tpr": 0.2045359557635936
+    },
+    {
+      "class_index": 2,
+      "class_label": "normal",
+      "class_name": "normal",
+      "positive_count": 163,
+      "negative_count": 163,
+      "auroc": 0.15021265384470625,
+      "fpr_at_target_tpr": 0.9938650306748467,
+      "threshold_at_target_tpr": 0.19882538838654246
+    }
+  ]
+}

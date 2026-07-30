@@ -1,0 +1,55 @@
+{
+  "method": "training-free SD-IPC closed-form CLIP image-to-prompt conversion",
+  "paper": "arXiv:2305.12716",
+  "stable_diffusion_model": "stable-diffusion-v1-5/stable-diffusion-inpainting",
+  "scheduler": "DDIM",
+  "normal_reference": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/assets/busi_normal_1.png",
+  "manual_trial_masks": true,
+  "mask_dilation_px": 5,
+  "converter": {
+    "clip_model": "openai/clip-vit-large-patch14",
+    "clip_vision_hidden_size": 1024,
+    "sd_clip_hidden_size": 768,
+    "kept_singular_values": 607,
+    "svd_threshold": 0.3,
+    "converted_token_l2_norm": 33.06402587890625
+  },
+  "records": [
+    {
+      "source": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/images_matching_BUS_COT_test_ids/000015@0.png",
+      "output": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_sd_ipc_closed_form/000015@0.png",
+      "mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_sd_ipc_closed_form/trial_masks/000015@0.png",
+      "ellipse_relative_xywh": [
+        0.51,
+        0.34,
+        0.17,
+        0.15
+      ],
+      "seed": 20260728
+    },
+    {
+      "source": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/images_matching_BUS_COT_test_ids/000019@0.png",
+      "output": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_sd_ipc_closed_form/000019@0.png",
+      "mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_sd_ipc_closed_form/trial_masks/000019@0.png",
+      "ellipse_relative_xywh": [
+        0.535,
+        0.18,
+        0.2,
+        0.13
+      ],
+      "seed": 20260729
+    },
+    {
+      "source": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/data/BUS-COT/images_matching_BUS_COT_test_ids/000020@0.png",
+      "output": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_sd_ipc_closed_form/000020@0.png",
+      "mask": "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/experiments/bus_cot_image2prompt_trial/outputs_sd_ipc_closed_form/trial_masks/000020@0.png",
+      "ellipse_relative_xywh": [
+        0.29,
+        0.185,
+        0.29,
+        0.21
+      ],
+      "seed": 20260730
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "protocol": {
+    "name": "Clip4Retrofit-style per-class one-vs-rest ROC-AUC",
+    "score": "raw per-class confidence; cosine similarity for paper reproduction",
+    "auroc": "sklearn roc_curve followed by trapezoidal sklearn auc",
+    "macro_auroc": "unweighted arithmetic mean of per-class AUROCs",
+    "fpr_at_target_tpr": "first attainable ROC point with TPR >= target_tpr",
+    "macro_fpr_at_target_tpr": "unweighted arithmetic mean of per-class FPR@targetTPR"
+  },
+  "n_samples": 800,
+  "n_classes": 4,
+  "target_tpr": 0.95,
+  "macro_auroc": 0.5100833333333333,
+  "macro_fpr_at_target_tpr": 0.8079166666666667,
+  "per_class": [
+    {
+      "class_index": 0,
+      "class_label": "bronchus_noise",
+      "class_name": "bronchus_noise",
+      "positive_count": 200,
+      "negative_count": 600,
+      "auroc": 0.172325,
+      "fpr_at_target_tpr": 1.0,
+      "threshold_at_target_tpr": -0.049178385922198864
+    },
+    {
+      "class_index": 1,
+      "class_label": "heart_noise",
+      "class_name": "heart_noise",
+      "positive_count": 200,
+      "negative_count": 600,
+      "auroc": 0.48296666666666666,
+      "fpr_at_target_tpr": 0.9383333333333334,
+      "threshold_at_target_tpr": -0.011521065337846659
+    },
+    {
+      "class_index": 2,
+      "class_label": "lung_noise",
+      "class_name": "lung_noise",
+      "positive_count": 200,
+      "negative_count": 600,
+      "auroc": 0.878825,
+      "fpr_at_target_tpr": 0.44666666666666666,
+      "threshold_at_target_tpr": -0.043222150432358566
+    },
+    {
+      "class_index": 3,
+      "class_label": "normal",
+      "class_name": "normal",
+      "positive_count": 200,
+      "negative_count": 600,
+      "auroc": 0.5062166666666666,
+      "fpr_at_target_tpr": 0.8466666666666667,
+      "threshold_at_target_tpr": -0.032063662068886764
+    }
+  ]
+}
