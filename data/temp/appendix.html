@@ -1,0 +1,1534 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>Appendix</title>
+<meta name="data-notion-page-icon" content="📃"/>
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20100%20100%22%3E%3Ctext%20y%3D%22.9em%22%20font-size%3D%2290%22%3E%F0%9F%93%83%3C%2Ftext%3E%3C%2Fsvg%3E"/>
+<style>
+@import url('https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex-swap.min.css');
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+/* Override strong tags inside headings to maintain consistent weight */
+h1 strong,
+h2 strong,
+h3 strong {
+	font-weight: 600;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 10px;
+	padding: 1rem;
+}
+
+/* For default-background callouts, render the border outline. */
+.callout.block-color-default_background {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+figure,
+aside,
+details {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+
+	table.collection-content {
+		width: 100%;
+		table-layout: fixed;
+	}
+
+	table.collection-content th,
+	table.collection-content td {
+		overflow-wrap: anywhere;
+	}
+
+	table.collection-content td > .user,
+	table.collection-content td > time {
+		white-space: pre-wrap;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content-wrapper {
+	overflow-x: auto;
+}
+
+@media only print {
+	.collection-content-wrapper {
+		overflow-x: visible;
+	}
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.collection-content td {
+	white-space: pre-wrap;
+	word-break: break-word;
+}
+
+.column-list {
+	display: flex;
+	gap: 46px;
+}
+
+.column {
+	min-width: 0;
+	overflow: hidden;
+}
+
+.column > *:first-child {
+	margin-top: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding-inline: 0.125rem;
+	padding-block: 0.375rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+table {
+	border-collapse: collapse;
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol.numbered-list.numbered-list-digits-2 {
+	padding-inline-start: 2em;
+}
+
+ol.numbered-list.numbered-list-digits-3plus {
+	padding-inline-start: 2.4em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+/*
+ * Render emoji icons using a ::before pseudo-element to keep the glyph
+ * out of the DOM textContent traversal. This avoids double-rendering icons
+ * in callouts and page titles.
+ * NOTE(slim/html-export-pseudo-icons): I can't tagref this because it will
+ * flag as a duplicate tag after codegen.
+ */
+.icon[data-emoji]::before {
+	content: attr(data-emoji);
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.callout img.notion-static-icon {
+	width: 1em;
+	height: 1em;
+}
+
+.callout p {
+	margin: 0;
+}
+
+.callout h1,
+.callout h2,
+.callout h3 {
+	margin: 0 0 0.6rem;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	margin-right: 0.4em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+blockquote.quote-large {
+	font-size: 1.25em;
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.tab {
+	margin: 1.25em 0;
+	padding-inline: 1rem;
+	border: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.highlight-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.highlight-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.highlight-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.highlight-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.highlight-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.highlight-default_background {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray_background {
+	background: rgba(42, 28, 0, 0.07);
+}
+.highlight-brown_background {
+	background: rgba(139, 46, 0, 0.086);
+}
+.highlight-orange_background {
+	background: rgba(224, 101, 1, 0.129);
+}
+.highlight-yellow_background {
+	background: rgba(211, 168, 0, 0.137);
+}
+.highlight-teal_background {
+	background: rgba(0, 100, 45, 0.09);
+}
+.highlight-blue_background {
+	background: rgba(0, 124, 215, 0.094);
+}
+.highlight-purple_background {
+	background: rgba(102, 0, 178, 0.078);
+}
+.highlight-pink_background {
+	background: rgba(197, 0, 93, 0.086);
+}
+.highlight-red_background {
+	background: rgba(223, 22, 0, 0.094);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.block-color-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.block-color-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.block-color-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.block-color-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.block-color-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(240, 239, 237, 1);
+}
+.block-color-brown_background {
+	background: rgba(245, 237, 233, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 235, 222, 1);
+}
+.block-color-yellow_background {
+	background: rgba(249, 243, 220, 1);
+}
+.block-color-teal_background {
+	background: rgba(232, 241, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(229, 242, 252, 1);
+}
+.block-color-purple_background {
+	background: rgba(243, 235, 249, 1);
+}
+.block-color-pink_background {
+	background: rgba(250, 233, 241, 1);
+}
+.block-color-red_background {
+	background: rgba(252, 233, 231, 1);
+}
+.select-value-color-default { background-color: rgba(42, 28, 0, 0.07); }
+.select-value-color-gray { background-color: rgba(28, 19, 1, 0.11); }
+.select-value-color-brown { background-color: rgba(127, 51, 0, 0.156); }
+.select-value-color-orange { background-color: rgba(196, 88, 0, 0.203); }
+.select-value-color-yellow { background-color: rgba(209, 156, 0, 0.282); }
+.select-value-color-green { background-color: rgba(0, 96, 38, 0.156); }
+.select-value-color-blue { background-color: rgba(0, 118, 217, 0.203); }
+.select-value-color-purple { background-color: rgba(92, 0, 163, 0.141); }
+.select-value-color-pink { background-color: rgba(183, 0, 78, 0.152); }
+.select-value-color-red { background-color: rgba(206, 24, 0, 0.164); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+</style>
+</head>
+<body>
+<article id="3ad1cc83-d7e4-80e3-803c-ed19bff6c8d4" class="page sans" data-notion-page-icon="📃">
+<header>
+<div class="page-header-icon undefined">
+<span class="icon" data-emoji="📃">
+</span>
+</div>
+<h1 class="page-title" dir="auto">Appendix</h1>
+<p class="page-description" dir="auto">
+</p>
+</header>
+<div class="page-body">
+<p id="3ad1cc83-d7e4-80b9-928b-ef928bdfd339" class="" dir="auto">
+</p>
+<p id="3ad1cc83-d7e4-802a-aa8d-e744562f1b3c" class="" dir="auto">코드 공개 체크리스트</p>
+<ul id="3ad1cc83-d7e4-8031-b32f-fec7b2c6d55d" class="bulleted-list" dir="auto">
+<li style="list-style-type:disc">학습에 사용한 데이터셋<ul id="3ad1cc83-d7e4-8016-98ce-f22cb7a7e8ef" class="bulleted-list" dir="auto">
+<li style="list-style-type:circle">각 이미지와 캡션들</li>
+</ul>
+<ul id="3ad1cc83-d7e4-808b-b079-cba27f937cae" class="bulleted-list" dir="auto">
+<li style="list-style-type:circle">네거티브샘플 생성 코드</li>
+</ul>
+<ul id="3ad1cc83-d7e4-8010-8a33-e510acb4a540" class="bulleted-list" dir="auto">
+<li style="list-style-type:circle">전처리 코드 (구체적으론 모르지만 아마 학습 코드에 포함??)</li>
+</ul>
+</li>
+</ul>
+<ul id="3ad1cc83-d7e4-8052-80d1-c762e5f4a6d9" class="bulleted-list" dir="auto">
+<li style="list-style-type:disc">학습 코드<ul id="3ad1cc83-d7e4-80cb-af95-f50d4fb9588b" class="bulleted-list" dir="auto">
+<li style="list-style-type:circle">tasa 프레임워크의 각 과정은 논문과 연결지어 주석 필요</li>
+</ul>
+<ul id="3ad1cc83-d7e4-806a-8c08-c3395417fd25" class="bulleted-list" dir="auto">
+<li style="list-style-type:circle">random seed 등 랜덤성에 관여하는 하이퍼파라미터들은 appendix에서 언급 필요</li>
+</ul>
+</li>
+</ul>
+<ul id="3ad1cc83-d7e4-80c5-a50e-c056657fa5d0" class="bulleted-list" dir="auto">
+<li style="list-style-type:disc">평가 코드</li>
+</ul>
+<ul id="3ad1cc83-d7e4-80e0-8811-fe0d286ce64c" class="bulleted-list" dir="auto">
+<li style="list-style-type:disc">계산 환경. GPU/CPU models; amount of memory; operating system; names and versions of relevant software libraries and frameworks</li>
+</ul>
+<ul id="3ad1cc83-d7e4-80b6-b922-e99c30bcc16e" class="bulleted-list" dir="auto">
+<li style="list-style-type:disc">하이퍼파라미터 설정</li>
+</ul>
+<p id="3ad1cc83-d7e4-806d-9bb1-eac034ee41c1" class="" dir="auto">
+</p>
+<p id="3ad1cc83-d7e4-8003-9e91-db502ed3a3b2" class="" dir="auto">깃허브</p>
+<figure id="3ad1cc83-d7e4-80db-930e-e3e30293eb09" dir="ltr">
+<a href="https://github.com/leewoojye/MedCLIP-SAMv2" class="bookmark source">
+<div class="bookmark-info">
+<div class="bookmark-text">
+<div class="bookmark-title">GitHub - leewoojye/MedCLIP-SAMv2: Improving tumor segmentation performance using DPO based on MedCLIP-SAMv2</div>
+<div class="bookmark-description">Improving tumor segmentation performance using DPO based on MedCLIP-SAMv2 - leewoojye/MedCLIP-SAMv2</div>
+</div>
+<div class="bookmark-href">
+<img src="https://github.com/fluidicon.png" class="icon bookmark-icon"/>https://github.com/leewoojye/MedCLIP-SAMv2</div>
+</div>
+<img src="https://opengraph.githubassets.com/d859cc45804d6a0250c306d65390dc198c5f20538a9c9982d63713d17b370a6f/leewoojye/MedCLIP-SAMv2" class="bookmark-image"/>
+</a>
+</figure>
+<p id="3ad1cc83-d7e4-8010-9f54-ff3ff90b8ff6" class="" dir="auto">
+</p>
+<div data-notion-highlight="yellow_background" dir="auto">
+<ol type="1" id="3ad1cc83-d7e4-80dc-972d-d46560da83c4" class="block-color-yellow_background numbered-list" data-notion-highlight="yellow_background" start="1">
+<li>
+<span data-notion-inline-equation="I" class="notion-text-equation-token" contenteditable="false">
+<span class="katex">
+<span class="katex-html" aria-hidden="true">
+<span class="base">
+<span class="strut" style="height:0.6833em;">
+</span>
+<span class="mord mathnormal" style="margin-right:0.07847em;">I</span>
+</span>
+</span>
+</span>
+</span> 입력하여 <span data-notion-inline-equation="I^{-k}" class="notion-text-equation-token" contenteditable="false">
+<span class="katex">
+<span class="katex-html" aria-hidden="true">
+<span class="base">
+<span class="strut" style="height:0.8491em;">
+</span>
+<span class="mord">
+<span class="mord mathnormal" style="margin-right:0.07847em;">I</span>
+<span class="msupsub">
+<span class="vlist-t">
+<span class="vlist-r">
+<span class="vlist" style="height:0.8491em;">
+<span style="top:-3.063em;margin-right:0.05em;">
+<span class="pstrut" style="height:2.7em;">
+</span>
+<span class="sizing reset-size6 size3 mtight">
+<span class="mord mtight">
+<span class="mord mtight">−</span>
+<span class="mord mathnormal mtight" style="margin-right:0.03148em;">k</span>
+</span>
+</span>
+</span>
+</span>
+</span>
+</span>
+</span>
+</span>
+</span>
+</span>
+</span>
+</span> 생성하는 방법</li>
+</ol>
+</div>
+<ul id="3ad1cc83-d7e4-80b4-a9fe-c70f87014aa7" class="bulleted-list" dir="auto">
+<li style="list-style-type:disc"> [어떤 모델 사용하였는지, 어떤 프롬프트(어떤 논문 참고하였는지) 사용하였는지, 메타데이터 입력 등]</li>
+</ul>
+<ul id="3ad1cc83-d7e4-8062-8b0f-f17330415800" class="bulleted-list" dir="auto">
+<li style="list-style-type:disc">도메인 마다 다르면, 방법마다 작성 </li>
+</ul>
+<p id="3ad1cc83-d7e4-80ea-b2b0-c39402facd79" class="" dir="auto">(ex. A의 경우 B모델 사용하였으며, C연구와 같은 파이프라인으로 생성하였다. D는…)</p>
+<details id="3ad1cc83-d7e4-8017-8fbc-e9d8148df913" open="" class="toggle" dir="auto">
+<summary>Breast tumor (BUS-CoT, UDIAT)</summary>
+<div class="indented">
+<p id="3ad1cc83-d7e4-809c-b90c-dac64d870dc9" class="" dir="auto">full dataset: </p>
+<ul id="3ad1cc83-d7e4-806a-b1c7-ef9f69257da7" class="bulleted-list" dir="auto">
+<li style="list-style-type:disc">UDIAT: <a href="https://huggingface.co/datasets/WOOJYE/udiat/tree/main">https://huggingface.co/datasets/WOOJYE/udiat/tree/main</a>
+</li>
+</ul>
+<ul id="3ad1cc83-d7e4-808d-8930-ecaa6b82933d" class="bulleted-list" dir="auto">
+<li style="list-style-type:disc">BUS-CoT: <a href="https://huggingface.co/datasets/WOOJYE/bus_cot_preprocessed/tree/main">https://huggingface.co/datasets/WOOJYE/bus_cot_preprocessed/tree/main</a>
+</li>
+</ul>
+<p id="3ad1cc83-d7e4-8098-b796-f7d19f3ffea6" class="" dir="auto">
+</p>
+<p id="3ad1cc83-d7e4-80e1-a583-f5f7e2be48cf" class="" dir="auto">유방초음파 음성 생성 설정</p>
+<ul id="3ad1cc83-d7e4-8006-8bb3-d0a332640f23" class="bulleted-list" dir="auto">
+<li style="list-style-type:disc">스크립트: experiments/bus_cot_image2prompt_trial/generate_sd_ipc_batch.py</li>
+</ul>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer">
+</script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-json.min.js" integrity="sha512-QXFMVAusM85vUYDaNgcYeU3rzSlc+bTV4JvkfJhjxSHlQEo+ig53BtnGkvFTiNJh8D+wv6uWAQ2vJaVmxe8d3w==" crossorigin="anonymous" referrerPolicy="no-referrer">
+</script>
+<pre id="3ad1cc83-d7e4-800f-bf1a-e5dded4afbe5" class="code code-wrap" data-notion-code-syntax="json">
+<code class="language-json" style="white-space:pre-wrap;word-break:break-all">  - 기본 생성 모델: stable-diffusion-v1-5/stable-diffusion-inpainting, float16.
+  - 스케줄러: 기존 스케줄러 설정을 유지한 DDIMScheduler.
+  - inference steps: 50
+  - CFG guidance scale: 5.0
+  - safety checker: 비활성화.
+  - 배치: GPU당 batch size 2, 3개 shard. 초기 519장과 resume 387장을 합쳐 최종 906장이 생성됨. (testset 기준)
+  - 난수: 각 정렬된 이미지의 전역 index에 대해 20260728 + index; shard/resume 여부와 무관하게 동일 이미지에는
+    동일 seed를 사용.</code>
+</pre>
+<ul id="3ad1cc83-d7e4-806a-b3ae-f12f6a01173c" class="bulleted-list" dir="auto">
+<li style="list-style-type:disc">정상 조건 이미지: 고정된 BUSI 정상 이미지 1장 assets/busi_normal_1.png(BUSI normal 1번 이미지). 입력 이미지마다 새 정상 이미지를 고 르지 않았음.</li>
+</ul>
+<p id="3ad1cc83-d7e4-80ab-9f52-c2860a91bb04" class="" dir="auto">정상 이미지를 텍스트 조건으로 바꾸는 부분(image2prompt) 설정</p>
+<ul id="3ad1cc83-d7e4-8097-bc82-ccde838f80bd" class="bulleted-list" dir="auto">
+<li style="list-style-type:disc">레퍼런스 논문: The CLIP Model is Secretly an Image-to-Prompt Converter (NeurIPS 2023) <a href="https://arxiv.org/abs/2305.12716">https://arxiv.org/abs/2305.12716</a> </li>
+</ul>
+<pre id="3ad1cc83-d7e4-80b8-b7dc-d0ce7ed16e1a" class="code code-wrap" data-notion-code-syntax="json">
+<code class="language-json" style="white-space:pre-wrap;word-break:break-all">  - OpenAI CLIP openai/clip-vit-large-patch14의 vision CLS embedding(1024차원)을 사용.
+  - W_map = pinv(W_text) @ W_visual의 closed-form 변환을 적용.
+  - SVD cutoff는 0.3, 실제 유지된 singular value 수는 607.
+  - 결과는 SD CLIP text hidden space의 768차원 token임.
+  - SD의 native empty prompt에서 시작 token 위치 0은 유지하고, 위치 1–76은 같은 정상 이미지-derived token으로
+    반복함. 즉 자연어 텍스트 프롬프트는 사용하지 않았음.
+
+  - negative prompt도 빈 문자열의 native SD embedding임.
+  - Stable Diffusion 구조 자체는 변경하지 않았음.</code>
+</pre>
+<p id="3ad1cc83-d7e4-808a-88c9-c77439f20376" class="" dir="auto">마스크·해상도 설정</p>
+<pre id="3ad1cc83-d7e4-808b-a882-de63212dca7b" class="code code-wrap" data-notion-code-syntax="json">
+<code class="language-json" style="white-space:pre-wrap;word-break:break-all">  - 원본 lesion mask를 grayscale로 읽고, dilation_px=9를 적용.
+  - 여기서 dilation=9는 19×19 square MaxFilter이므로 각 방향으로 최대 9픽셀 확장임.
+  - 원본은 Lanczos로 512×512, 마스크는 nearest-neighbor로 512×512로 맞춘 뒤 inpainting함.
+  - 생성 결과는 다시 원본 크기로 Lanczos resize함.
+  - 출력 이름은 원본 이름을 유지함. JPEG quality/subsampling은 코드에서 별도 지정하지 않아 Pillow 기본값을
+    따름.</code>
+</pre>
+</div>
+</details>
+<details id="3ad1cc83-d7e4-80cb-b5f6-c41d7c896f4d" open="" class="toggle" dir="auto">
+<summary>Brain MRI (MMNeuro, Figshare)</summary>
+<div class="indented">
+<p id="3ad1cc83-d7e4-80a5-a56d-cbf5a01ecc2c" class="" dir="auto">full dataset: <a href="https://huggingface.co/datasets/WOOJYE/bus_cot_preprocessed/tree/main">https://huggingface.co/datasets/WOOJYE/bus_cot_preprocessed/tree/main</a>
+</p>
+<p id="3ad1cc83-d7e4-800e-bfd8-de6edd8332a9" class="" dir="auto">pre-trained diffusion model ckpt: <a href="https://huggingface.co/WOOJYE/ssldiffusion_brainmri/tree/main/checkpoints">https://huggingface.co/WOOJYE/ssldiffusion_brainmri/tree/main/checkpoints</a>
+</p>
+<p id="3ad1cc83-d7e4-8095-9052-ed2945c6ec9c" class="" dir="auto">
+</p>
+<p id="3ad1cc83-d7e4-80d4-8564-cb70b2841865" class="" dir="auto">Figshare Brain MRI 음성 생성 설정</p>
+<ul id="3ad1cc83-d7e4-80df-9338-e083f89ca152" class="bulleted-list" dir="auto">
+<li style="list-style-type:disc">DDPM/run_figshare_test_dilation9_3gpu.sh DDPM/sample_figshare_dilated_sharded.py 설정으로 생성</li>
+</ul>
+<pre id="3ad1cc83-d7e4-8002-8bf4-e2846d429eab" class="code code-wrap" data-notion-code-syntax="json">
+<code class="language-json" style="white-space:pre-wrap;word-break:break-all">  - 대상: Figshare test image/mask pair 3,064개. (testset 기준)
+  - 체크포인트: checkpont/step_122000.pt
+  - 사용 가중치: raw model이 아닌 EMA shadow weight.
+  - 실제 checkpoint global step: 122,000
+  - EMA decay: 0.9999
+  - 난수: 정렬된 데이터셋 index별 42 + index.
+  - 3개 독립 shard로 index rank, rank+3, ...를 나눴습니다. 로그상 실제 GPU는 0번 RTX Pro 5000, 1·2번 RTX A6000
+    임.</code>
+</pre>
+<p id="3ad1cc83-d7e4-8058-88c0-cfa6befc4512" class="" dir="auto">DDPM/UNet 및 diffusion 설정</p>
+<pre id="3ad1cc83-d7e4-80ce-aa70-f73ccd6dfccc" class="code code-wrap" data-notion-code-syntax="json">
+<code class="language-json" style="white-space:pre-wrap;word-break:break-all">  - 입력 crop: 224×224
+  - UNet 조건 입력 3채널: [masked baseline, lesion mask, Gaussian noise channel]
+  - 출력: 1채널 epsilon prediction
+  - base channels 128, residual block 2, channel multiplier (1, 1, 2, 2, 4, 4)
+  - attention: downsample rate 16
+  - dropout 0, learned variance 비활성화, 총 파라미터 약 113.67M
+  - 1,000 diffusion step, linear beta schedule (β=0.0001 → 0.02)
+  - epsilon prediction, fixed-small variance, MSE loss, timestep rescaling 없음
+  - 추론도 DDIM이 아니라 1,000-step DDPM reverse sampling p_sample_loop_known을 사용.
+  - clip_denoised=True</code>
+</pre>
+<p id="3ad1cc83-d7e4-80a7-9078-e2f91cd2fd77" class="" dir="auto">학습 체크포인트의 설정</p>
+<pre id="3ad1cc83-d7e4-804a-849c-cb444138aaa3" class="code code-wrap" data-notion-code-syntax="json">
+<code class="language-json" style="white-space:pre-wrap;word-break:break-all">  - batch size 8, learning rate 1e-4, AMP 활성화, seed 42
+  - 계획 학습 step은 2,850,000이지만 사용 checkpoint는 122,000 step.
+  - training mask mode는 synthetic_healthy: 종양 모양을 이동/회전/반전해 종양과 겹치지 않는 정상 뇌 영역에
+    synthetic hole을 만듦.
+
+  - 실제 종양은 context에서 숨기고(hide_tumor_in_context=True), tumor loss weight는 0; hole loss 1.0, context
+    loss 0.05임.</code>
+</pre>
+<p id="3ad1cc83-d7e4-80d7-86d0-ce7a58270244" class="" dir="auto">Figshare 추론(훈련된 diffusion model로 음성 생성하는 단계) 시 전처리와 합성</p>
+<pre id="3ad1cc83-d7e4-80da-bb60-e0a6929267af" class="code code-wrap" data-notion-code-syntax="json">
+<code class="language-json" style="white-space:pre-wrap;word-break:break-all">  - grayscale 입력을 0.1–99.9 percentile clipping 후 [0,1] min–max 정규화합니다.
+  - 실제 종양 mask의 bounding box로 ROI를 잡습니다. 한 변은 max(224, bbox 높이+32, bbox 너비+32)이고 context
+    margin은 16px입니다.
+
+  - 그 뒤 최종 적용 mask에 dilation_size=9를 적용합니다. 이는 9×9 MaxFilter, 즉 각 방향 최대 4픽셀 확장입니다.
+  - 따라서 유방초음파의 dilation_px=9(19×19, 반경 9px)과 Brain MRI의 dilation_size=9(9×9, 반경 4px)은 의미가 다
+    릅니다.
+
+  - ROI는 bilinear로 224×224, mask는 nearest-neighbor로 224×224로 변환합니다.
+  - 생성 prediction에는 PIL GaussianBlur radius 1.075를 적용한 뒤 원래 ROI 크기로 bilinear 복원합니다.
+  - raw는 ROI 전체를 prediction으로 교체하고, blended는 dilation된 마스크 내부만 hard replacement합니다. AUROC/
+    FPR 평가 CSV의 음성샘플은 blended/의 3,064장을 사용했습니다.</code>
+</pre>
+</div>
+</details>
+<details id="3ad1cc83-d7e4-8007-a428-e9eed7625f3d" open="" class="toggle" dir="auto">
+<summary>Chest CT (Kaggle)</summary>
+<div class="indented">
+<p id="3ad1cc83-d7e4-8008-bfee-cda7d75a199d" class="" dir="auto">full dataset (testset): <a href="https://huggingface.co/datasets/WOOJYE/chest_ct/tree/main">https://huggingface.co/datasets/WOOJYE/chest_ct/tree/main</a>
+</p>
+<p id="3ad1cc83-d7e4-80c9-a0d6-c41608e8b64c" class="" dir="auto">
+</p>
+<p id="3ad1cc83-d7e4-80fe-a259-c0651351f58b" class="" dir="auto">가우시안 노이즈 샘플링 설정</p>
+<ul id="3ad1cc83-d7e4-8028-b537-e43d165abb55" class="bulleted-list" dir="auto">
+<li style="list-style-type:disc">해상도: 512×512. 원본은 grayscale(L) JPEG이며, 생성 전에 RGB로 복제 변환</li>
+</ul>
+<ul id="22e36120-72c7-4fc3-b831-dd5bf9f78768" class="bulleted-list" dir="auto">
+<li style="list-style-type:disc">노이즈: 선택된 픽셀의 RGB 채널 각각에 독립적으로 N(μ=0, σ=50) additive Gaussian noise를 적용함. 분산은 2500. <ul id="3ad1cc83-d7e4-8060-87ca-ea0fcfe54af5" class="bulleted-list" dir="auto">
+<li style="list-style-type:circle">다만 전체 이미지를 JPEG로 다시 저장하므로, 마스크 밖에는 새 노이즈가 더해지지 않더라도 JPEG 재압축에 따른 미세한 변화는 생길 수 있음.</li>
+</ul>
+</li>
+</ul>
+<ul id="3ad1cc83-d7e4-8002-b6e1-e27a1406386a" class="bulleted-list" dir="auto">
+<li style="list-style-type:disc">alpha blending: 없음. 원본 RGB + noise 뒤 [0,255]로 clipping하고 uint8로 변환</li>
+</ul>
+<ul id="3ad1cc83-d7e4-80f4-8d60-ece14dc0cd37" class="bulleted-list" dir="auto">
+<li style="list-style-type:disc">난수 시드: 기본 시드 20250728<ul id="3ad1cc83-d7e4-8061-9c5d-f537b09a62a7" class="bulleted-list" dir="auto">
+<li style="list-style-type:circle">test_i bronchus: 20250728 + 10*i</li>
+</ul>
+<ul id="3ad1cc83-d7e4-807f-8467-d1254f20aa5d" class="bulleted-list" dir="auto">
+<li style="list-style-type:circle">heart: 위 값 +1</li>
+</ul>
+<ul id="3ad1cc83-d7e4-809a-904e-c50456933ce2" class="bulleted-list" dir="auto">
+<li style="list-style-type:circle">lung: 위 값 +2 따라서 이미지·부위마다 서로 다른 독립 노이즈가 생성</li>
+</ul>
+</li>
+</ul>
+<ul id="3ad1cc83-d7e4-807f-be41-f41271673b0f" class="bulleted-list" dir="auto">
+<li style="list-style-type:disc">dilation / erosion / feathering: 없음. 선택된 마스크는 hard boundary</li>
+</ul>
+<ul id="3ad1cc83-d7e4-80aa-a781-f26f01ca46fa" class="bulleted-list" dir="auto">
+<li style="list-style-type:disc">저장: RGB JPEG, quality 95, chroma subsampling 4:2:0</li>
+</ul>
+</div>
+</details>
+<details id="3ad1cc83-d7e4-80ec-891c-f7873a1d5ffa" open="" class="toggle" dir="auto">
+<summary>Natural Image (COD10K, MAS3K)</summary>
+<div class="indented">
+<p id="3ad1cc83-d7e4-806b-b50f-e3f1c59e2536" class="" dir="auto">full dataset:</p>
+<ul id="3ad1cc83-d7e4-80a7-aaee-e29e4014e01d" class="bulleted-list" dir="auto">
+<li style="list-style-type:disc">COD10K: <a href="https://huggingface.co/datasets/WOOJYE/COD10K/tree/main">https://huggingface.co/datasets/WOOJYE/COD10K/tree/main</a>
+</li>
+</ul>
+<ul id="3ad1cc83-d7e4-80ee-bca0-d87efb6e9b05" class="bulleted-list" dir="auto">
+<li style="list-style-type:disc">MAS3K: <a href="https://huggingface.co/datasets/WOOJYE/gmpo_mas3k/tree/main">https://huggingface.co/datasets/WOOJYE/gmpo_mas3k/tree/main</a>
+</li>
+</ul>
+<p id="3ad1cc83-d7e4-8013-a3a8-f4c637962465" class="" dir="auto">
+</p>
+</div>
+</details>
+<details id="3ad1cc83-d7e4-8053-8a01-dc591eef27c3" open="" class="toggle" dir="auto">
+<summary>example (재윤)</summary>
+<div class="indented">
+<p id="3ad1cc83-d7e4-80c2-9a07-e8b9d2e7f07f" class="" dir="auto">
+</p>
+<pre id="3ad1cc83-d7e4-80d9-bbc3-d3a9db0ea1cd" class="code code-wrap">
+<code style="white-space:pre-wrap;word-break:break-all">noise = N(μ=0, σ=50)       # RGB 채널별 독립 난수
+negative = clip(original + noise, 0, 255)</code>
+</pre>
+<ul id="3ad1cc83-d7e4-8000-8a62-c1b36f91e15e" class="bulleted-list" dir="auto">
+<li style="list-style-type:disc">원시 Gaussian: <code>μ ≈ 0</code>, <code>σ ≈ 50</code>, 분산 <code>≈ 2500</code>
+</li>
+</ul>
+<ul id="3ad1cc83-d7e4-80b0-8beb-c14c912dcca6" class="bulleted-list" dir="auto">
+<li style="list-style-type:disc">alpha blending: 해당 없음. 원본에 대한 회귀 기울기가 0.85–0.97이며, clipping을 고려하면 additive 모델과 일치합니다.</li>
+</ul>
+<ul id="3ad1cc83-d7e4-80a8-8532-eea10a85da72" class="bulleted-list" dir="auto">
+<li style="list-style-type:disc">채널: 원시 RGB별 독립 noise입니다. 저장 JPEG의 4:2:0 chroma subsampling 때문에 파일을 직접 보면 채널 상관이 약 <code>0.80–0.84</code>로 높아 보입니다.</li>
+</ul>
+<ul id="3ad1cc83-d7e4-80d9-af67-e349fe6e9b1a" class="bulleted-list" dir="auto">
+<li style="list-style-type:disc">공간 특성: 픽셀 독립 white noise. 잔차의 이웃 픽셀 상관은 <code>0.05–0.15</code> 수준으로 Gaussian blur 같은 공간 상관 노이즈가 아닙니다.</li>
+</ul>
+<ul id="3ad1cc83-d7e4-802d-8b50-cbc73792fbb5" class="bulleted-list" dir="auto">
+<li style="list-style-type:disc">적용 영역:<ul id="3ad1cc83-d7e4-8047-9d1b-f6deecdafc1a" class="bulleted-list" dir="auto">
+<li style="list-style-type:circle">폐: 파란 마스크</li>
+</ul>
+<ul id="3ad1cc83-d7e4-809f-83c3-f7575e9c1964" class="bulleted-list" dir="auto">
+<li style="list-style-type:circle">심장: 초록 마스크</li>
+</ul>
+<ul id="3ad1cc83-d7e4-8056-b831-c6aca7ad4e0b" class="bulleted-list" dir="auto">
+<li style="list-style-type:circle">기관지: 빨간 마스크</li>
+</ul>
+</li>
+</ul>
+<ul id="3ad1cc83-d7e4-80e6-ba9d-f97ea72f55fa" class="bulleted-list" dir="auto">
+<li style="list-style-type:disc">마스크 내부에만 적용됐습니다. <code>|Δ| ≥ 20</code> 기준으로 마스크 밖 변화는 폐 0.3%, 심장 0.5%, 기관지 2.5%뿐이며, 모두 경계에서 4px 이내 JPEG DCT artifact입니다.</li>
+</ul>
+<ul id="3ad1cc83-d7e4-80ab-8808-e6452d62d55a" class="bulleted-list" dir="auto">
+<li style="list-style-type:disc">dilation/erosion/feathering: 확인되지 않았습니다. 실질적 경계는 hard boundary입니다.</li>
+</ul>
+<ul id="3ad1cc83-d7e4-80ef-bdbd-c5c9989557ee" class="bulleted-list" dir="auto">
+<li style="list-style-type:disc">clipping: <code>[0, 255]</code> uint8 clipping. 어두운 영역에서 평균 변화가 양수로 치우치고 분산이 작아지는 현상이 정확히 관찰됩니다.</li>
+</ul>
+<ul id="3ad1cc83-d7e4-8083-955a-eba58296d654" class="bulleted-list" dir="auto">
+<li style="list-style-type:disc">저장 형식: 512×512, 8-bit RGB JPEG, quality 95 수준의 양자화 테이블, 4:2:0 subsampling.</li>
+</ul>
+<ul id="3ad1cc83-d7e4-80a3-a315-c6569df51708" class="bulleted-list" dir="auto">
+<li style="list-style-type:disc">모든 구조와 이미지에 동일한 noise strength가 적용된 것으로 보입니다. 100개 이미지를 대조했을 때 noise pattern 재사용 상관은 <code>~0</code>이었습니다.</li>
+</ul>
+</div>
+</details>
+<p id="3ad1cc83-d7e4-809f-b537-cb032cedbb60" class="" dir="auto">
+</p>
+<div data-notion-highlight="yellow_background" dir="auto">
+<ol type="1" id="3ad1cc83-d7e4-8093-b564-d24414cecc4c" class="block-color-yellow_background numbered-list" data-notion-highlight="yellow_background" start="2">
+<li>
+<span data-notion-inline-equation="T" class="notion-text-equation-token" contenteditable="false">
+<span class="katex">
+<span class="katex-html" aria-hidden="true">
+<span class="base">
+<span class="strut" style="height:0.6833em;">
+</span>
+<span class="mord mathnormal" style="margin-right:0.13889em;">T</span>
+</span>
+</span>
+</span>
+</span> 와 <span data-notion-inline-equation="T^{-k}" class="notion-text-equation-token" contenteditable="false">
+<span class="katex">
+<span class="katex-html" aria-hidden="true">
+<span class="base">
+<span class="strut" style="height:0.8491em;">
+</span>
+<span class="mord">
+<span class="mord mathnormal" style="margin-right:0.13889em;">T</span>
+<span class="msupsub">
+<span class="vlist-t">
+<span class="vlist-r">
+<span class="vlist" style="height:0.8491em;">
+<span style="top:-3.063em;margin-right:0.05em;">
+<span class="pstrut" style="height:2.7em;">
+</span>
+<span class="sizing reset-size6 size3 mtight">
+<span class="mord mtight">
+<span class="mord mtight">−</span>
+<span class="mord mathnormal mtight" style="margin-right:0.03148em;">k</span>
+</span>
+</span>
+</span>
+</span>
+</span>
+</span>
+</span>
+</span>
+</span>
+</span>
+</span>
+</span> 생성하는 방법</li>
+</ol>
+</div>
+<section id="evaluation-caption-construction" dir="auto">
+<p><strong>평가용 텍스트 집합의 정의.</strong> AUROC/FPR 평가 CSV의 <code>caption</code> 열은 이미지별로 생성·샘플링한 설명문이 아니라, 클래스 라벨에 일대일로 대응하도록 사전에 고정한 짧은 문장이다. 클래스 집합을 <code>C = {1, ..., K}</code>, 클래스 <code>k</code>의 고정 문장을 <code>t<sub>k</sub></code>라 하면, 평가 텍스트 집합은 <code>T = {t<sub>1</sub>, ..., t<sub>K</sub>}</code>이다. 이미지 픽셀, 이미지별 메타데이터(단, Figshare의 종양 유형 라벨 및 COD10K/MAS3K의 공식 클래스명은 제외), LLM, 난수는 캡션 선택에 사용하지 않았다. 같은 클래스의 모든 행은 완전히 같은 문자열을 사용한다.</p>
+<p><strong><code>T<sup>−k</sup></code>의 의미와 one-vs-rest.</strong> 이 문서에서 <code>T<sup>−k</sup> = T \ {t<sub>k</sub>}</code>는 표적 클래스 <code>k</code>를 제외한 나머지 클래스 문장 집합을 뜻한다. 실제 평가는 별도의 합성 “음성 프롬프트”를 만들어 <code>T<sup>−k</sup></code>를 인코딩하지 않는다. 각 이미지 <code>i</code>에 대해 모든 <code>t<sub>k</sub></code>와의 L2-정규화 코사인 유사도 <code>s<sub>i,k</sub></code>를 계산하고, <code>y<sub>i</sub><sup>(k)</sup> = 1[label(i)=k]</code>로 이진화하여 <code>k</code> 대 나머지 모든 클래스의 AUROC 및 FPR@95%TPR을 구한다. 따라서 <code>normal</code> 또는 <code>no camouflaged animal</code>은 <code>T<sup>−k</sup></code>의 대용물이 아니라, <code>T</code> 안의 독립적인 클래스 문장이다.</p>
+<p>이 설계는 자연어로 시각 개념을 지칭해 zero-shot 전이를 수행하는 CLIP의 평가 관례와 일치한다. 다만 CLIP 원 논문은 아래의 정확한 문장을 규정하지 않았으며, 본 실험의 문장들은 재현성을 위해 프로젝트에서 고정한 템플릿이다. <a href="https://arxiv.org/abs/2103.00020">Radford et al., CLIP (2021)</a></p>
+
+<details open="" class="toggle">
+<summary>Breast tumor (UDIAT; 326 rows)</summary>
+<div class="indented">
+<p><strong>라벨 원천:</strong> 원본 UDIAT 폴더명 <code>Benign</code>, <code>Malignant</code> 및 생성 음성샘플 폴더가 각각 <code>benign</code>, <code>malignant</code>, <code>normal</code> 클래스가 된다. 원본 종양 영상은 163장, 음성샘플은 163장이다.</p>
+<p><strong>고정 <code>T</code>:</strong></p>
+<ul class="bulleted-list">
+<li><code>benign</code> → <code>There is a benign tumor.</code></li>
+<li><code>malignant</code> → <code>There is malignant tumor.</code></li>
+<li><code>normal</code> → <code>There is no visible tumor.</code></li>
+</ul>
+<p>캡션은 <code>a1_inference/build_udiat_classwise_eval_csv.py</code>의 <code>CLASSES</code> 상수로 직접 지정했다. LLM 프롬프트나 문장 생성 모델은 사용하지 않았다. 두 종양 클래스의 <code>T<sup>−k</sup></code>에는 다른 종양 클래스와 <code>normal</code>이, <code>normal</code>의 <code>T<sup>−k</sup></code>에는 두 종양 클래스가 포함된다.</p>
+</div>
+</details>
+
+<details open="" class="toggle">
+<summary>Brain MRI (Figshare; 6,128 rows)</summary>
+<div class="indented">
+<p><strong>라벨 원천:</strong> 원본 3,064장의 종양 유형은 <code>data/Figshare/test_figshare3064/figshare_tumor_type_metadata0.json</code>의 <code>label_name</code>에서 읽고, 같은 ID의 DDPM dilation=9 <code>blended</code> 음성샘플 3,064장은 <code>normal</code>로 지정했다.</p>
+<p><strong>고정 <code>T</code>:</strong></p>
+<ul class="bulleted-list">
+<li><code>meningioma</code> → <code>There is a meningioma tumor.</code></li>
+<li><code>glioma</code> → <code>There is a glioma tumor.</code></li>
+<li><code>pituitary</code> → <code>There is a pituitary tumor.</code></li>
+<li><code>normal</code> → <code>There is no visible tumor.</code></li>
+</ul>
+<p>이 네 문장은 <code>a1_inference/build_figshare_classwise_eval_csv.py</code>의 <code>CAPTIONS</code> 사전으로 고정했다. 종양 유형은 메타데이터에서만 얻고, 영상 내용으로부터 텍스트를 추론하거나 LLM으로 문장을 생성하지 않았다.</p>
+</div>
+</details>
+
+<details open="" class="toggle">
+<summary>Chest CT (800 rows)</summary>
+<div class="indented">
+<p><strong>라벨 원천:</strong> 200개 원본 영상과 각 해부학적 영역에만 Gaussian noise를 적용한 200개씩의 <code>bronchus_noise</code>, <code>heart_noise</code>, <code>lung_noise</code> 폴더명으로 클래스가 정해진다. 각 노이즈 클래스의 문장은 <em>노이즈가 적용되지 않은</em> 두 구조를 기술하고, 원본은 세 구조가 모두 보존되었다고 기술한다.</p>
+<p><strong>고정 <code>T</code>:</strong></p>
+<ul class="bulleted-list">
+<li><code>bronchus_noise</code> → <code>Chest CT image showing preserved cardiac contour and normal-appearing bilateral lung parenchyma.</code></li>
+<li><code>heart_noise</code> → <code>Chest CT image showing preserved bilateral lung aeration and patent central airways.</code></li>
+<li><code>lung_noise</code> → <code>Chest CT image showing preserved cardiac contour and patent central tracheobronchial structures.</code></li>
+<li><code>normal</code> → <code>Chest CT image showing preserved cardiac contour, preserved bilateral lung aeration, and patent central airways.</code></li>
+</ul>
+<p>이 네 문장은 <code>a1_inference/build_chest_ct_classwise_eval_csv.py</code>의 <code>CLASS_SPECS</code>에 직접 지정했다. 기존 초안의 “GPT-5가 장기별 후보 문장을 10개 생성하고 매 영상마다 샘플링하였다”는 설명은 실제 평가 CSV와 일치하지 않으므로 적용하지 않는다. 이 평가에는 LLM 호출, 후보 풀, 이미지별 랜덤 샘플링이 없었다.</p>
+</div>
+</details>
+
+<details open="" class="toggle">
+<summary>Natural images (COD10K and MAS3K)</summary>
+<div class="indented">
+<p><strong>라벨 원천:</strong> COD10K는 테스트 메타데이터의 69개 camouflage subclass와 <code>no camouflaged animal</code>, MAS3K는 33개 원본 객체 클래스와 같은 no-object 클래스를 사용한다. CAMOUFLAGED-object라는 문제 설정과 COD10K의 클래스 메타데이터는 <a href="https://openaccess.thecvf.com/content_CVPR_2020/html/Fan_Camouflaged_Object_Detection_CVPR_2020_paper.html">Fan et al., COD10K (CVPR 2020)</a>에 근거하지만, 아래 자연어 템플릿은 해당 논문이 제공한 문장이 아니라 본 평가에서 고정한 문장이다.</p>
+<p><strong>최종 scene-caption CSV에서의 고정 <code>T</code>:</strong> 원본 객체 행은 정규화한 클래스명 <code>[class name]</code>을 삽입해 정확히 <code>There is an [class name] present in the scene.</code>를 사용했다. no-object 행은 정확히 <code>There is no camouflaged animal present in the scene.</code>를 사용했다. 관사 <code>an</code>은 클래스명에 따라 교정하지 않고 모든 객체 클래스에 문자 그대로 유지했다.</p>
+<p><strong>평가 파일:</strong> COD10K는 <code>data/COD10K/test/cod10k_original2026_no_object2026_subclass70_scene_caption_pairs_paths_fixed.csv</code> (2,026 원본 + 2,026 no-object = 4,052행, 70클래스), MAS3K는 <code>data/MAS3K/mas3k_original582_no_object582_classwise_scene_caption_pairs_paths_fixed.csv</code> (582 원본 + 582 no-object = 1,164행, 34클래스)이다.</p>
+<p><strong>이전 manifest와의 구분:</strong> 경로 보정 이전의 <code>*_caption_pairs_paths_fixed.csv</code>에는 <code>There is a [class name] hidden in the natural background.</code> 및 <code>There is no camouflaged animal hidden in the natural background.</code> 템플릿이 남아 있다. 이는 이전 템플릿이며, 이름에 <code>scene_caption</code>이 있는 CSV로 산출한 결과와 혼용하지 않는다. 두 경우 모두 LLM 프롬프트나 이미지별 캡션 생성은 없으며, 공식 클래스명을 템플릿에 치환한 결정론적 문자열 생성이다.</p>
+</div>
+</details>
+
+<p><strong>재현 절차.</strong> 각 CSV 행에 <code>image_path</code>, <code>class_label</code>, <code>caption</code>을 기록하고, 평가 시 클래스별로 하나의 고유 캡션만 텍스트 인코더에 입력한다. 이어 <code>clip4retrofit_ovr_metrics.py</code>가 클래스별 one-vs-rest AUROC와 ROC 곡선에서 처음으로 TPR ≥ 0.95가 되는 지점의 FPR을 계산하고, 최종 macro 값은 클래스별 값을 동일 가중치로 산술평균한다. 따라서 캡션 생성 단계에는 seed, 온도, top-p, 모델 버전 같은 생성형 언어모델 하이퍼파라미터가 존재하지 않는다.</p>
+</section>
+
+<ul id="3ad1cc83-d7e4-8099-98f1-f58406c1b20c" class="bulleted-list" dir="auto" hidden aria-hidden="true">
+<li style="list-style-type:disc">basecaption: [어떤 모델 사용하였는지, 어떤 프롬프트(어떤 논문 참고하였는지) 사용하였는지, 메타데이터 입력 등]<details id="3ad1cc83-d7e4-8041-9aee-cc867cd0f5ca" open="" class="toggle" dir="auto">
+<summary>Breast tumor (BUS-CoT, UDIAT)</summary>
+<div class="indented">
+</div>
+</details>
+<details id="3ad1cc83-d7e4-80d2-b358-d8686c3a916d" open="" class="toggle" dir="auto">
+<summary>Brain MRI (MMNeuro, Figshare)</summary>
+<div class="indented">
+</div>
+</details>
+<details id="3ad1cc83-d7e4-8059-9550-ddc54c0fea1e" open="" class="toggle" dir="auto">
+<summary>Chest CT (Kaggle)</summary>
+<div class="indented">
+</div>
+</details>
+<details id="3ad1cc83-d7e4-8027-a92e-cfd98cbc4b92" open="" class="toggle" dir="auto">
+<summary>Natural Image (COD10K, MAS3K)</summary>
+<div class="indented">
+</div>
+</details>
+</li>
+</ul>
+<div id="3ad1cc83-d7e4-8095-9e9a-c0018e4e1fe6" class="" dir="auto" hidden aria-hidden="true">
+<div class="indented">
+<p id="3ad1cc83-d7e4-8020-ab29-d850fb6228a2" class="" dir="auto">example (재윤)</p>
+<details id="3ad1cc83-d7e4-803e-82e5-d87ad53f45b1" open="" class="toggle" dir="auto">
+<summary>Chest CT</summary>
+<div class="indented">
+<p id="3ad1cc83-d7e4-8004-9b92-e21245d134fb" class="" dir="auto">To construct the base captions for the chest CT dataset, GPT-5 was prompted with the following instruction:</p>
+<p id="3ad1cc83-d7e4-80d3-afc7-f0477919d3fd" class="" dir="auto">&quot;Generate ten distinct and medically accurate sentences describing the general anatomical, physiological, or functional characteristics of the lung, heart, and bronchus as they appear in chest CT images. Produce ten sentences for each organ. Each sentence should be concise, self-contained, and written in professional medical language. The descriptions should reflect general medical knowledge and must not refer to specific patients, diseases, abnormalities, imaging findings, or diagnostic interpretations. Ensure that the generated sentences are semantically diverse and suitable for use as generic captions for a chest CT vision-language dataset.&quot;</p>
+<p id="3ad1cc83-d7e4-8025-bef7-e87231b06db2" class="" dir="auto">GPT-5 generated ten candidate sentences for each organ. For every chest CT image, one sentence was independently sampled from the lung, heart, and bronchus sentence pools, and the three selected sentences were concatenated to construct the base caption.</p>
+</div>
+</details>
+<details id="3ad1cc83-d7e4-800d-adae-dc92c7e3129e" open="" class="toggle" dir="auto">
+<summary>brain MRI</summary>
+<div class="indented">
+<p id="3ad1cc83-d7e4-8033-b932-fdc14850682f" class="" dir="auto">
+<strong>MRI Brain – Normal report template</strong>에서 반복적으로 사용되는 feature 중, 촬영 방향이나 sequence에 크게 의존하지 않는 정상 해부학적 appearance feature 위주의 특징 7가지를 바탕으로 생성</p>
+<ul id="3ad1cc83-d7e4-8034-a9bc-c1d6be4a009c" class="bulleted-list" dir="auto">
+<li style="list-style-type:disc">preserved intracranial anatomy<ul id="3ad1cc83-d7e4-80e2-9888-ee7dfa259498" class="bulleted-list" dir="auto">
+<li style="list-style-type:circle">두개강 내 해부학적 구조가 보존되어 있음</li>
+</ul>
+</li>
+</ul>
+<ul id="3ad1cc83-d7e4-803a-96d7-c4ff39f25f48" class="bulleted-list" dir="auto">
+<li style="list-style-type:disc">normal-appearing brain parenchyma<ul id="3ad1cc83-d7e4-8038-9a1f-db346fb71f81" class="bulleted-list" dir="auto">
+<li style="list-style-type:circle">정상적으로 보이는 뇌 실질</li>
+</ul>
+</li>
+</ul>
+<ul id="3ad1cc83-d7e4-808e-a8d4-e33eb362ed06" class="bulleted-list" dir="auto">
+<li style="list-style-type:disc">preserved anatomical organization<ul id="3ad1cc83-d7e4-80a5-8e70-db6b8eb4311b" class="bulleted-list" dir="auto">
+<li style="list-style-type:circle">해부학적 배열이 보존되어 있음</li>
+</ul>
+</li>
+</ul>
+<ul id="3ad1cc83-d7e4-8032-a876-ee3fe842e14b" class="bulleted-list" dir="auto">
+<li style="list-style-type:disc">normal overall brain configuration<ul id="3ad1cc83-d7e4-800d-9d9b-d7e069077047" class="bulleted-list" dir="auto">
+<li style="list-style-type:circle">전체적인 뇌 구성이 정상적으로 보임</li>
+</ul>
+</li>
+</ul>
+<ul id="3ad1cc83-d7e4-8089-bbc9-c2ffe4ecb92c" class="bulleted-list" dir="auto">
+<li style="list-style-type:disc">preserved brain morphology<ul id="3ad1cc83-d7e4-8058-a5f0-ea91d0e28aab" class="bulleted-list" dir="auto">
+<li style="list-style-type:circle">뇌 형태가 보존되어 있음</li>
+</ul>
+</li>
+</ul>
+<ul id="3ad1cc83-d7e4-80e2-9b03-ed61583e4dd3" class="bulleted-list" dir="auto">
+<li style="list-style-type:disc">preserved intracranial structures<ul id="3ad1cc83-d7e4-809f-b3f4-fa95e7aea24b" class="bulleted-list" dir="auto">
+<li style="list-style-type:circle">두개강 내 구조들이 보존되어 있음</li>
+</ul>
+</li>
+</ul>
+<ul id="3ad1cc83-d7e4-8064-8e81-e675298e6257" class="bulleted-list" dir="auto">
+<li style="list-style-type:disc">preserved regional brain architecture<ul id="3ad1cc83-d7e4-8089-8d53-f1aa0c351de6" class="bulleted-list" dir="auto">
+<li style="list-style-type:circle">국소/부분적인 뇌 구조 architecture가 보존되어 있음</li>
+</ul>
+</li>
+</ul>
+<ul id="3ad1cc83-d7e4-8008-80fd-fbe89a87b757" class="bulleted-list" dir="auto">
+<li style="list-style-type:disc">normal-appearing intracranial structures<ul id="3ad1cc83-d7e4-8026-a62e-d2820af1eb30" class="bulleted-list" dir="auto">
+<li style="list-style-type:circle">정상적으로 보이는 두개강 내 구조들</li>
+</ul>
+</li>
+</ul>
+</div>
+</details>
+<details id="3ad1cc83-d7e4-8077-9b51-efb8dea28a08" open="" class="toggle" dir="auto">
+<summary>COD10K</summary>
+<div class="indented">
+<ul id="3ad1cc83-d7e4-8059-b3c3-c59d66c26ef9" class="bulleted-list" dir="auto">
+<li style="list-style-type:disc">common: 자연 환경, 질감, 색, 조명, 복잡도<code>A natural scene with textured visual surroundings and complex background patterns.</code>
+</li>
+</ul>
+<ul id="3ad1cc83-d7e4-8017-84b6-eed868b01515" class="bulleted-list" dir="auto">
+<li style="list-style-type:disc">superclass: 수중/육상/비행/습지 등 상위 환경<code>An underwater environment with rocks, sand, vegetation, and diffuse light patterns.</code>
+</li>
+</ul>
+<ul id="3ad1cc83-d7e4-8085-9292-f8241e63aab3" class="bulleted-list" dir="auto">
+<li style="list-style-type:disc">image-specific background: 색조, 밝기, 대비, texture, edge density를 반영<code>An underwater background with green and cyan tones, moderate lighting, balanced contrast...</code>
+</li>
+</ul>
+</div>
+</details>
+</div>
+</div>
+<p id="3ad1cc83-d7e4-8092-8ada-fabd3e641f31" class="" dir="auto">
+</p>
+<ul id="3ad1cc83-d7e4-80b6-b218-e1fb68e499b7" class="bulleted-list" dir="auto" hidden aria-hidden="true">
+<li style="list-style-type:disc">존재 부재 캡션: [어떤 모델 사용하였는지, 어떤 프롬프트(어떤 논문 참고하였는지) 사용하였는지, 메타데이터 입력 등]<details id="3ad1cc83-d7e4-802d-babc-cd1b058ec15b" open="" class="toggle" dir="auto">
+<summary>Breast tumor (BUS-CoT, UDIAT)</summary>
+<div class="indented">
+</div>
+</details>
+<details id="3ad1cc83-d7e4-808a-84f8-fa314accb777" open="" class="toggle" dir="auto">
+<summary>Brain MRI (MMNeuro, Figshare)</summary>
+<div class="indented">
+</div>
+</details>
+<details id="3ad1cc83-d7e4-809a-b5fa-db89d9194f3c" open="" class="toggle" dir="auto">
+<summary>Chest CT (Kaggle)</summary>
+<div class="indented">
+</div>
+</details>
+<details id="3ad1cc83-d7e4-80c1-b2d8-ed44a3dbe3c0" open="" class="toggle" dir="auto">
+<summary>Natural Image (COD10K, MAS3K)</summary>
+<div class="indented">
+</div>
+</details>
+<p id="3ad1cc83-d7e4-80c8-99ae-c69aa80c1580" class="" dir="auto">
+</p>
+<p id="3ad1cc83-d7e4-8024-ba11-fc53ee4fc343" class="" dir="auto">example (재윤)</p>
+<details id="3ad1cc83-d7e4-80f8-9b8e-e77826152fbe" open="" class="toggle" dir="auto">
+<summary>Chest CT</summary>
+<div class="indented">
+<p id="3ad1cc83-d7e4-80d6-a9ab-f4f158176175" class="" dir="auto">For each base caption, a corresponding negative caption was generated by replacing the sentence associated with the target organ with the fixed template, &quot;The {organ} is obscured by random noise.&quot;, where {organ} denotes the target organ (lung, heart, or bronchus). The descriptions of the remaining organs were kept unchanged. As a result, each negative caption differed from its corresponding base caption only in the semantic information describing the target organ while preserving the overall caption structure.</p>
+</div>
+</details>
+<details id="3ad1cc83-d7e4-8081-b29b-faffae3cb6f8" open="" class="toggle" dir="auto">
+<summary>brain MRI</summary>
+<div class="indented">
+<p id="3ad1cc83-d7e4-8024-a74f-ed471d5dea4a" class="" dir="auto">Positive 종결 문장은 세 종류</p>
+<ul id="3ad1cc83-d7e4-808a-a676-f11e813a51f3" class="bulleted-list" dir="auto">
+<li style="list-style-type:disc">
+<code>There is glioma type of tumor.</code> — 7,697건</li>
+</ul>
+<ul id="3ad1cc83-d7e4-809b-b08c-d2d8de3ffd7c" class="bulleted-list" dir="auto">
+<li style="list-style-type:disc">
+<code>There is pituitary type of tumor.</code> — 2,649건</li>
+</ul>
+<ul id="3ad1cc83-d7e4-808f-a5a7-f5ce0c74360d" class="bulleted-list" dir="auto">
+<li style="list-style-type:disc">
+<code>There is meningioma type of tumor.</code> — 2,298건</li>
+</ul>
+<p id="3ad1cc83-d7e4-804c-9c7e-e781790472ec" class="" dir="auto">Negative 종결 문장은 ID별로 100개가 있으며, 크게 5군입니다.</p>
+<ul id="3ad1cc83-d7e4-806c-81b2-d77f3c6e19bc" class="bulleted-list" dir="auto">
+<li style="list-style-type:disc">ID 0–19: 직접 부재 선언<p id="3ad1cc83-d7e4-8077-b28e-d5c2fd9dd301" class="" dir="auto">
+<code>There is no visible tumor.</code>, <code>No focal tumor is identified.</code>
+</p>
+</li>
+</ul>
+<ul id="3ad1cc83-d7e4-80ff-82ac-fa3361594c01" class="bulleted-list" dir="auto">
+<li style="list-style-type:disc">ID 20–39: synthetic noise/masking으로 병변을 가렸다고 설명<p id="3ad1cc83-d7e4-8054-8cfa-d49a742d501b" class="" dir="auto">
+<code>The tumor-related signal is covered by synthetic noise.</code>
+</p>
+</li>
+</ul>
+<ul id="3ad1cc83-d7e4-80d7-ac1a-ecf3b4125afc" class="bulleted-list" dir="auto">
+<li style="list-style-type:disc">ID 40–59: masking 후 종양을 확정할 수 없다고 설명<p id="3ad1cc83-d7e4-803c-b349-f5fbf697c94d" class="" dir="auto">
+<code>No definite tumor is identifiable after local masking.</code>
+</p>
+</li>
+</ul>
+<ul id="3ad1cc83-d7e4-805b-ac6b-ef7a49dd4f95" class="bulleted-list" dir="auto">
+<li style="list-style-type:disc">ID 60–79: 영상에서 종양이 보이지 않는다는 자연어 표현<p id="3ad1cc83-d7e4-8073-b275-c4bd5c3deafb" class="" dir="auto">
+<code>The brain parenchyma shows no clear tumor focus.</code>
+</p>
+</li>
+</ul>
+<ul id="3ad1cc83-d7e4-8037-b507-eb5f56a6c58c" class="bulleted-list" dir="auto">
+<li style="list-style-type:disc">ID 80–99: noisy/altered region 때문에 검출할 수 없다고 설명<p id="3ad1cc83-d7e4-8000-b9c9-e38262b64fa1" class="" dir="auto">
+<code>The noisy patch prevents reliable tumor detection.</code>
+</p>
+</li>
+</ul>
+</div>
+</details>
+</li>
+</ul>
+<p id="3ad1cc83-d7e4-801a-bd77-d664161d1e07" class="" dir="auto">
+</p>
+<div data-notion-highlight="yellow_background" dir="auto">
+<ol type="1" id="3ad1cc83-d7e4-8076-8a8d-f46fa16e40e3" class="block-color-yellow_background numbered-list" data-notion-highlight="yellow_background" start="3">
+<li>학습 파라미터 </li>
+</ol>
+</div>
+<ul id="3ad1cc83-d7e4-80d1-9f05-d27cc2f2cd08" class="bulleted-list" dir="auto">
+<li style="list-style-type:disc">학습 파라미터 </li>
+</ul>
+<p id="3ad1cc83-d7e4-8099-a20d-c40812d1ad40" class="" dir="auto">
+</p>
+<ul id="3ad1cc83-d7e4-80b2-ac10-dca31d2b9915" class="bulleted-list" dir="auto">
+<li style="list-style-type:disc">GPU</li>
+</ul>
+<p id="3ad1cc83-d7e4-80ab-8ae6-d8f443ce98c8" class="" dir="auto">
+</p>
+<p id="3ad1cc83-d7e4-804b-a7b3-dd365448566f" class="" dir="auto">
+</p>
+<div data-notion-highlight="yellow_background" dir="auto">
+<ol type="1" id="3ad1cc83-d7e4-8022-bced-daf5303d92cf" class="block-color-yellow_background numbered-list" data-notion-highlight="yellow_background" start="4">
+<li>학습데이터 및 테스트셋 구분[몇대몇인지, 랜덤샘플링인지, 이미 분할되있는 경우 그렇게썼다고 작성]</li>
+</ol>
+</div>
+<p id="3ad1cc83-d7e4-8025-be09-ec86ccce2a11" class="" dir="auto">취소선 섹션은 민성’s 문서 참고</p>
+<div id="3ad1cc83-d7e4-80a6-8ef0-fc308f827f06" class="" dir="auto">Table 1<div class="indented">
+<ul id="3ad1cc83-d7e4-8051-aa9a-faa4e708ab3e" class="bulleted-list" dir="auto">
+<li style="list-style-type:disc">Brest Ultrasound <ul id="3ad1cc83-d7e4-8032-b765-d09825670a32" class="bulleted-list" dir="auto">
+<li style="list-style-type:circle">BUS-CoT: 논문 저자 측에서 사전 분할</li>
+</ul>
+<ul id="3ad1cc83-d7e4-8069-bfc7-d22b038bc76d" class="bulleted-list" dir="auto">
+<li style="list-style-type:circle">UDIAT: impactlab 측에서 사전 분할<ul id="3ad1cc83-d7e4-8042-b52d-c426c4fd168a" class="bulleted-list" dir="auto">
+<li style="list-style-type:square">
+<a href="https://huggingface.co/datasets/WOOJYE/udiat/tree/main">https://huggingface.co/datasets/WOOJYE/udiat/tree/main</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul id="3ad1cc83-d7e4-806c-b45d-fda867476311" class="bulleted-list" dir="auto">
+<li style="list-style-type:disc">
+<del>Brain MRI</del>
+</li>
+</ul>
+<ul id="3ad1cc83-d7e4-8087-8354-e88d4dd26d03" class="bulleted-list" dir="auto">
+<li style="list-style-type:disc">
+<del>ChestCT</del>
+</li>
+</ul>
+<ul id="3ad1cc83-d7e4-806a-af38-df56115c5967" class="bulleted-list" dir="auto">
+<li style="list-style-type:disc">
+<del>COD10K</del>
+</li>
+</ul>
+<ul id="3ad1cc83-d7e4-8039-a8c8-c1c761fb3388" class="bulleted-list" dir="auto">
+<li style="list-style-type:disc">MAS3K <ul id="3ad1cc83-d7e4-804c-8daa-c9c9ded670b6" class="bulleted-list" dir="auto">
+<li style="list-style-type:circle">논문 측에서 사전 분할 X, 임의 8:2 train:test 분할</li>
+</ul>
+<ul id="3ad1cc83-d7e4-8064-9fc0-edc87a77a42e" class="bulleted-list" dir="auto">
+<li style="list-style-type:circle">
+<a href="https://huggingface.co/datasets/WOOJYE/gmpo_mas3k/tree/main">https://huggingface.co/datasets/WOOJYE/gmpo_mas3k/tree/main</a>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="3ad1cc83-d7e4-80e3-a4be-e0e5aea72044" class="" dir="auto">Table 2  (segmentation)<div class="indented">
+<ul id="3ad1cc83-d7e4-80cc-b300-d39772387b7f" class="bulleted-list" dir="auto">
+<li style="list-style-type:disc">Brest Ultrasound</li>
+</ul>
+<ul id="3ad1cc83-d7e4-80e9-a1e5-f7861765faa3" class="bulleted-list" dir="auto">
+<li style="list-style-type:disc">Brain MRI</li>
+</ul>
+<ul id="3ad1cc83-d7e4-8085-a583-d8a9dc11e8e3" class="bulleted-list" dir="auto">
+<li style="list-style-type:disc">ChestCT</li>
+</ul>
+<ul id="3ad1cc83-d7e4-8028-9acb-e8a41902ce91" class="bulleted-list" dir="auto">
+<li style="list-style-type:disc">COD10K</li>
+</ul>
+<ul id="3ad1cc83-d7e4-80c9-94a5-d4ec5e9f69db" class="bulleted-list" dir="auto">
+<li style="list-style-type:disc">MAS3K</li>
+</ul>
+</div>
+</div>
+<div id="3ad1cc83-d7e4-8076-b763-d71bb0d3c0b5" class="" dir="auto">Table 3  (VQA)<div class="indented">
+<ul id="3ad1cc83-d7e4-80eb-a205-db7a5ea41c8b" class="bulleted-list" dir="auto">
+<li style="list-style-type:disc">Brest Ultrasound</li>
+</ul>
+<ul id="3ad1cc83-d7e4-8071-b3ae-f606bb13e522" class="bulleted-list" dir="auto">
+<li style="list-style-type:disc">Brain MRI</li>
+</ul>
+<ul id="3ad1cc83-d7e4-8092-ba61-d8d7e875eb63" class="bulleted-list" dir="auto">
+<li style="list-style-type:disc">camofla</li>
+</ul>
+</div>
+</div>
+<p id="3ad1cc83-d7e4-8089-a6f3-f4c630d64cff" class="" dir="auto">
+</p>
+<p id="3ad1cc83-d7e4-80a0-bcb1-ca09533df98e" class="" dir="auto">english</p>
+<hr id="3ad1cc83-d7e4-80a0-a407-f47a6dc28686" dir="auto"/>
+<p id="3ad1cc83-d7e4-807f-9ac9-f53c3bd46762" class="" dir="auto">
+</p>
+</div>
+</article>
+<span class="sans" style="font-size:14px;padding-top:2em">
+</span>
+</body>
+</html>

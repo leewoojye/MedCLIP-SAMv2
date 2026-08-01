@@ -1,185 +1,191 @@
-# MedCLIP-SAMv2: Towards Universal Text-Driven Medical Image Segmentation
+# Class-wise AUROC and FPR@95%TPR Evaluation
 
-**[Health-X Lab](http://www.healthx-lab.ca/)** | **[IMPACT Lab](https://users.encs.concordia.ca/~impact/)** 
+This repository provides a CSV-based, zero-shot evaluation pipeline for
+class-wise one-vs-rest (OVR) AUROC and macro FPR@95%TPR. The metric core is
+implemented in `a1_inference/clip4retrofit_ovr_metrics.py`; the CSV evaluators
+only add the upstream inference steps:
 
-[Taha Koleilat](https://tahakoleilat.github.io/), [Hojat Asgariandehkordi](https://scholar.google.com/citations?user=ndXNye4AAAAJ&hl=en), [Hassan Rivaz](https://users.encs.concordia.ca/~hrivaz/), [Yiming Xiao](https://yimingxiao.weebly.com/curriculum-vitae.html)
-
-[![paper](https://img.shields.io/badge/arXiv-Paper-<COLOR>.svg)](https://www.arxiv.org/abs/2409.19483)
-[![Overview](https://img.shields.io/badge/Overview-Read-blue.svg)](#overview)
-[![Datasets](https://img.shields.io/badge/Datasets-Access-yellow.svg)](#datasets)
-[![Demo](https://img.shields.io/badge/Demo-Try-orange.svg)](#colab-demo)
-[![BibTeX](https://img.shields.io/badge/BibTeX-Cite-blueviolet.svg)](#citation)
-
-## Updates
-Due to the many requests we received for releasing the BiomedCLIP fine-tuning code, we have updated the repo and added the necessary code to do so. Follow the steps [here](#how-to-run)
-
-## Overview
-
-_**Abstract:** Segmentation of anatomical structures and pathological regions in medical images is essential for modern clinical diagnosis, disease research, and treatment planning. While significant advancements have been made in deep learning-based segmentation techniques, many of these methods still suffer from limitations in data efficiency, generalizability, and interactivity. As a result, developing precise segmentation methods that require fewer labeled datasets remains a critical challenge in medical image analysis. Recently, the introduction of foundation models like CLIP and Segment-Anything-Model (SAM), with robust cross-domain representations, has paved the way for interactive and universal image segmentation. However, further exploration of these models for data-efficient segmentation in medical imaging is still needed and highly relevant. In this paper, we introduce MedCLIP-SAMv2, a novel framework that integrates the CLIP and SAM models to perform segmentation on clinical scans using text prompts, in both zero-shot and weakly supervised settings. Our approach includes fine-tuning the BiomedCLIP model with a new Decoupled Hard Negative Noise Contrastive Estimation (DHN-NCE) loss, and leveraging the Multi-modal Information Bottleneck (M2IB) to create visual prompts for generating segmentation masks from SAM in the zero-shot setting. We also investigate using zero-shot segmentation labels within a weakly supervised paradigm to enhance segmentation quality further. Extensive testing across four diverse segmentation tasks and medical imaging modalities (breast tumor ultrasound, brain tumor MRI, lung X-ray, and lung CT) demonstrates the high accuracy of our proposed framework._
-
-### Framework
-
-<p float="left">
-  <img src="assets/MedCLIP-SAMv2.png" width="100%" />
-</p>
-
-### Sample Segmentation Results
-<p float="left">
-  <img src="assets/SegExamples.png" width="100%" />
-</p>
-
-## Datasets
-Public datasets used in our study:
-- [Radiology Objects in COntext (ROCO)](https://github.com/razorx89/roco-dataset)
-- [MedPix](https://drive.google.com/file/d/1GrTyC08-CwP90TKO2aoMOj0tTyNiafjd/view?usp=sharing)
-- [Breast UltraSound Images (BUSI)](https://www.kaggle.com/datasets/aryashah2k/breast-ultrasound-images-dataset)
-- [UDIAT](https://drive.google.com/file/d/1txsA6eNFZciIrbqzwS3uOcnnkiEh3Pt4/view?usp=drive_link)
-- [COVID-QU-Ex](https://www.kaggle.com/datasets/anasmohammedtahir/covidqu)
-- [Brain Tumors](https://www.kaggle.com/datasets/ashkhagan/figshare-brain-tumor-dataset)
-- [Lung CT](https://www.kaggle.com/datasets/polomarco/chest-ct-segmentation)
-
-You can download the segmentation datasets [here](https://drive.google.com/file/d/1uYtyg3rClE-XXPNuEz7s6gYq2p48Z08p/view?usp=sharing).
-
-Create a directory for your data that you want to work with in the main working directory like the following:
-
-```shell
-data
-├── breast_tumors
-│   ├── train_images           
-│   ├── train_masks             
-│   ├── val_images        
-│   ├── val_masks         
-│   ├── test_images       
-│   └── test_masks        
-│
-├── brain_tumors
-│   ├── train_images            
-│   ├── train_masks            
-│   ├── val_images        
-│   ├── val_masks         
-│   ├── test_images       
-│   └── test_masks        
-│
-└── ...        
+```text
+CSV -> image and text embeddings -> raw cosine-similarity scores -> OVR metrics
 ```
 
-## Colab Demo
+The pipeline keeps one fixed text caption per class, encodes all images and
+captions with the selected vision-language model, and uses raw L2-normalised
+image-text cosine similarity as the score. It does not apply CLIP logit
+scaling, sigmoid, or softmax before ROC calculation.
 
-Interactive Colab demo: [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1Hf_ticAbO7Oyh5Rat2XqQ-FAkm4vk3RQ?usp=sharing)
+## Metric definition
 
-## Prerequisites & Installation
-Install anaconda following the [anaconda installation documentation](https://docs.anaconda.com/anaconda/install/).
-Create an environment with all required packages with the following command :
-```bashscript
-conda env create -f medclipsamv2_env.yml
-conda activate medclipsamv2
-```
-then setup the segment-anything library:
-```bashscript
-cd segment-anything
-pip install -e .
-cd ..
-```
-finally setup the nnUNet framework:
-```bashscript
-cd weak_segmentation
-pip install -e .
-cd ..
-```
+For every class `k`, the evaluator treats samples from class `k` as positive
+and all other samples as negative. It then constructs one binary ROC curve
+from the `k`-th cosine-similarity score column and reports:
 
-### <a name="Models"></a>SAM Model Checkpoints
+- **Per-class AUROC:** trapezoidal area under that ROC curve.
+- **Macro AUROC:** the unweighted arithmetic mean of all per-class AUROCs.
+- **Per-class FPR@95%TPR:** the FPR at the first ROC point whose TPR is at
+  least 0.95. No interpolation is applied.
+- **Macro FPR@95%TPR:** the unweighted arithmetic mean of the per-class
+  FPR@95%TPR values.
 
-Three model versions of the SAM model are available with different backbone sizes. These models can be instantiated by running
+The implementation follows the one-vs-rest ROC-AUC procedure used by
+Clip4Retrofit. FPR@95%TPR is an additional metric in this repository. Every
+class must have at least one positive and one negative sample; undefined
+classes raise an error rather than being silently removed from the macro mean.
 
-Click the links below to download the checkpoint for the corresponding model type and place it at `segment-anything/sam_checkpoints/sam_vit_h_4b8939.pth`
+## Evaluation environment
 
-- **`default` or `vit_h`: [ViT-H SAM model.](https://dl.fbaipublicfiles.com/segment_anything/sam_vit_h_4b8939.pth)**
-- `vit_l`: [ViT-L SAM model.](https://dl.fbaipublicfiles.com/segment_anything/sam_vit_l_0b3195.pth)
-- `vit_b`: [ViT-B SAM model.](https://dl.fbaipublicfiles.com/segment_anything/sam_vit_b_01ec64.pth)
-
-## How to run
-### DHN-NCE Loss
-You can fine-tune the BiomedCLIP pre-trained model using our [DHN-NCE Loss](https://github.com/HealthX-Lab/MedCLIP-SAMv2/tree/main/loss).
-
-Place your image-text dataset in `biomedclip_finetuning/open_clip/src/data` (please refer to the [MedPix](https://drive.google.com/file/d/1GrTyC08-CwP90TKO2aoMOj0tTyNiafjd/view?usp=sharing) dataset to see how your custom dataset should be structured)
-
-You can then start fine-tuning BiomedCLIP like this:
-```bash
-bash biomedclip_finetuning/open_clip/scripts/biomedclip.sh
-```
-
-If you have the model saved with the `.pt` format, you can convert it to `.bin` by moving the saved model checkpoint to `saliency_maps/model` and then calling:
-
-```python
-python saliency_maps/model/convert.py
-```
-
-Our fine-tuned model can be downloaded [here](https://drive.google.com/file/d/1jjnZabUlc9_gpcP0d2nz_GNS-EGX0lq5/view?usp=sharing). Place it at `saliency_maps/model/pytorch_model.bin`
-
-### Zero-shot Segmentation
-You can run the whole zero-shot framework with the following:
-
-```bashscript
-bash zeroshot.sh <path/to/dataset>
-```
-You can change the settings by specifying which CLIP model you want to use, the post-processing algorithm, the SAM model and the type of visual prompts to use (boxes/points/both).
-
-The text prompts we used can be found [here](https://github.com/HealthX-Lab/MedCLIP-SAMv2/blob/main/saliency_maps/text_prompts.py).
-
-Some zeroshot_scripts to reproduce the results are found at `zeroshot_scripts`.
-
-### Weakly Supervised Segmentation
-
-Go to `weak_segmentation`:
-
-```bashscript
-cd weak_segmentation
-```
-
-#### Dataset Prepartion
-Please follow this [guideline](https://github.com/MIC-DKFZ/nnUNet/blob/master/documentation/dataset_format.md) to prepare your datasets. Place all your prepared datasets in `data`.
-
-#### Preprocessing
+The standard runners use `bioclip2/.venv/bin/python` and keep the additional
+OpenCLIP dependency in `a1_inference/pydeps`. From the repository root, install
+the evaluator dependency once:
 
 ```bash
-nnUNetv2_plan_and_preprocess -d DATASET_ID --verify_dataset_integrity
+bash a1_inference/setup_csv_classwise_eval.sh
 ```
 
-#### Training
+All Hugging Face and OpenCLIP downloads are cached under
+`a1_inference/.hf_cache`. The generic CSV runner supports these model keys:
+
+| Model key | Model |
+| --- | --- |
+| `openai_clip` | `openai/clip-vit-large-patch14` |
+| `siglip` | `google/siglip-base-patch16-224` |
+| `medsiglip` | `google/medsiglip-448` |
+| `biomedclip` | `microsoft/BiomedCLIP-PubMedBERT_256-vit_base_patch16_224` |
+
+`google/medsiglip-448` is a gated Hugging Face model. Accept its access terms
+on Hugging Face and authenticate before including `medsiglip` in a run:
+
 ```bash
-nnUNetv2_train DATASET_ID 2d all --npz --num_epochs EPOCHS --num_of_cycles CYCLES
+HF_HOME="$PWD/a1_inference/.hf_cache" hf auth login
 ```
 
-#### Inference and Uncertainty
+The runner evaluates requested models sequentially, so only one model is kept
+in GPU memory at a time. Unless overridden, the generic runner exposes the
+compatible physical GPUs `1,2,3` through `CUDA_VISIBLE_DEVICES`; therefore
+`--device cuda:0` refers to the first visible GPU, not necessarily physical GPU
+0. To choose visible devices explicitly, set `CUDA_VISIBLE_DEVICES` before the
+command.
+
+## CSV requirements
+
+The generic evaluator accepts a CSV with exactly these required columns:
+
+```csv
+image_path,class_label,caption
+/absolute/path/inside/MedCLIP-SAMv2/data/example/a.png,class_a,A fixed caption for class A.
+/absolute/path/inside/MedCLIP-SAMv2/data/example/b.png,class_b,A fixed caption for class B.
+```
+
+- `image_path` must exist inside this repository.
+- `class_label` must appear in `--class-order`.
+- Each class must occur at least once.
+- All rows sharing a `class_label` must use exactly the same `caption`, because
+  one text embedding is created per class.
+- The order passed to `--class-order` fixes both the cosine-score columns and
+  the reported class order.
+
+Prepared CSVs and dataset-specific wrappers are available in `a1_inference/`.
+They cover UDIAT, Figshare brain MRI, Chest CT, COD10K, and MAS3K.
+
+## Run a CSV evaluation
+
+The following command evaluates the prepared UDIAT CSV with all four generic
+model keys on the first visible GPU:
 
 ```bash
-nnUNetv2_predict_from_folder --dataset DATASET_ID --fold all --input_folder INPUT_PATH --output_folder OUTPUT_PATH --rule RULE
+bash a1_inference/run_csv_classwise_eval.sh \
+  --csv a1_inference/udiat_classwise_eval.csv \
+  --output-dir a1_inference/csv_classwise_results/udiat_example \
+  --class-order benign malignant normal \
+  --models openai_clip siglip medsiglip biomedclip \
+  --device cuda:0
 ```
+
+For a custom CSV, replace the CSV path, output directory, class order, and
+model selection as needed. For example, a small single-model smoke test is:
 
 ```bash
-nnUNetv2_run_uncertainty_on_fold --proba_dir PATH --raw_path PATH --labels PATH --score_type TYPE --output_pred_path PATH
+bash a1_inference/run_csv_classwise_eval.sh \
+  --csv a1_inference/udiat_classwise_eval.csv \
+  --output-dir a1_inference/csv_classwise_results/udiat_openai_clip_smoke \
+  --class-order benign malignant normal \
+  --models openai_clip \
+  --batch-size 16 \
+  --device cuda:0
 ```
 
-## Acknowledgements
+Useful options are:
 
-Special thanks to [open_clip](https://github.com/mlfoundations/open_clip), [M2IB](https://github.com/YingWANGG/M2IB), [nnUNet](https://github.com/MIC-DKFZ/nnUNet), and [segment-anything](https://github.com/facebookresearch/segment-anything) for making their valuable code publicly available.
+- `--target-tpr 0.95` sets the FPR operating point (default: `0.95`).
+- `--no-plots` skips ROC PNG creation.
+- `--fail-fast` stops after the first model error; by default the runner writes
+  a `failure.json` for a failed model and continues with the remaining models.
+- `--batch-size N` controls image-encoding batch size. Lower it if GPU memory
+  is insufficient.
 
-## Citation
+Dataset-specific wrappers encode the corresponding CSV, class order, and
+default output location. Examples include:
 
-If you use MedCLIP-SAM, please consider citing:
+```bash
+bash a1_inference/run_figshare_classwise_eval.sh --device cuda:0
+bash a1_inference/run_chest_ct_classwise_eval.sh --device cuda:0
+```
 
-    @article{koleilat2024medclipsamv2,
-      title={MedCLIP-SAMv2: Towards Universal Text-Driven Medical Image Segmentation},
-      author={Koleilat, Taha and Asgariandehkordi, Hojat and Rivaz, Hassan and Xiao, Yiming},
-      journal={arXiv preprint arXiv:2409.19483},
-      year={2024}
-    }
+For the separate OpenAI CLIP ViT-B/32 baseline, use the dedicated runner:
 
-    @inproceedings{koleilat2024medclip,
-      title={MedCLIP-SAM: Bridging text and image towards universal medical image segmentation},
-      author={Koleilat, Taha and Asgariandehkordi, Hojat and Rivaz, Hassan and Xiao, Yiming},
-      booktitle={International Conference on Medical Image Computing and Computer-Assisted Intervention},
-      pages={643--653},
-      year={2024},
-      organization={Springer}
-    }
+```bash
+bash a1_inference/run_openai_vit_b32_classwise_eval.sh \
+  --dataset figshare \
+  --device cuda:0
+```
+
+Supported `--dataset` values for this baseline are `udiat`, `figshare`,
+`chestct`, `cod10k`, and `mas3k`. Dataset- and checkpoint-specific scripts
+such as `checkpoint_classwise_eval.py`, `mri_global_figshare_classwise_eval.py`,
+`ct_global_chest_ct_classwise_eval.py`, `cod10k_classwise_eval.py`, and
+`mas3k_classwise_eval.py` reuse the same metric core after their model-specific
+inference step.
+
+## Evaluate precomputed scores only
+
+If image and text embeddings have already been converted to an NPZ containing
+`y_true` and `y_score`, calculate the OVR metrics without running inference:
+
+```bash
+bioclip2/.venv/bin/python a1_inference/clip4retrofit_ovr_metrics.py \
+  --input a1_inference/predictions.npz \
+  --output-dir a1_inference/metrics_output \
+  --target-tpr 0.95
+```
+
+`y_true` may be a single-label vector of shape `(N,)` or a multi-hot matrix of
+shape `(N, C)`. `y_score` must have shape `(N, C)`, with columns aligned to
+`class_names` when supplied. This supports the image-level multi-label OVR
+setting as well as ordinary single-label multiclass evaluation.
+
+## Outputs
+
+For each evaluated model, the result directory contains:
+
+- `predictions.npz`: labels, raw cosine scores, source image paths, captions,
+  and image/text embeddings.
+- `metrics.json`: metric definitions, macro values, and per-class values.
+- `per_class_metrics.csv`: class label, positive/negative counts, AUROC, and
+  FPR@95%TPR.
+- `roc_curves.npz`: complete FPR, TPR, and threshold arrays.
+- `ovr_roc_curves.png` and `ovr_roc_subplots.png`: ROC visualisations, unless
+  `--no-plots` was used.
+- `run_metadata.json`: model ID, backend, device, captions, class order, cache
+  location, and score definition.
+
+For generic CSV runs, these artifacts are written to
+`<output-dir>/<model_key>/`. Keep CSV inputs, output directories, and model
+caches inside this repository; the evaluators enforce this path boundary.
+
+## Validation
+
+Run the metric unit tests with:
+
+```bash
+bioclip2/.venv/bin/python -m unittest a1_inference.test_clip4retrofit_ovr_metrics
+```

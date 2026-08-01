@@ -1,0 +1,357 @@
+{
+  "protocol": {
+    "name": "Clip4Retrofit-style per-class one-vs-rest ROC-AUC",
+    "score": "raw per-class confidence; cosine similarity for paper reproduction",
+    "auroc": "sklearn roc_curve followed by trapezoidal sklearn auc",
+    "macro_auroc": "unweighted arithmetic mean of per-class AUROCs",
+    "fpr_at_target_tpr": "first attainable ROC point with TPR >= target_tpr",
+    "macro_fpr_at_target_tpr": "unweighted arithmetic mean of per-class FPR@targetTPR"
+  },
+  "n_samples": 1164,
+  "n_classes": 34,
+  "target_tpr": 0.95,
+  "macro_auroc": 0.7580024175422598,
+  "macro_fpr_at_target_tpr": 0.5233632915938223,
+  "per_class": [
+    {
+      "class_index": 0,
+      "class_label": 0,
+      "class_name": "AngelFish",
+      "positive_count": 2,
+      "negative_count": 1162,
+      "auroc": 0.9677280550774527,
+      "fpr_at_target_tpr": 0.04130808950086059,
+      "threshold_at_target_tpr": 0.1513716762544333
+    },
+    {
+      "class_index": 1,
+      "class_label": 1,
+      "class_name": "BatFish",
+      "positive_count": 2,
+      "negative_count": 1162,
+      "auroc": 0.8446643717728055,
+      "fpr_at_target_tpr": 0.1721170395869191,
+      "threshold_at_target_tpr": 0.15673119085801268
+    },
+    {
+      "class_index": 2,
+      "class_label": 2,
+      "class_name": "Butterflyfish",
+      "positive_count": 6,
+      "negative_count": 1158,
+      "auroc": 0.7415083477259643,
+      "fpr_at_target_tpr": 0.5872193436960277,
+      "threshold_at_target_tpr": 0.09647790303730688
+    },
+    {
+      "class_index": 3,
+      "class_label": 3,
+      "class_name": "ClownFish",
+      "positive_count": 12,
+      "negative_count": 1152,
+      "auroc": 0.9785879629629629,
+      "fpr_at_target_tpr": 0.2065972222222222,
+      "threshold_at_target_tpr": 0.14027514182888787
+    },
+    {
+      "class_index": 4,
+      "class_label": 4,
+      "class_name": "Conch",
+      "positive_count": 19,
+      "negative_count": 1145,
+      "auroc": 0.7580326361755918,
+      "fpr_at_target_tpr": 0.8960698689956332,
+      "threshold_at_target_tpr": 0.04817600504495616
+    },
+    {
+      "class_index": 5,
+      "class_label": 5,
+      "class_name": "Crab",
+      "positive_count": 15,
+      "negative_count": 1149,
+      "auroc": 0.29353060632434,
+      "fpr_at_target_tpr": 0.927763272410792,
+      "threshold_at_target_tpr": 0.014309664747296275
+    },
+    {
+      "class_index": 6,
+      "class_label": 6,
+      "class_name": "CrocodileFish",
+      "positive_count": 3,
+      "negative_count": 1161,
+      "auroc": 0.8989376973873098,
+      "fpr_at_target_tpr": 0.2558139534883721,
+      "threshold_at_target_tpr": 0.16005843391068392
+    },
+    {
+      "class_index": 7,
+      "class_label": 7,
+      "class_name": "CuttleFish",
+      "positive_count": 1,
+      "negative_count": 1163,
+      "auroc": 0.819432502149613,
+      "fpr_at_target_tpr": 0.18056749785038692,
+      "threshold_at_target_tpr": 0.14184522394983679
+    },
+    {
+      "class_index": 8,
+      "class_label": 8,
+      "class_name": "Dolphin",
+      "positive_count": 9,
+      "negative_count": 1155,
+      "auroc": 0.7139009139009139,
+      "fpr_at_target_tpr": 0.8805194805194805,
+      "threshold_at_target_tpr": 0.036558285179492785
+    },
+    {
+      "class_index": 9,
+      "class_label": 9,
+      "class_name": "Fish",
+      "positive_count": 86,
+      "negative_count": 1078,
+      "auroc": 0.4230217456961643,
+      "fpr_at_target_tpr": 0.9304267161410018,
+      "threshold_at_target_tpr": 0.02512263518368993
+    },
+    {
+      "class_index": 10,
+      "class_label": 10,
+      "class_name": "Flounder",
+      "positive_count": 11,
+      "negative_count": 1153,
+      "auroc": 0.6928171568240952,
+      "fpr_at_target_tpr": 0.7467476149176062,
+      "threshold_at_target_tpr": 0.06578089670595942
+    },
+    {
+      "class_index": 11,
+      "class_label": 11,
+      "class_name": "FrogFish",
+      "positive_count": 3,
+      "negative_count": 1161,
+      "auroc": 0.8776916451335056,
+      "fpr_at_target_tpr": 0.22652885443583118,
+      "threshold_at_target_tpr": 0.14124252366786502
+    },
+    {
+      "class_index": 12,
+      "class_label": 12,
+      "class_name": "GhostPipeFish",
+      "positive_count": 23,
+      "negative_count": 1141,
+      "auroc": 0.9124718972678428,
+      "fpr_at_target_tpr": 0.3496932515337423,
+      "threshold_at_target_tpr": 0.15374499529822588
+    },
+    {
+      "class_index": 13,
+      "class_label": 13,
+      "class_name": "Grouper",
+      "positive_count": 93,
+      "negative_count": 1071,
+      "auroc": 0.7877071975743704,
+      "fpr_at_target_tpr": 0.6302521008403361,
+      "threshold_at_target_tpr": 0.09961611310848198
+    },
+    {
+      "class_index": 14,
+      "class_label": 14,
+      "class_name": "JellyFish",
+      "positive_count": 18,
+      "negative_count": 1146,
+      "auroc": 0.9663079309676168,
+      "fpr_at_target_tpr": 0.18673647469458987,
+      "threshold_at_target_tpr": 0.12309902616505244
+    },
+    {
+      "class_index": 15,
+      "class_label": 15,
+      "class_name": "LeafySeaDragon",
+      "positive_count": 3,
+      "negative_count": 1161,
+      "auroc": 0.8690783807062877,
+      "fpr_at_target_tpr": 0.39276485788113696,
+      "threshold_at_target_tpr": 0.1294964160946533
+    },
+    {
+      "class_index": 16,
+      "class_label": 16,
+      "class_name": "MantaRay",
+      "positive_count": 7,
+      "negative_count": 1157,
+      "auroc": 0.9881466847758982,
+      "fpr_at_target_tpr": 0.045808124459809856,
+      "threshold_at_target_tpr": 0.20080062526034112
+    },
+    {
+      "class_index": 17,
+      "class_label": 17,
+      "class_name": "MorayEel",
+      "positive_count": 8,
+      "negative_count": 1156,
+      "auroc": 0.7814662629757786,
+      "fpr_at_target_tpr": 0.4826989619377163,
+      "threshold_at_target_tpr": 0.11650309869591788
+    },
+    {
+      "class_index": 18,
+      "class_label": 18,
+      "class_name": "Octopus",
+      "positive_count": 17,
+      "negative_count": 1147,
+      "auroc": 0.7896815221293398,
+      "fpr_at_target_tpr": 0.9145597210113339,
+      "threshold_at_target_tpr": 0.008794245369941889
+    },
+    {
+      "class_index": 19,
+      "class_label": 19,
+      "class_name": "Pagurian",
+      "positive_count": 1,
+      "negative_count": 1163,
+      "auroc": 0.7695614789337919,
+      "fpr_at_target_tpr": 0.23043852106620807,
+      "threshold_at_target_tpr": 0.1400931462842226
+    },
+    {
+      "class_index": 20,
+      "class_label": 20,
+      "class_name": "PipeFish",
+      "positive_count": 78,
+      "negative_count": 1086,
+      "auroc": 0.743955706662889,
+      "fpr_at_target_tpr": 0.6261510128913443,
+      "threshold_at_target_tpr": 0.07914013666175632
+    },
+    {
+      "class_index": 21,
+      "class_label": 21,
+      "class_name": "Piranha",
+      "positive_count": 2,
+      "negative_count": 1162,
+      "auroc": 0.9995697074010327,
+      "fpr_at_target_tpr": 0.0008605851979345956,
+      "threshold_at_target_tpr": 0.22648950293464082
+    },
+    {
+      "class_index": 22,
+      "class_label": 22,
+      "class_name": "RatFish",
+      "positive_count": 1,
+      "negative_count": 1163,
+      "auroc": 0.8168529664660361,
+      "fpr_at_target_tpr": 0.1831470335339639,
+      "threshold_at_target_tpr": 0.16247683279965164
+    },
+    {
+      "class_index": 23,
+      "class_label": 23,
+      "class_name": "ScorpionFish",
+      "positive_count": 23,
+      "negative_count": 1141,
+      "auroc": 0.6997294516633007,
+      "fpr_at_target_tpr": 0.588957055214724,
+      "threshold_at_target_tpr": 0.07973929785823361
+    },
+    {
+      "class_index": 24,
+      "class_label": 24,
+      "class_name": "SeaHorse",
+      "positive_count": 30,
+      "negative_count": 1134,
+      "auroc": 0.8303057025279248,
+      "fpr_at_target_tpr": 0.5079365079365079,
+      "threshold_at_target_tpr": 0.09782104486894994
+    },
+    {
+      "class_index": 25,
+      "class_label": 25,
+      "class_name": "Seal",
+      "positive_count": 7,
+      "negative_count": 1157,
+      "auroc": 0.4725274725274725,
+      "fpr_at_target_tpr": 0.9394987035436474,
+      "threshold_at_target_tpr": 0.02589871267988607
+    },
+    {
+      "class_index": 26,
+      "class_label": 26,
+      "class_name": "Shark",
+      "positive_count": 6,
+      "negative_count": 1158,
+      "auroc": 0.6911341393206678,
+      "fpr_at_target_tpr": 0.533678756476684,
+      "threshold_at_target_tpr": 0.10281123374327203
+    },
+    {
+      "class_index": 27,
+      "class_label": 27,
+      "class_name": "Shrimp",
+      "positive_count": 16,
+      "negative_count": 1148,
+      "auroc": 0.5040287456445993,
+      "fpr_at_target_tpr": 0.9738675958188153,
+      "threshold_at_target_tpr": -0.009873630767405783
+    },
+    {
+      "class_index": 28,
+      "class_label": 28,
+      "class_name": "Slug",
+      "positive_count": 2,
+      "negative_count": 1162,
+      "auroc": 0.7267641996557659,
+      "fpr_at_target_tpr": 0.5017211703958692,
+      "threshold_at_target_tpr": 0.05824858514815289
+    },
+    {
+      "class_index": 29,
+      "class_label": 29,
+      "class_name": "StarFish",
+      "positive_count": 20,
+      "negative_count": 1144,
+      "auroc": 0.7797202797202797,
+      "fpr_at_target_tpr": 0.715034965034965,
+      "threshold_at_target_tpr": 0.0725020755441581
+    },
+    {
+      "class_index": 30,
+      "class_label": 30,
+      "class_name": "Stingaree",
+      "positive_count": 11,
+      "negative_count": 1153,
+      "auroc": 0.7792320428920603,
+      "fpr_at_target_tpr": 0.5429314830875975,
+      "threshold_at_target_tpr": 0.08172998170138088
+    },
+    {
+      "class_index": 31,
+      "class_label": 31,
+      "class_name": "SurgeonFish",
+      "positive_count": 7,
+      "negative_count": 1157,
+      "auroc": 0.6947771329793802,
+      "fpr_at_target_tpr": 0.560933448573898,
+      "threshold_at_target_tpr": 0.08884984535881456
+    },
+    {
+      "class_index": 32,
+      "class_label": 32,
+      "class_name": "Turtle",
+      "positive_count": 40,
+      "negative_count": 1124,
+      "auroc": 0.5775133451957295,
+      "fpr_at_target_tpr": 0.8985765124555161,
+      "threshold_at_target_tpr": 1.5994720142659125e-06
+    },
+    {
+      "class_index": 33,
+      "class_label": 33,
+      "class_name": "no camouflaged animal",
+      "positive_count": 582,
+      "negative_count": 582,
+      "auroc": 0.5816963073180526,
+      "fpr_at_target_tpr": 0.936426116838488,
+      "threshold_at_target_tpr": -0.04778724519364685
+    }
+  ]
+}

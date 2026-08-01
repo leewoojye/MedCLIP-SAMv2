@@ -1,0 +1,717 @@
+{
+  "protocol": {
+    "name": "Clip4Retrofit-style per-class one-vs-rest ROC-AUC",
+    "score": "raw per-class confidence; cosine similarity for paper reproduction",
+    "auroc": "sklearn roc_curve followed by trapezoidal sklearn auc",
+    "macro_auroc": "unweighted arithmetic mean of per-class AUROCs",
+    "fpr_at_target_tpr": "first attainable ROC point with TPR >= target_tpr",
+    "macro_fpr_at_target_tpr": "unweighted arithmetic mean of per-class FPR@targetTPR"
+  },
+  "n_samples": 4052,
+  "n_classes": 70,
+  "target_tpr": 0.95,
+  "macro_auroc": 0.9319411240560764,
+  "macro_fpr_at_target_tpr": 0.21766472296889108,
+  "per_class": [
+    {
+      "class_index": 0,
+      "class_label": 0,
+      "class_name": "ant",
+      "positive_count": 10,
+      "negative_count": 4042,
+      "auroc": 0.8803315190499753,
+      "fpr_at_target_tpr": 0.3587333003463632,
+      "threshold_at_target_tpr": 0.33788397727680014
+    },
+    {
+      "class_index": 1,
+      "class_label": 1,
+      "class_name": "bat",
+      "positive_count": 13,
+      "negative_count": 4039,
+      "auroc": 0.9957719923057877,
+      "fpr_at_target_tpr": 0.022035157217132954,
+      "threshold_at_target_tpr": 0.2365666205113683
+    },
+    {
+      "class_index": 2,
+      "class_label": 2,
+      "class_name": "bat fish",
+      "positive_count": 4,
+      "negative_count": 4048,
+      "auroc": 0.9149580039525692,
+      "fpr_at_target_tpr": 0.1956521739130435,
+      "threshold_at_target_tpr": 0.45110588910886407
+    },
+    {
+      "class_index": 3,
+      "class_label": 3,
+      "class_name": "bee",
+      "positive_count": 11,
+      "negative_count": 4041,
+      "auroc": 0.9907313671233493,
+      "fpr_at_target_tpr": 0.07225934174709231,
+      "threshold_at_target_tpr": 0.33007500552129404
+    },
+    {
+      "class_index": 4,
+      "class_label": 4,
+      "class_name": "beetle",
+      "positive_count": 3,
+      "negative_count": 4049,
+      "auroc": 0.9218737136741582,
+      "fpr_at_target_tpr": 0.14250432205482835,
+      "threshold_at_target_tpr": 0.2716561946785996
+    },
+    {
+      "class_index": 5,
+      "class_label": 5,
+      "class_name": "bird",
+      "positive_count": 95,
+      "negative_count": 3957,
+      "auroc": 0.8799914874373196,
+      "fpr_at_target_tpr": 0.27849380844073796,
+      "threshold_at_target_tpr": 0.2851124187368428
+    },
+    {
+      "class_index": 6,
+      "class_label": 6,
+      "class_name": "bittern",
+      "positive_count": 12,
+      "negative_count": 4040,
+      "auroc": 0.9512788778877888,
+      "fpr_at_target_tpr": 0.1962871287128713,
+      "threshold_at_target_tpr": 0.3886781703115654
+    },
+    {
+      "class_index": 7,
+      "class_label": 7,
+      "class_name": "bug",
+      "positive_count": 22,
+      "negative_count": 4030,
+      "auroc": 0.7631513647642679,
+      "fpr_at_target_tpr": 0.5744416873449132,
+      "threshold_at_target_tpr": 0.19171738030704089
+    },
+    {
+      "class_index": 8,
+      "class_label": 8,
+      "class_name": "butterfly",
+      "positive_count": 53,
+      "negative_count": 3999,
+      "auroc": 0.9309355640796991,
+      "fpr_at_target_tpr": 0.27906976744186046,
+      "threshold_at_target_tpr": 0.2667137422270222
+    },
+    {
+      "class_index": 9,
+      "class_label": 9,
+      "class_name": "cat",
+      "positive_count": 107,
+      "negative_count": 3945,
+      "auroc": 0.9545183184677161,
+      "fpr_at_target_tpr": 0.33713561470215464,
+      "threshold_at_target_tpr": 0.130137991783892
+    },
+    {
+      "class_index": 10,
+      "class_label": 10,
+      "class_name": "caterpillar",
+      "positive_count": 39,
+      "negative_count": 4013,
+      "auroc": 0.8181870459468267,
+      "fpr_at_target_tpr": 0.7881883877398455,
+      "threshold_at_target_tpr": 0.24225590336260047
+    },
+    {
+      "class_index": 11,
+      "class_label": 11,
+      "class_name": "centipede",
+      "positive_count": 3,
+      "negative_count": 4049,
+      "auroc": 0.9936609862517494,
+      "fpr_at_target_tpr": 0.01901704124475179,
+      "threshold_at_target_tpr": 0.31855606360526134
+    },
+    {
+      "class_index": 12,
+      "class_label": 12,
+      "class_name": "chameleon",
+      "positive_count": 28,
+      "negative_count": 4024,
+      "auroc": 0.9350415364953137,
+      "fpr_at_target_tpr": 0.35934393638170975,
+      "threshold_at_target_tpr": 0.2906073350597566
+    },
+    {
+      "class_index": 13,
+      "class_label": 13,
+      "class_name": "cheetah",
+      "positive_count": 10,
+      "negative_count": 4042,
+      "auroc": 0.9984166254329541,
+      "fpr_at_target_tpr": 0.006679861454725384,
+      "threshold_at_target_tpr": 0.4354740163287081
+    },
+    {
+      "class_index": 14,
+      "class_label": 14,
+      "class_name": "cicada",
+      "positive_count": 45,
+      "negative_count": 4007,
+      "auroc": 0.9629759032803704,
+      "fpr_at_target_tpr": 0.14225106064387322,
+      "threshold_at_target_tpr": 0.41482718580225325
+    },
+    {
+      "class_index": 15,
+      "class_label": 15,
+      "class_name": "clown fish",
+      "positive_count": 5,
+      "negative_count": 4047,
+      "auroc": 0.9782060785767235,
+      "fpr_at_target_tpr": 0.06869285890783296,
+      "threshold_at_target_tpr": 0.43575359925503626
+    },
+    {
+      "class_index": 16,
+      "class_label": 16,
+      "class_name": "crab",
+      "positive_count": 29,
+      "negative_count": 4023,
+      "auroc": 0.9616772523507074,
+      "fpr_at_target_tpr": 0.2296793437733035,
+      "threshold_at_target_tpr": 0.3459796329847372
+    },
+    {
+      "class_index": 17,
+      "class_label": 17,
+      "class_name": "crocodile",
+      "positive_count": 7,
+      "negative_count": 4045,
+      "auroc": 0.9949143563482253,
+      "fpr_at_target_tpr": 0.03189122373300371,
+      "threshold_at_target_tpr": 0.35358476521423204
+    },
+    {
+      "class_index": 18,
+      "class_label": 18,
+      "class_name": "crocodile fish",
+      "positive_count": 3,
+      "negative_count": 4049,
+      "auroc": 0.9986004774841525,
+      "fpr_at_target_tpr": 0.002716720177821684,
+      "threshold_at_target_tpr": 0.5257719186686284
+    },
+    {
+      "class_index": 19,
+      "class_label": 19,
+      "class_name": "deer",
+      "positive_count": 22,
+      "negative_count": 4030,
+      "auroc": 0.994676291450485,
+      "fpr_at_target_tpr": 0.039950372208436724,
+      "threshold_at_target_tpr": 0.3506768997577177
+    },
+    {
+      "class_index": 20,
+      "class_label": 20,
+      "class_name": "dog",
+      "positive_count": 23,
+      "negative_count": 4029,
+      "auroc": 0.9344966385013003,
+      "fpr_at_target_tpr": 0.4023330851327873,
+      "threshold_at_target_tpr": 0.11038524596657506
+    },
+    {
+      "class_index": 21,
+      "class_label": 21,
+      "class_name": "dragonfly",
+      "positive_count": 15,
+      "negative_count": 4037,
+      "auroc": 0.9306415655189497,
+      "fpr_at_target_tpr": 0.14292791676987862,
+      "threshold_at_target_tpr": 0.39159749061487914
+    },
+    {
+      "class_index": 22,
+      "class_label": 22,
+      "class_name": "duck",
+      "positive_count": 7,
+      "negative_count": 4045,
+      "auroc": 0.9968921066572489,
+      "fpr_at_target_tpr": 0.018541409147095178,
+      "threshold_at_target_tpr": 0.3197091560370918
+    },
+    {
+      "class_index": 23,
+      "class_label": 23,
+      "class_name": "fish",
+      "positive_count": 43,
+      "negative_count": 4009,
+      "auroc": 0.8587248458410437,
+      "fpr_at_target_tpr": 0.265153404839112,
+      "threshold_at_target_tpr": 0.2666289234916913
+    },
+    {
+      "class_index": 24,
+      "class_label": 24,
+      "class_name": "flounder",
+      "positive_count": 24,
+      "negative_count": 4028,
+      "auroc": 0.9903901853690831,
+      "fpr_at_target_tpr": 0.031777557100297914,
+      "threshold_at_target_tpr": 0.28592317356202956
+    },
+    {
+      "class_index": 25,
+      "class_label": 25,
+      "class_name": "frog",
+      "positive_count": 44,
+      "negative_count": 4008,
+      "auroc": 0.954193884957358,
+      "fpr_at_target_tpr": 0.18088822355289422,
+      "threshold_at_target_tpr": 0.22846089641298967
+    },
+    {
+      "class_index": 26,
+      "class_label": 26,
+      "class_name": "frog fish",
+      "positive_count": 7,
+      "negative_count": 4045,
+      "auroc": 0.95362881864736,
+      "fpr_at_target_tpr": 0.15327564894932014,
+      "threshold_at_target_tpr": 0.3741855930158418
+    },
+    {
+      "class_index": 27,
+      "class_label": 27,
+      "class_name": "frogmouth",
+      "positive_count": 7,
+      "negative_count": 4045,
+      "auroc": 0.9981988345399965,
+      "fpr_at_target_tpr": 0.005933250927070457,
+      "threshold_at_target_tpr": 0.5548286778784173
+    },
+    {
+      "class_index": 28,
+      "class_label": 28,
+      "class_name": "gecko",
+      "positive_count": 19,
+      "negative_count": 4033,
+      "auroc": 0.8853015255719264,
+      "fpr_at_target_tpr": 0.3424249938011406,
+      "threshold_at_target_tpr": 0.28916410163325945
+    },
+    {
+      "class_index": 29,
+      "class_label": 29,
+      "class_name": "ghost pipefish",
+      "positive_count": 41,
+      "negative_count": 4011,
+      "auroc": 0.9924111133407519,
+      "fpr_at_target_tpr": 0.025430067314884067,
+      "threshold_at_target_tpr": 0.5406790519136111
+    },
+    {
+      "class_index": 30,
+      "class_label": 30,
+      "class_name": "giraffe",
+      "positive_count": 9,
+      "negative_count": 4043,
+      "auroc": 0.9827136065078187,
+      "fpr_at_target_tpr": 0.1553302003462775,
+      "threshold_at_target_tpr": 0.2435974702248252
+    },
+    {
+      "class_index": 31,
+      "class_label": 31,
+      "class_name": "grasshopper",
+      "positive_count": 124,
+      "negative_count": 3928,
+      "auroc": 0.9251034754615334,
+      "fpr_at_target_tpr": 0.30728105906313646,
+      "threshold_at_target_tpr": 0.24456168616639992
+    },
+    {
+      "class_index": 32,
+      "class_label": 32,
+      "class_name": "grouse",
+      "positive_count": 7,
+      "negative_count": 4045,
+      "auroc": 0.9932544587674378,
+      "fpr_at_target_tpr": 0.014091470951792336,
+      "threshold_at_target_tpr": 0.4465695517222746
+    },
+    {
+      "class_index": 33,
+      "class_label": 33,
+      "class_name": "heron",
+      "positive_count": 23,
+      "negative_count": 4029,
+      "auroc": 0.99344966385013,
+      "fpr_at_target_tpr": 0.04095309009679821,
+      "threshold_at_target_tpr": 0.423216887307123
+    },
+    {
+      "class_index": 34,
+      "class_label": 34,
+      "class_name": "human",
+      "positive_count": 30,
+      "negative_count": 4022,
+      "auroc": 0.6883557102602353,
+      "fpr_at_target_tpr": 0.8393833913475882,
+      "threshold_at_target_tpr": 0.14932886381194524
+    },
+    {
+      "class_index": 35,
+      "class_label": 35,
+      "class_name": "kangaroo",
+      "positive_count": 3,
+      "negative_count": 4049,
+      "auroc": 1.0,
+      "fpr_at_target_tpr": 0.0,
+      "threshold_at_target_tpr": 0.4249585854096817
+    },
+    {
+      "class_index": 36,
+      "class_label": 36,
+      "class_name": "katydid",
+      "positive_count": 129,
+      "negative_count": 3923,
+      "auroc": 0.9330839592385989,
+      "fpr_at_target_tpr": 0.3798113688503696,
+      "threshold_at_target_tpr": 0.3502397781657539
+    },
+    {
+      "class_index": 37,
+      "class_label": 37,
+      "class_name": "leafy sea dragon",
+      "positive_count": 5,
+      "negative_count": 4047,
+      "auroc": 0.9895231035334816,
+      "fpr_at_target_tpr": 0.024215468248085,
+      "threshold_at_target_tpr": 0.519143179596407
+    },
+    {
+      "class_index": 38,
+      "class_label": 38,
+      "class_name": "leopard",
+      "positive_count": 22,
+      "negative_count": 4030,
+      "auroc": 0.996232799458606,
+      "fpr_at_target_tpr": 0.005210918114143921,
+      "threshold_at_target_tpr": 0.41327269545051926
+    },
+    {
+      "class_index": 39,
+      "class_label": 39,
+      "class_name": "lion",
+      "positive_count": 5,
+      "negative_count": 4047,
+      "auroc": 0.9998517420311341,
+      "fpr_at_target_tpr": 0.00024709661477637757,
+      "threshold_at_target_tpr": 0.37558673770140777
+    },
+    {
+      "class_index": 40,
+      "class_label": 40,
+      "class_name": "lizard",
+      "positive_count": 77,
+      "negative_count": 3975,
+      "auroc": 0.9382373601241526,
+      "fpr_at_target_tpr": 0.2893081761006289,
+      "threshold_at_target_tpr": 0.30003570293205184
+    },
+    {
+      "class_index": 41,
+      "class_label": 41,
+      "class_name": "mantis",
+      "positive_count": 62,
+      "negative_count": 3990,
+      "auroc": 0.9463093216913251,
+      "fpr_at_target_tpr": 0.28922305764411027,
+      "threshold_at_target_tpr": 0.37881358408761956
+    },
+    {
+      "class_index": 42,
+      "class_label": 42,
+      "class_name": "mockingbird",
+      "positive_count": 14,
+      "negative_count": 4038,
+      "auroc": 0.9999115545177952,
+      "fpr_at_target_tpr": 0.00024764735017335313,
+      "threshold_at_target_tpr": 0.48356941589038677
+    },
+    {
+      "class_index": 43,
+      "class_label": 43,
+      "class_name": "monkey",
+      "positive_count": 2,
+      "negative_count": 4050,
+      "auroc": 0.9490123456790124,
+      "fpr_at_target_tpr": 0.06592592592592593,
+      "threshold_at_target_tpr": 0.2725280493377958
+    },
+    {
+      "class_index": 44,
+      "class_label": 44,
+      "class_name": "moth",
+      "positive_count": 31,
+      "negative_count": 4021,
+      "auroc": 0.877706556706324,
+      "fpr_at_target_tpr": 0.381994528724198,
+      "threshold_at_target_tpr": 0.25959379910051483
+    },
+    {
+      "class_index": 45,
+      "class_label": 45,
+      "class_name": "octopus",
+      "positive_count": 21,
+      "negative_count": 4031,
+      "auroc": 0.9911873456899505,
+      "fpr_at_target_tpr": 0.044157777226494666,
+      "threshold_at_target_tpr": 0.40820081540582903
+    },
+    {
+      "class_index": 46,
+      "class_label": 46,
+      "class_name": "other",
+      "positive_count": 15,
+      "negative_count": 4037,
+      "auroc": 0.45573445627941545,
+      "fpr_at_target_tpr": 0.9687887044835274,
+      "threshold_at_target_tpr": 0.09760242524505328
+    },
+    {
+      "class_index": 47,
+      "class_label": 47,
+      "class_name": "owl",
+      "positive_count": 71,
+      "negative_count": 3981,
+      "auroc": 0.9927790809160414,
+      "fpr_at_target_tpr": 0.02461693041949259,
+      "threshold_at_target_tpr": 0.31609062500890883
+    },
+    {
+      "class_index": 48,
+      "class_label": 48,
+      "class_name": "owlfly",
+      "positive_count": 6,
+      "negative_count": 4046,
+      "auroc": 0.8557834898665349,
+      "fpr_at_target_tpr": 0.40212555610479483,
+      "threshold_at_target_tpr": 0.17998053389750285
+    },
+    {
+      "class_index": 49,
+      "class_label": 49,
+      "class_name": "pagurian",
+      "positive_count": 6,
+      "negative_count": 4046,
+      "auroc": 0.9697231833910035,
+      "fpr_at_target_tpr": 0.07810182896688087,
+      "threshold_at_target_tpr": 0.3508772278312814
+    },
+    {
+      "class_index": 50,
+      "class_label": 50,
+      "class_name": "pipefish",
+      "positive_count": 141,
+      "negative_count": 3911,
+      "auroc": 0.980442505317789,
+      "fpr_at_target_tpr": 0.07875223727946817,
+      "threshold_at_target_tpr": 0.4973076319043474
+    },
+    {
+      "class_index": 51,
+      "class_label": 51,
+      "class_name": "rabbit",
+      "positive_count": 17,
+      "negative_count": 4035,
+      "auroc": 0.9983963845761352,
+      "fpr_at_target_tpr": 0.004956629491945477,
+      "threshold_at_target_tpr": 0.32705548178510013
+    },
+    {
+      "class_index": 52,
+      "class_label": 52,
+      "class_name": "reccoon",
+      "positive_count": 2,
+      "negative_count": 4050,
+      "auroc": 0.9662962962962962,
+      "fpr_at_target_tpr": 0.06691358024691359,
+      "threshold_at_target_tpr": 0.22913790145568583
+    },
+    {
+      "class_index": 53,
+      "class_label": 53,
+      "class_name": "sciuridae",
+      "positive_count": 16,
+      "negative_count": 4036,
+      "auroc": 0.9903214816650149,
+      "fpr_at_target_tpr": 0.07358771060455897,
+      "threshold_at_target_tpr": 0.2146359770650051
+    },
+    {
+      "class_index": 54,
+      "class_label": 54,
+      "class_name": "scorpion fish",
+      "positive_count": 47,
+      "negative_count": 4005,
+      "auroc": 0.9438202247191011,
+      "fpr_at_target_tpr": 0.16704119850187266,
+      "threshold_at_target_tpr": 0.45615746495699994
+    },
+    {
+      "class_index": 55,
+      "class_label": 55,
+      "class_name": "sea horse",
+      "positive_count": 55,
+      "negative_count": 3997,
+      "auroc": 0.9829826915641275,
+      "fpr_at_target_tpr": 0.0893169877408056,
+      "threshold_at_target_tpr": 0.3437069492118873
+    },
+    {
+      "class_index": 56,
+      "class_label": 56,
+      "class_name": "sheep",
+      "positive_count": 1,
+      "negative_count": 4051,
+      "auroc": 0.9363120217230313,
+      "fpr_at_target_tpr": 0.06368797827696865,
+      "threshold_at_target_tpr": 0.291859188540197
+    },
+    {
+      "class_index": 57,
+      "class_label": 57,
+      "class_name": "shrimp",
+      "positive_count": 12,
+      "negative_count": 4040,
+      "auroc": 0.8670792079207921,
+      "fpr_at_target_tpr": 0.5252475247524753,
+      "threshold_at_target_tpr": 0.2694457820683406
+    },
+    {
+      "class_index": 58,
+      "class_label": 58,
+      "class_name": "slug",
+      "positive_count": 2,
+      "negative_count": 4050,
+      "auroc": 0.805679012345679,
+      "fpr_at_target_tpr": 0.38839506172839505,
+      "threshold_at_target_tpr": 0.2600677980845247
+    },
+    {
+      "class_index": 59,
+      "class_label": 59,
+      "class_name": "snake",
+      "positive_count": 28,
+      "negative_count": 4024,
+      "auroc": 0.9582771229764273,
+      "fpr_at_target_tpr": 0.22738568588469185,
+      "threshold_at_target_tpr": 0.29400124394921273
+    },
+    {
+      "class_index": 60,
+      "class_label": 60,
+      "class_name": "spider",
+      "positive_count": 120,
+      "negative_count": 3932,
+      "auroc": 0.9340433197694133,
+      "fpr_at_target_tpr": 0.3405391658189217,
+      "threshold_at_target_tpr": 0.24501583232213914
+    },
+    {
+      "class_index": 61,
+      "class_label": 61,
+      "class_name": "star fish",
+      "positive_count": 9,
+      "negative_count": 4043,
+      "auroc": 0.9962074367219061,
+      "fpr_at_target_tpr": 0.024981449418748455,
+      "threshold_at_target_tpr": 0.40761428724257315
+    },
+    {
+      "class_index": 62,
+      "class_label": 62,
+      "class_name": "stick insect",
+      "positive_count": 37,
+      "negative_count": 4015,
+      "auroc": 0.9402780115108882,
+      "fpr_at_target_tpr": 0.6769613947696139,
+      "threshold_at_target_tpr": 0.3542767928031335
+    },
+    {
+      "class_index": 63,
+      "class_label": 63,
+      "class_name": "stingaree",
+      "positive_count": 9,
+      "negative_count": 4043,
+      "auroc": 0.9968944952867782,
+      "fpr_at_target_tpr": 0.015335147167944596,
+      "threshold_at_target_tpr": 0.39835022857211966
+    },
+    {
+      "class_index": 64,
+      "class_label": 64,
+      "class_name": "tiger",
+      "positive_count": 16,
+      "negative_count": 4036,
+      "auroc": 0.9819282705649157,
+      "fpr_at_target_tpr": 0.2770069375619425,
+      "threshold_at_target_tpr": 0.24850258804223152
+    },
+    {
+      "class_index": 65,
+      "class_label": 65,
+      "class_name": "toad",
+      "positive_count": 80,
+      "negative_count": 3972,
+      "auroc": 0.965625,
+      "fpr_at_target_tpr": 0.18026183282980865,
+      "threshold_at_target_tpr": 0.3019713406673151
+    },
+    {
+      "class_index": 66,
+      "class_label": 66,
+      "class_name": "turtle",
+      "positive_count": 4,
+      "negative_count": 4048,
+      "auroc": 0.9556571146245059,
+      "fpr_at_target_tpr": 0.1724308300395257,
+      "threshold_at_target_tpr": 0.27610539545685975
+    },
+    {
+      "class_index": 67,
+      "class_label": 67,
+      "class_name": "wolf",
+      "positive_count": 6,
+      "negative_count": 4046,
+      "auroc": 0.9721123743615093,
+      "fpr_at_target_tpr": 0.08551655956500247,
+      "threshold_at_target_tpr": 0.22777105167893696
+    },
+    {
+      "class_index": 68,
+      "class_label": 68,
+      "class_name": "worm",
+      "positive_count": 11,
+      "negative_count": 4041,
+      "auroc": 0.7039661649906638,
+      "fpr_at_target_tpr": 0.8309824300915615,
+      "threshold_at_target_tpr": 0.20428008240397763
+    },
+    {
+      "class_index": 69,
+      "class_label": 69,
+      "class_name": "no camouflaged animal",
+      "positive_count": 2026,
+      "negative_count": 2026,
+      "auroc": 0.5668280517146785,
+      "fpr_at_target_tpr": 0.922507403751234,
+      "threshold_at_target_tpr": 0.25802682414806843
+    }
+  ]
+}
