@@ -1,3 +1,0 @@
-nohup: ignoring input
-Training and conversion for biomedclip_dpo_udiat_v28 started in background.
-Logs: /home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/biomedclip_finetuning/open_clip/src/train_biomedclip_dpo_udiat_v28.log

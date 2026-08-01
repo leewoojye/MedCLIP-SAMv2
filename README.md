@@ -189,3 +189,70 @@ Run the metric unit tests with:
 ```bash
 bioclip2/.venv/bin/python -m unittest a1_inference.test_clip4retrofit_ovr_metrics
 ```
+
+## Negative-sample generation
+
+### Brain MRI: conditional DDPM inpainting
+
+`DDPM/` contains the 2D conditional DDPM implementation for replacing a
+masked brain-tumour region with an inpainted healthy-looking sample. The
+Figshare runner uses the test images and their corresponding masks, a local
+DDPM checkpoint, EMA weights, a 1,000-step linear schedule, and Gaussian
+post-processing with `sigma=1.075`. The maintained three-GPU configuration
+uses GPUs `0,1,2`, a mask-dilation size of `9`, crop size `224`, and context
+margin `16`.
+
+After placing the input images, masks, checkpoint, and DDPM virtual
+environment at the paths configured in the runner, launch it from the
+repository root as follows:
+
+```bash
+mkdir -p DDPM/logs
+nohup bash DDPM/run_figshare_test_dilation9_3gpu.sh \
+  > DDPM/logs/figshare_dilation9_launcher.log 2>&1 &
+```
+
+The runner gives each GPU a deterministic disjoint shard and writes a separate
+worker log. It skips outputs that already exist, so an interrupted job can be
+resumed with the same command. Images, masks, checkpoints, environments, and
+generated samples are intentionally ignored by Git and must be provided
+locally.
+
+### Breast ultrasound: image-to-prompt Stable Diffusion inpainting
+
+`experiments/bus_cot_image2prompt_trial/generate_sd_ipc_batch.py` implements
+the training-free image-to-prompt (SD-IPC) procedure. It encodes one normal
+ultrasound reference image with OpenAI CLIP ViT-L/14 and converts the visual
+feature into Stable Diffusion's native text-hidden space using the closed-form
+mapping described in arXiv:2305.12716. The Stable Diffusion inpainting model
+architecture is not changed. For each source image, the original BUS-CoT mask
+is dilated (default `9` pixels) before inpainting.
+
+Set `ROOT` to this repository, then start one disjoint shard per GPU. The
+example below keeps all downloaded model assets and auxiliary dependencies
+inside the experiment directory:
+
+```bash
+ROOT="$PWD"
+EXP="$ROOT/experiments/bus_cot_image2prompt_trial"
+export HF_HOME="$EXP/.hf_cache"
+export HF_HUB_DISABLE_XET=1
+export PYTHONPATH="$EXP/pydeps${PYTHONPATH:+:$PYTHONPATH}"
+
+for SHARD in 0 1 2; do
+  CUDA_VISIBLE_DEVICES="$SHARD" "$ROOT/bioclip2/.venv/bin/python" \
+    "$EXP/generate_sd_ipc_batch.py" \
+    --source-dir "$ROOT/data/BUS-COT/images_matching_BUS_COT_test_ids" \
+    --mask-dir "$ROOT/data/BUS-COT/masks" \
+    --normal-image /path/to/one_normal_ultrasound.png \
+    --output-dir "$EXP/outputs_bus_cot_all_original_masks_dilation9" \
+    --run-label production --shard-index "$SHARD" --num-shards 3 \
+    --batch-size 2 --steps 50 --guidance-scale 5.0 \
+    --mask-dilation-px 9 --svd-threshold 0.3 --seed 20260728 \
+    > "$EXP/gpu${SHARD}_production.log" 2>&1 &
+done
+```
+
+Each shard records its settings and generated files in a manifest. Re-running
+the same command resumes safely because files already present in the output
+directory are skipped.

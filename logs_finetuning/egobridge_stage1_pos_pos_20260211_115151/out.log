@@ -1,3 +1,0 @@
-2026-02-11,11:52:01 | INFO | Running with a single process. Device cuda.
-2026-02-11,11:52:03 | INFO | Loaded hf-hub:chuhac/BiomedCLIP-vit-bert-hf model config.
-2026-02-11,11:52:07 | INFO | Loading pretrained hf-hub:chuhac/BiomedCLIP-vit-bert-hf weights (/home/woojye2020/.cache/huggingface/hub/models--chuhac--BiomedCLIP-vit-bert-hf/snapshots/c44fed22e30460c0ea1b033a41b68fdab375d64c/pytorch_model.bin).

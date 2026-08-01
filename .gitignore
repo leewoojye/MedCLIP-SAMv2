@@ -92,3 +92,36 @@ dilation_tests/
 
 # Third-party model repositories are tracked as Git submodules. Their own
 # .gitignore files exclude downloaded models, caches, and local environments.
+
+# Focused feature branch: retain only the class-wise AUROC/FPR evaluator, the
+# conditional brain-DDPM pipeline, and the BUS-CoT SD-IPC image-to-prompt
+# pipeline. Everything else in the project root stays local unless it is
+# explicitly re-included below. Existing ignore rules above remain in force.
+/*
+!/.gitignore
+!/.gitmodules
+!/README.md
+!/LICENSE
+!/medclipsamv2_env.yml
+!/DDPM_PAPER_IMPLEMENTATION.md
+!/DDPM/
+!/a1_inference/
+!/bioclip/
+!/bioclip2/
+!/experiments/
+/experiments/*
+!/experiments/bus_cot_image2prompt_trial/
+!/data/
+/data/*
+!/data/COD10K/
+/data/COD10K/*
+!/data/COD10K/test/
+/data/COD10K/test/*
+!/data/COD10K/test/cod10k_original2026_no_object2026_subclass70_caption_pairs.csv
+!/data/COD10K/test/cod10k_original2026_no_object2026_subclass70_caption_pairs_paths_fixed.csv
+!/data/COD10K/test/cod10k_original2026_no_object2026_subclass70_scene_caption_pairs_paths_fixed.csv
+!/data/MAS3K/
+/data/MAS3K/*
+!/data/MAS3K/mas3k_original582_no_object582_classwise_caption_pairs.csv
+!/data/MAS3K/mas3k_original582_no_object582_classwise_caption_pairs_paths_fixed.csv
+!/data/MAS3K/mas3k_original582_no_object582_classwise_scene_caption_pairs_paths_fixed.csv

@@ -1,25 +1,0 @@
-1. Generating Saliency Maps using High-Fidelity Prompts...
-Loading models ...
-Generating Saliency Maps ...
-  0%|          | 0/49 [00:00<?, ?it/s]  0%|          | 0/49 [00:00<?, ?it/s]
-Traceback (most recent call last):
-  File "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/saliency_maps/generate_saliency_maps.py", line 238, in <module>
-    main(args)
-  File "/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/saliency_maps/generate_saliency_maps.py", line 201, in main
-    text = json_decoded[image_id]
-KeyError: '000006.png'
-2. Postprocessing...
-Postprocessing started...
-0it [00:00, ?it/s]0it [00:00, ?it/s]
-Postprocessing done!
-3. Prompting SAM...
-Segmenting images using SAM...
-  0%|          | 0/49 [00:00<?, ?it/s]  0%|          | 0/49 [00:00<?, ?it/s]
-SAM Segmentation Done!
-4. Evaluation...
-0it [00:00, ?it/s]0it [00:00, ?it/s]
->>>>>>>>>>>>>>>>>>>>
-Average DSC for test_masks: nan
-Average NSD for test_masks: nan
-<<<<<<<<<<<<<<<<<<<<
-UDIAT3 Test Baseline Complex Inference Complete.

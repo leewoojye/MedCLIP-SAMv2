@@ -1,3 +1,0 @@
-2026-02-11,10:58:58 | INFO | Running with a single process. Device cuda.
-2026-02-11,10:59:01 | INFO | Loaded hf-hub:microsoft/BiomedCLIP-PubMedBERT_256-vit_base_patch16_224 model config.
-2026-02-11,10:59:05 | INFO | Loading pretrained hf-hub:microsoft/BiomedCLIP-PubMedBERT_256-vit_base_patch16_224 weights (/home/woojye2020/decs_jupyter_lab/MedCLIP-SAMv2/saliency_maps/model/pytorch_model.bin).
